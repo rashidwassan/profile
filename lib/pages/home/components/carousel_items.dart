@@ -14,7 +14,7 @@ List<CarouselItemModel> carouselItems = List.generate(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "PRODUCT DESIGNER",
+            "SOFTWARE DEVELOPER",
             style: GoogleFonts.oswald(
               color: kPrimaryColor,
               fontWeight: FontWeight.w900,
@@ -25,7 +25,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 18.0,
           ),
           Text(
-            "MICHELE\nHARRINGTON",
+            "RASHID\nWASSAN",
             style: GoogleFonts.oswald(
               color: Colors.white,
               fontSize: 40.0,
@@ -37,7 +37,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             height: 10.0,
           ),
           Text(
-            "Full-stack developer, based in Barcelona",
+            "Flutter & Python developer, based in Pakistan 🇵🇰",
             style: TextStyle(
               color: kCaptionColor,
               fontSize: 15.0,
@@ -51,7 +51,7 @@ List<CarouselItemModel> carouselItems = List.generate(
             child: Wrap(
               children: [
                 Text(
-                  "Need a full custom website?",
+                  "Wanna talk?",
                   style: TextStyle(
                     color: kCaptionColor,
                     fontSize: 15.0,
@@ -78,8 +78,8 @@ List<CarouselItemModel> carouselItems = List.generate(
           SizedBox(
             height: 25.0,
           ),
-          MouseRegion(
-            cursor: SystemMouseCursors.click,
+          MaterialButton(
+            onPressed: () {},
             child: Container(
               decoration: BoxDecoration(
                 color: kPrimaryColor,
@@ -89,15 +89,12 @@ List<CarouselItemModel> carouselItems = List.generate(
               padding: EdgeInsets.symmetric(
                 horizontal: 28.0,
               ),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "GET STARTED",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+              child: Text(
+                "GET STARTED",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
