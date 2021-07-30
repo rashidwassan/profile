@@ -2,22 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/models/design_process.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+
+const _cVUrl =
+    'https://drive.google.com/file/d/1l6YViAYRUukuVNsn633YK5DqsxbFyF9g/view?usp=sharing';
+
+void _launchURL() async => await canLaunch(_cVUrl)
+    ? await launch(_cVUrl)
+    : throw 'Could not launch url';
 
 final List<DesignProcess> designProcesses = [
   DesignProcess(
     title: "DESIGN",
     imagePath: "assets/design.png",
     subtitle:
-        "A full stack allround designer thay may or may not include a guide for specific creative",
+        "Having designed 15+ professional grade UIs with proper responsiveness & adaptness.",
   ),
   DesignProcess(
     title: "DEVELOP",
     imagePath: "assets/develop.png",
     subtitle:
-        "A full stack allround developer thay may or may not include a guide for specific creative",
+        "Strong understanding of object oriented programming along with best practices for performance",
   ),
   DesignProcess(
     title: "WRITE",
@@ -67,18 +75,29 @@ class CvSection extends StatelessWidget {
                   fontSize: 18.0,
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
-                child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(
-                    "DOWNLOAD CV",
-                    style: GoogleFonts.oswald(
-                      color: kPrimaryColor,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 16.0,
+              MaterialButton(
+                onPressed: () {
+                  _launchURL();
+                },
+                child: Row(
+                  children: [
+                    Text(
+                      "DOWNLOAD CV",
+                      style: GoogleFonts.oswald(
+                        color: kPrimaryColor,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Icon(
+                      Icons.download,
+                      color: kPrimaryColor,
+                      size: 16,
+                    )
+                  ],
                 ),
               ),
             ],

@@ -8,23 +8,23 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 List<Skill> skills = [
   Skill(
     skill: "Dart",
-    percentage: 62,
-  ),
-  Skill(
-    skill: "Javascript",
-    percentage: 80,
-  ),
-  Skill(
-    skill: "PHP",
-    percentage: 78,
+    percentage: 85,
   ),
   Skill(
     skill: "Python",
-    percentage: 90,
+    percentage: 77,
   ),
   Skill(
-    skill: "GoLang",
-    percentage: 40,
+    skill: "Javascript",
+    percentage: 60,
+  ),
+  Skill(
+    skill: "Java",
+    percentage: 78,
+  ),
+  Skill(
+    skill: "c++",
+    percentage: 60,
   ),
 ];
 
@@ -81,7 +81,7 @@ class SkillSection extends StatelessWidget {
                         height: 10.0,
                       ),
                       Text(
-                        "This is all the skills listed below more will be added in due time. This is all the skills listed below more will be added in due time.",
+                        "This is all the skills listed below more will be added in due time.",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
@@ -94,41 +94,57 @@ class SkillSection extends StatelessWidget {
                       Column(
                         children: skills
                             .map(
-                              (skill) => Container(
-                                margin: EdgeInsets.only(bottom: 15.0),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: skill.percentage,
-                                      child: Container(
-                                        padding: EdgeInsets.only(left: 10.0),
-                                        alignment: Alignment.centerLeft,
-                                        height: 38.0,
-                                        child: Text(skill.skill),
-                                        color: Colors.white,
+                              (skill) => Padding(
+                                padding: EdgeInsets.only(bottom: 16),
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        flex: skill.percentage,
+                                        child: Container(
+                                          padding: EdgeInsets.only(left: 10.0),
+                                          alignment: Alignment.centerLeft,
+                                          height: 35.0,
+                                          child: Text(
+                                            skill.skill,
+                                            style: TextStyle(
+                                                color: Colors.white70,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(30),
+                                                bottomRight:
+                                                    Radius.circular(30),
+                                                topLeft: Radius.circular(30),
+                                                bottomLeft:
+                                                    Radius.circular(30)),
+                                            color: kPrimaryColor,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 10.0,
-                                    ),
-                                    Expanded(
-                                      // remaining (blank part)
-                                      flex: 100 - skill.percentage,
-                                      child: Divider(
-                                        color: Colors.white,
+                                      SizedBox(
+                                        width: 10.0,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 10.0,
-                                    ),
-                                    Text(
-                                      "${skill.percentage}%",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16.0,
+                                      Expanded(
+                                        // remaining (blank part)
+                                        flex: 100 - skill.percentage,
+                                        child: Divider(
+                                          color: Colors.white,
+                                        ),
                                       ),
-                                    )
-                                  ],
+                                      SizedBox(
+                                        width: 10.0,
+                                      ),
+                                      Text(
+                                        "${skill.percentage}%",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16.0,
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             )

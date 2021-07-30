@@ -13,6 +13,7 @@ import 'package:web_portfolio/pages/home/components/testimonial_widget.dart';
 import 'package:web_portfolio/pages/home/components/website_ad.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -27,6 +28,7 @@ class Home extends StatelessWidget {
               vertical: 24.0,
             ),
             child: ListView.separated(
+              physics: BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return headerItems[index].isButton
                     ? MouseRegion(
@@ -108,6 +110,7 @@ class Home extends StatelessWidget {
               ),
               TestimonialWidget(),
               Footer(),
+              24.heightBox
             ],
           ),
         ),

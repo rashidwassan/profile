@@ -1,12 +1,39 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:web_portfolio/models/carousel_item_model.dart';
 import 'package:web_portfolio/pages/home/components/carousel_items.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:velocity_x/velocity_x.dart';
 
-class Carousel extends StatelessWidget {
+class Carousel extends StatefulWidget {
+  @override
+  State<Carousel> createState() => _CarouselState();
+}
+
+class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
+  AnimationController _flutterFLoatController;
+  Animation _flutterIconAnimation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _flutterFLoatController =
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
+    _flutterIconAnimation = CurvedAnimation(
+        parent: _flutterFLoatController, curve: Curves.bounceIn);
+
+    _flutterFLoatController.forward();
+    _flutterFLoatController.addListener(() {
+      setState(() {});
+    });
+  }
+
   final CarouselController carouselController = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
@@ -63,27 +90,146 @@ class Carousel extends StatelessWidget {
       ),
     );
   }
-}
 
-// Big screens
-Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
-  return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kDesktopMaxWidth,
-      minWidth: kDesktopMaxWidth,
-      defaultScale: false,
-      child: Row(
-        children: [
-          Expanded(
-            child: text,
-          ),
-          Expanded(
-            child: image,
-          )
-        ],
+  List<CarouselItemModel> carouselItems = List.generate(
+    5,
+    (index) => CarouselItemModel(
+      text: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              "SOFTWARE DEVELOPER",
+              style: GoogleFonts.oswald(
+                color: kPrimaryColor,
+                fontWeight: FontWeight.w900,
+                fontSize: 16.0,
+              ),
+            ),
+            SizedBox(
+              height: 18.0,
+            ),
+            Text(
+              "RASHID\nWASSAN",
+              style: GoogleFonts.oswald(
+                color: Colors.white,
+                fontSize: 40.0,
+                fontWeight: FontWeight.w900,
+                height: 1.3,
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              "Flutter & Python developer, based in Pakistan 🇵🇰",
+              style: TextStyle(
+                color: kCaptionColor,
+                fontSize: 15.0,
+                height: 1.0,
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              child: Wrap(
+                children: [
+                  Text(
+                    "Wanna talk?",
+                    style: TextStyle(
+                      color: kCaptionColor,
+                      fontSize: 15.0,
+                      height: 1.5,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: Text(
+                        " Got a project? Let's talk.",
+                        style: TextStyle(
+                          height: 1.5,
+                          color: Colors.white,
+                          fontSize: 15.0,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 25.0,
+            ),
+            MaterialButton(
+              hoverElevation: 10,
+              hoverColor: Colors.green,
+              height: 48.0,
+              color: kPrimaryColor,
+              padding: EdgeInsets.symmetric(
+                horizontal: 28.0,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              onPressed: () {},
+              child: Text(
+                "GET STARTED",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 13.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     ),
   );
+
+  // Big screens
+  Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
+    return Center(
+      child: ResponsiveWrapper(
+        maxWidth: kDesktopMaxWidth,
+        minWidth: kDesktopMaxWidth,
+        defaultScale: false,
+        child: Row(
+          children: [
+            Expanded(
+              child: text,
+            ),
+            Expanded(
+              child: Stack(
+                alignment: Alignment.topLeft,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(500),
+                    child: Container(
+                      child: Image.asset(
+                        "assets/rashid.png",
+                        opacity: _flutterFLoatController,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/f3.png',
+                    height: _flutterIconAnimation.value * 120,
+                  ).pOnly(top: 45, left: 30)
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 // Mid screens

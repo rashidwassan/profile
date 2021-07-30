@@ -6,6 +6,6 @@ class CarouselItemModel {
 
   CarouselItemModel({
     @required this.text,
-    @required this.image,
+    this.image,
   });
 }

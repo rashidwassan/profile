@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:web_portfolio/models/education.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
@@ -34,6 +36,12 @@ final List<Education> educationList = [
 ];
 
 class EducationSection extends StatelessWidget {
+  final _cVUrl = 'https://www.muet.edu.pk/';
+
+  void _launchMUETURL() async => await canLaunch(_cVUrl)
+      ? await launch(_cVUrl)
+      : throw 'Could not launch url';
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,8 +79,22 @@ class EducationSection extends StatelessWidget {
               children: [
                 Container(
                   constraints: BoxConstraints(maxWidth: 400.0),
-                  child: Text(
-                    "A full stack all round developer that does all the job he needs to do at all times. Actually this is a false statement",
+                  child: Text.rich(
+                    TextSpan(
+                        text:
+                            'I am currenty doing my B.E Software Engineering from ',
+                        children: [
+                          TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () => _launchMUETURL(),
+                            text: 'Mehran University Jamshoro.',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                              height: 1.5,
+                            ),
+                          ),
+                        ]),
                     style: TextStyle(
                       color: Colors.white,
                       height: 1.5,
