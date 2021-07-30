@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +9,7 @@ import 'package:web_portfolio/pages/home/components/carousel_items.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'dart:async';
 
 class Carousel extends StatefulWidget {
   @override
@@ -14,22 +17,77 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
+  //Initializing
+
   AnimationController _flutterFLoatController;
+  AnimationController _imageAnimationController;
   Animation _flutterIconAnimation;
+  Animation _mainImageAnimation;
+  List<String> _tech;
+  int _currentTech = 0;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _flutterFLoatController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
-    _flutterIconAnimation = CurvedAnimation(
-        parent: _flutterFLoatController, curve: Curves.bounceIn);
+    _flutterFLoatController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
 
-    _flutterFLoatController.forward();
-    _flutterFLoatController.addListener(() {
-      setState(() {});
+    _imageAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 3),
+    );
+
+    _flutterIconAnimation = CurvedAnimation(
+        parent: _flutterFLoatController,
+        curve: Curves.elasticIn,
+        reverseCurve: Curves.bounceOut);
+
+    _mainImageAnimation = CurvedAnimation(
+        parent: _imageAnimationController, curve: Curves.easeIn);
+
+    _tech = [
+      'assets/f3.png',
+      'assets/m1.png',
+      'assets/python.png',
+      'assets/macos.png'
+    ];
+
+    Future.delayed(Duration(seconds: 3), () {
+      _imageAnimationController.forward();
+      _imageAnimationController.addListener(() {
+        setState(() {});
+      });
+
+      _flutterFLoatController.forward();
+      _flutterFLoatController.addListener(() {
+        setState(() {});
+      });
     });
+
+    changeTechIcon();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _imageAnimationController.dispose();
+    _flutterFLoatController.dispose();
+  }
+
+  Future changeTechIcon() async {
+    while (true) {
+      await new Future.delayed(const Duration(seconds: 2), () {
+        if (_flutterFLoatController.status == AnimationStatus.completed) {
+          _flutterFLoatController.reverse();
+        } else {
+          _currentTech = (_currentTech + 1) % _tech.length;
+          _flutterFLoatController.forward();
+        }
+      });
+    }
   }
 
   final CarouselController carouselController = CarouselController();
@@ -213,15 +271,15 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                     child: Container(
                       child: Image.asset(
                         "assets/rashid.png",
-                        opacity: _flutterFLoatController,
+                        opacity: _imageAnimationController,
                         fit: BoxFit.contain,
                       ),
                     ),
                   ),
                   Image.asset(
-                    'assets/f3.png',
+                    _tech[_currentTech],
                     height: _flutterIconAnimation.value * 120,
-                  ).pOnly(top: 45, left: 30)
+                  ).pOnly(top: 45, left: 30),
                 ],
               ),
             )
