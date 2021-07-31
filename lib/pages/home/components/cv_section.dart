@@ -10,9 +10,8 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 const _cVUrl =
     'https://drive.google.com/file/d/1l6YViAYRUukuVNsn633YK5DqsxbFyF9g/view?usp=sharing';
 
-void _launchURL() async => await canLaunch(_cVUrl)
-    ? await launch(_cVUrl)
-    : throw 'Could not launch url';
+void launchURL(url) async =>
+    await canLaunch(url) ? await launch(url) : throw 'Could not launch url';
 
 final List<DesignProcess> designProcesses = [
   DesignProcess(
@@ -77,7 +76,7 @@ class CvSection extends StatelessWidget {
               ),
               MaterialButton(
                 onPressed: () {
-                  _launchURL();
+                  launchURL(_cVUrl);
                 },
                 child: Row(
                   children: [

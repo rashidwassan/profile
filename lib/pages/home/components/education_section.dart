@@ -16,10 +16,9 @@ final List<Education> educationList = [
     period: "2019 - PRESENT",
   ),
   Education(
-    description:
-        "This is a sample education and details about it is stated below.This is a sample education and details about it is stated below",
-    linkName: "www.flutterpanda.com",
-    period: "2018 - 2019",
+    description: "Parimary, Secondary, & Higher Secondary sections.",
+    linkName: "www.mazharcollege.edu.pk",
+    period: "2011 - 2019",
   ),
   Education(
     description:

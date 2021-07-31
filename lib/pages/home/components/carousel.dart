@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
 import 'package:web_portfolio/pages/home/components/carousel_items.dart';
+import 'package:web_portfolio/pages/home/components/cv_section.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -197,26 +198,27 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               child: Wrap(
                 children: [
                   Text(
-                    "Wanna talk?",
+                    "Wanna know more?",
                     style: TextStyle(
                       color: kCaptionColor,
                       fontSize: 15.0,
                       height: 1.5,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Text(
-                        " Got a project? Let's talk.",
-                        style: TextStyle(
-                          height: 1.5,
-                          color: Colors.white,
-                          fontSize: 15.0,
-                        ),
+                  MaterialButton(
+                    height: 15,
+                    padding: EdgeInsets.all(0),
+                    onPressed: () {
+                      launchURL('https://www.instagram.com/rashidwassaan/');
+                    },
+                    child: Text(
+                      " Got a project? Let's talk.",
+                      style: TextStyle(
+                        height: 1.5,
+                        color: Colors.white,
+                        fontSize: 15.0,
                       ),
-                    ),
+                    ).px(3),
                   )
                 ],
               ),
