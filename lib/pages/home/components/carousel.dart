@@ -79,8 +79,9 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
   Future changeTechIcon() async {
     while (true) {
-      await new Future.delayed(const Duration(seconds: 2), () {
+      await new Future.delayed(const Duration(seconds: 6), () {
         if (_flutterFLoatController.status == AnimationStatus.completed) {
+          Future.delayed(Duration(seconds: 4));
           _flutterFLoatController.reverse();
         } else {
           _currentTech = (_currentTech + 1) % _tech.length;
@@ -170,7 +171,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               height: 18.0,
             ),
             Text(
-              "RASHID\nWASSAN",
+              "RASHID WASSAN",
               style: GoogleFonts.oswald(
                 color: Colors.white,
                 fontSize: 40.0,
@@ -276,9 +277,15 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                  Image.asset(
-                    _tech[_currentTech],
-                    height: _flutterIconAnimation.value * 120,
+                  SizedBox(
+                    height: 110,
+                    width: 110,
+                    child: Center(
+                      child: Image.asset(
+                        _tech[_currentTech],
+                        height: _flutterIconAnimation.value * 120,
+                      ),
+                    ),
                   ).pOnly(top: 45, left: 30),
                 ],
               ),

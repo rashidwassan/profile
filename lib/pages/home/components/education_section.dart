@@ -11,8 +11,8 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 final List<Education> educationList = [
   Education(
     description:
-        "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below",
-    linkName: "www.flutterpanda.com",
+        "Enrolled in Bachelor of Engineering (Software Engineering) in Pakistan's second highest ranked university.",
+    linkName: "www.muet.edu.pk",
     period: "2019 - PRESENT",
   ),
   Education(

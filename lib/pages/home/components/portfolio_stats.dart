@@ -6,9 +6,9 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
 final List<Stat> stats = [
-  Stat(count: "43", text: "Clients"),
+  Stat(count: "10+", text: "Clients"),
   Stat(count: "15+", text: "Projects"),
-  Stat(count: "17", text: "Awards"),
+  Stat(count: "3", text: "Awards"),
   Stat(count: "2", text: "Years\nExperience"),
 ];
 
