@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
-import 'package:web_portfolio/pages/home/components/carousel_items.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
@@ -73,9 +72,9 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    super.dispose();
     _imageAnimationController.dispose();
     _flutterFLoatController.dispose();
+    super.dispose();
   }
 
   Future changeTechIcon() async {
