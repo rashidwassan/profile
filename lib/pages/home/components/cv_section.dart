@@ -24,19 +24,19 @@ final List<DesignProcess> designProcesses = [
     title: "DEVELOP",
     imagePath: "assets/develop.png",
     subtitle:
-        "Strong understanding of object oriented programming along with best practices for performance",
+        "Strong understanding of object oriented programming along with best practices for performance.",
   ),
   DesignProcess(
     title: "WRITE",
     imagePath: "assets/write.png",
     subtitle:
-        "A full stack allround writer thay may or may not include a guide for specific creative",
+        "Experience of multiple well-written articles. Click articles button in upper right corner to learn more.",
   ),
   DesignProcess(
-    title: "PROMOTE",
+    title: "CREATIVITY",
     imagePath: "assets/promote.png",
     subtitle:
-        "A full stack allround promoter thay may or may not include a guide for specific creative",
+        "Good hands-on experience in generating design ideas according to client's needs and expectations.",
   ),
 ];
 

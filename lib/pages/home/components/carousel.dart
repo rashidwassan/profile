@@ -38,7 +38,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
     _imageAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 4),
     );
 
     _flutterIconAnimation = CurvedAnimation(
@@ -205,20 +205,21 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                       height: 1.5,
                     ),
                   ),
-                  MaterialButton(
-                    height: 15,
-                    padding: EdgeInsets.all(0),
-                    onPressed: () {
+                  GestureDetector(
+                    onTap: () {
                       launchURL('https://www.instagram.com/rashidwassaan/');
                     },
-                    child: Text(
-                      " Got a project? Let's talk.",
-                      style: TextStyle(
-                        height: 1.5,
-                        color: Colors.white,
-                        fontSize: 15.0,
+                    child: MouseRegion(
+                      onHover: (v) {},
+                      child: Text(
+                        " Got a project? Let's talk.",
+                        style: TextStyle(
+                          height: 1.5,
+                          color: Colors.white,
+                          fontSize: 15.0,
+                        ),
                       ),
-                    ).px(3),
+                    ),
                   )
                 ],
               ),
@@ -270,7 +271,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                 alignment: Alignment.topLeft,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(500),
+                    borderRadius: BorderRadius.circular(0),
                     child: Container(
                       child: Image.asset(
                         "assets/rashid.png",
@@ -280,15 +281,27 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                     ),
                   ),
                   SizedBox(
-                    height: 110,
-                    width: 110,
-                    child: Center(
-                      child: Image.asset(
-                        _tech[_currentTech],
-                        height: _flutterIconAnimation.value * 120,
+                    width: 150,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black38,
+                                offset: Offset(-3, 3),
+                                blurRadius: 4,
+                                spreadRadius: 0.1)
+                          ],
+                          color: Color(0xFFff03f7).withOpacity(0.9),
+                          shape: BoxShape.circle),
+                      child: Center(
+                        child: Image.asset(
+                          _tech[_currentTech],
+                          height: _flutterIconAnimation.value * 90,
+                          width: _flutterIconAnimation.value * 90,
+                        ).p(5),
                       ),
                     ),
-                  ).pOnly(top: 45, left: 30),
+                  )
                 ],
               ),
             )

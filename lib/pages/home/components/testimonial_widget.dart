@@ -9,15 +9,15 @@ final List<Testimonial> testimonials = [
   Testimonial(
     text:
         "This is a testimonial text from Janny Stone. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
-    occupation: "Product Designer",
-    personName: "JANNY STONE",
-    profilePhoto: "assets/female.png",
+    occupation: "CEO IsaaTech",
+    personName: "SAAD MUJEEB",
+    profilePhoto: "assets/male.png",
   ),
   Testimonial(
     text:
         "This is a testimonial text from Ken Williams. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
-    occupation: "Art Director",
-    personName: "KEN WILLIAMS",
+    occupation: "MERN Stack Developer",
+    personName: "MUZAMMIL NAWAZ",
     profilePhoto: "assets/male.png",
   )
 ];
