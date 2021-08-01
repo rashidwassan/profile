@@ -8,17 +8,19 @@ import 'package:web_portfolio/utils/screen_helper.dart';
 final List<Testimonial> testimonials = [
   Testimonial(
     text:
-        "This is a testimonial text from Janny Stone. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
+        "This is a testimonial text from Saad Mujeeb. Rashid is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
     occupation: "CEO IsaaTech",
     personName: "SAAD MUJEEB",
-    profilePhoto: "assets/male.png",
+    profilePhoto:
+        "https://scontent.fkhi4-1.fna.fbcdn.net/v/t31.18172-8/10989230_10202588311147770_7304844486081199964_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH6JEuX7AYI8b_cdfzvFszyv92IRnxqezq_3YhGfGp7OmX0GrclCovlkyVjfbtx0FYRe9TcLE4P9jTmadJfozw0&_nc_ohc=LTHDmtsm0XUAX9V0Azn&_nc_ht=scontent.fkhi4-1.fna&oh=a04ba873bada8cf35f3c907297356ba2&oe=612BAF6A",
   ),
   Testimonial(
     text:
-        "This is a testimonial text from Ken Williams. Michele is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
+        "This is a testimonial text from Muzzamil Nawaz. Rashid is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
     occupation: "MERN Stack Developer",
     personName: "MUZAMMIL NAWAZ",
-    profilePhoto: "assets/male.png",
+    profilePhoto:
+        "https://scontent.fkhi4-2.fna.fbcdn.net/v/t1.6435-9/133366322_2859342830950543_7865627328469365281_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=ad2b24&_nc_eui2=AeHSutzNK0Gi6OffeN-_sfNcxZ2gcOywNqTFnaBw7LA2pJPU_1Pp5bMsGZCO6RnfLtAJSSJWTa3vHOacvznGaqqS&_nc_ohc=2q0qII1stBoAX9vaJ0d&_nc_ht=scontent.fkhi4-2.fna&oh=61c24f5c10a74ab982cb8d0707910761&oe=612BD8A9",
   )
 ];
 
@@ -65,20 +67,16 @@ Widget _buildUi(double width) {
                     children: [
                       TextSpan(
                         text:
-                            "This is the portfolio section. There is alot of work here",
+                            "This is section contains some testimonials from worthy people I have worked with.",
                         style: TextStyle(color: Colors.white, height: 1.8),
                       ),
                       TextSpan(
-                          text: " click here to contact us",
+                          text: " click here to learn more",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w700,
                             height: 1.8,
                           )),
-                      TextSpan(
-                        text: ". Please subscribe to me youtube channel :-)",
-                        style: TextStyle(color: Colors.white, height: 1.8),
-                      ),
                     ],
                   ),
                 ),
@@ -124,7 +122,7 @@ Widget _buildUi(double width) {
                               CircleAvatar(
                                 radius: 25.0,
                                 backgroundColor: Colors.transparent,
-                                backgroundImage: AssetImage(
+                                backgroundImage: NetworkImage(
                                   testimonial.profilePhoto,
                                 ),
                               ),

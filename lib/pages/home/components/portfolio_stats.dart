@@ -9,7 +9,7 @@ final List<Stat> stats = [
   Stat(count: "10+", text: "Clients"),
   Stat(count: "15+", text: "Projects"),
   Stat(count: "3", text: "Awards"),
-  Stat(count: "2", text: "Years\nExperience"),
+  Stat(count: "2", text: "Years of\nExperience"),
 ];
 
 class PortfolioStats extends StatelessWidget {

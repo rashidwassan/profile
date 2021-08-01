@@ -21,7 +21,7 @@ List<HeaderItem> headerItems = [
   HeaderItem(
       title: "ARTICLES",
       onTap: () {
-        launchURL('https://www.airtract.com/rashid-wassan');
+        launchURL('https://medium.com/@rashidwassaan');
       }),
   HeaderItem(
     title: "HIRE ME",
