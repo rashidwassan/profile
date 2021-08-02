@@ -49,24 +49,25 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Material(
-        color: kBackgroundColor,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Material(
-                color: Colors.white.withOpacity(0.9),
-                elevation: 12,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(500)),
-                child: Image.asset(
-                  'assets/rashid.png',
-                  width: _animation.value * (context.percentWidth * 25),
-                ).p(_animation.value * 32),
-              ),
-              Row(
+    return Material(
+      color: kBackgroundColor,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Material(
+              color: Colors.white.withOpacity(0.9),
+              elevation: 12,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(500)),
+              child: Image.asset(
+                'assets/rashid.png',
+                width: _animation.value * (context.percentWidth * 25),
+              ).p(_animation.value * 32),
+            ),
+            Opacity(
+              opacity: _animation.value,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -85,9 +86,9 @@ class _SplashScreenState extends State<SplashScreen>
                         fontSize: 20),
                   ),
                 ],
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
