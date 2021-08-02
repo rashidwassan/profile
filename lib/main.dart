@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/pages/home/home.dart';
+import 'package:web_portfolio/pages/splash_screen.dart';
 import 'package:web_portfolio/utils/constants.dart';
 
 void main() {
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           color: kBackgroundColor,
         ),
       ),
-      home: Home(),
+      home: SplashScreen(),
     );
   }
 }

@@ -34,10 +34,13 @@ class IosAppAd extends StatelessWidget {
                   // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    child: Image.asset(
-                      "assets/ios.png",
-                      // Set width for image on smaller screen
-                      width: constraints.maxWidth > 720.0 ? null : 350.0,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                      child: Image.asset(
+                        "assets/ios.png",
+                        // Set width for image on smaller screen
+                        width: constraints.maxWidth > 720.0 ? null : 350.0,
+                      ),
                     ),
                   ),
                   Expanded(
