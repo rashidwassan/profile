@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class IosAppAd extends StatelessWidget {
   @override
@@ -34,13 +35,24 @@ class IosAppAd extends StatelessWidget {
                   // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                      child: Image.asset(
-                        "assets/ios.png",
-                        // Set width for image on smaller screen
-                        width: constraints.maxWidth > 720.0 ? null : 350.0,
-                      ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Padding(
+                          padding: constraints.maxWidth > 720.0
+                              ? EdgeInsets.all(25)
+                              : EdgeInsets.all(35),
+                          child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(35),
+                                  child: Image.asset('assets/reapet/r1.png'))
+                              .pOnly(left: 8),
+                        ),
+                        Image.asset(
+                          "assets/ios.png",
+                          // Set width for image on smaller screen
+                          width: constraints.maxWidth > 720.0 ? null : 350.0,
+                        ),
+                      ],
                     ),
                   ),
                   Expanded(

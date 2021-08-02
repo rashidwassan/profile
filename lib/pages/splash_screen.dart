@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
     _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
+        vsync: this, duration: Duration(milliseconds: 1000));
     _animation =
         CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
     _controller.forward();
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     });
   }
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen>
               child: Image.asset(
                 'assets/rashid.png',
                 width: _animation.value * (context.percentWidth * 25),
-              ).p(_animation.value * 32),
+              ).p(_animation.value * 24),
             ),
             Opacity(
               opacity: _animation.value,
@@ -77,7 +77,10 @@ class _SplashScreenState extends State<SplashScreen>
                         fontWeight: FontWeight.bold,
                         fontSize: 20),
                   ),
-                  LottieBuilder.asset('assets/heart.json', height: 70),
+                  LottieBuilder.asset(
+                    'assets/heart.json',
+                    height: 70,
+                  ),
                   Text(
                     ' with Flutter!',
                     style: TextStyle(

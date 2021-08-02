@@ -10,8 +10,8 @@ final List<FooterItem> footerItems = [
   FooterItem(
     iconPath: "assets/mappin.png",
     title: "ADDRESS",
-    text1: "Room #72, Latif Hostel MUET",
-    text2: "Jamshoro, Sindh Pakistan",
+    text1: "Room #72, Latif Hostel",
+    text2: "MUET Jamshoro, Pakistan",
   ),
   FooterItem(
     iconPath: "assets/phone.png",
