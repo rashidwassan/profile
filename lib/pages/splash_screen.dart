@@ -26,8 +26,9 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 13), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+    Future.delayed(Duration(seconds: 40), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Home()));
     });
   }
 
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen>
   Animation _animation;
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    //  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     super.initState();
     _animateLogo();
     _navigate();
@@ -55,45 +56,44 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Material(
-              color: Colors.white.withOpacity(0.9),
-              elevation: 12,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(500)),
-              child: Image.asset(
-                'assets/rashid.png',
-                width: _animation.value * (context.percentWidth * 25),
-              ).p(_animation.value * 24),
+            Flexible(
+              child: Material(
+                color: Colors.white.withOpacity(0.9),
+                elevation: 12,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(500)),
+                child: Image.asset(
+                  'assets/rashid.png',
+                  width: _animation.value * (context.percentWidth * 20),
+                ).p(_animation.value * 16),
+              ).p(24),
             ),
-            Opacity(
-              opacity: _animation.value,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: Text(
                     'Made with',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25),
+                    style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
-                  LottieBuilder.asset(
+                ),
+                Flexible(
+                  child: LottieBuilder.asset(
                     'assets/flutter_anim.json',
-                    height: 25,
+                    height: 14,
                   ).px(16),
-                  Text(
-                    'with ',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25),
-                  ),
-                  LottieBuilder.asset(
+                ),
+                Text(
+                  'with ',
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+                Flexible(
+                  child: LottieBuilder.asset(
                     'assets/heart.json',
-                    height: 70,
+                    height: 30,
                   ),
-                ],
-              ),
+                ),
+              ],
             )
           ],
         ),
