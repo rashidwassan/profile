@@ -16,9 +16,9 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
     _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
+        vsync: this, duration: Duration(milliseconds: 2000));
     _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
+        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
     _controller.forward();
     _controller.addListener(() {
       setState(() {});
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 40), () {
+    Future.delayed(Duration(seconds: 14), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Home()));
     });
@@ -57,43 +57,53 @@ class _SplashScreenState extends State<SplashScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
-              child: Material(
-                color: Colors.white.withOpacity(0.9),
-                elevation: 12,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(500)),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.purple.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 32)
+                    ]),
                 child: Image.asset(
                   'assets/rashid.png',
-                  width: _animation.value * (context.percentWidth * 20),
+                  width: _animation.value * (context.percentWidth * 25),
                 ).p(_animation.value * 16),
               ).p(24),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: Text(
-                    'Made with',
+            SizedBox(
+              height: 90 - (_animation.value * 90),
+            ),
+            Opacity(
+              opacity: _animation.value,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Text(
+                      'Made with',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ),
+                  Flexible(
+                    child: LottieBuilder.asset(
+                      'assets/flutter_anim.json',
+                      height: 14,
+                    ).px(8),
+                  ),
+                  Text(
+                    'with ',
                     style: TextStyle(color: Colors.white, fontSize: 14),
                   ),
-                ),
-                Flexible(
-                  child: LottieBuilder.asset(
-                    'assets/flutter_anim.json',
-                    height: 14,
-                  ).px(16),
-                ),
-                Text(
-                  'with ',
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-                Flexible(
-                  child: LottieBuilder.asset(
-                    'assets/heart.json',
-                    height: 30,
-                  ),
-                ),
-              ],
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 14,
+                  )
+                ],
+              ),
             )
           ],
         ),
