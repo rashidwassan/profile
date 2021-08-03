@@ -23,7 +23,7 @@ List<Skill> skills = [
     percentage: 78,
   ),
   Skill(
-    skill: "c++",
+    skill: "C++",
     percentage: 60,
   ),
 ];

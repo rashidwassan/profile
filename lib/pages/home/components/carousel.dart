@@ -161,7 +161,8 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
           children: [
             Text(
               "SOFTWARE DEVELOPER",
-              style: GoogleFonts.oswald(
+              style: TextStyle(
+                fontFamily: 'Oswald',
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w900,
                 fontSize: 16.0,
@@ -172,7 +173,8 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             ),
             Text(
               "RASHID WASSAN",
-              style: GoogleFonts.oswald(
+              style: TextStyle(
+                fontFamily: 'Oswald',
                 color: Colors.white,
                 fontSize: 40.0,
                 fontWeight: FontWeight.w900,

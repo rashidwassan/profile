@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Rashid Wassan - Software Solutions",
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Lato'),
       themeMode: ThemeMode.dark,
       darkTheme: Theme.of(context).copyWith(
         platform: TargetPlatform.android,
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         canvasColor: kBackgroundColor,
-        textTheme: GoogleFonts.latoTextTheme(),
       ),
       builder: (context, widget) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(context, widget),

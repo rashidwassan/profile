@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 13), () {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     });
   }
@@ -71,22 +71,26 @@ class _SplashScreenState extends State<SplashScreen>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Made with ',
+                    'Made with',
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                        fontSize: 25),
+                  ),
+                  LottieBuilder.asset(
+                    'assets/flutter_anim.json',
+                    height: 25,
+                  ).px(16),
+                  Text(
+                    'with ',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25),
                   ),
                   LottieBuilder.asset(
                     'assets/heart.json',
                     height: 70,
-                  ),
-                  Text(
-                    ' with Flutter!',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
                   ),
                 ],
               ),
