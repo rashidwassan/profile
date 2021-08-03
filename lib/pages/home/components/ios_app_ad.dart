@@ -16,17 +16,19 @@ class IosAppAd extends StatefulWidget {
 
 class _IosAppAdState extends State<IosAppAd> {
   int _currentApp = 0;
-  int _currentAppPage = 0;
+  int _currentAppPage = 1;
 
   void _nextApp() {
     setState(() {
       _currentApp = (_currentApp + 1) % apps.length;
+      _currentAppPage = 0;
     });
   }
 
   void _prevApp() {
     setState(() {
       _currentApp = (_currentApp - 1) % apps.length;
+      _currentAppPage = 0;
     });
   }
 
@@ -70,95 +72,101 @@ class _IosAppAdState extends State<IosAppAd> {
                   // Disable expanded on smaller screen to avoid Render errors by setting flex to 0
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    child: Stack(
-                      alignment: Alignment.bottomCenter,
-                      children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.circular(25),
-                            child: SizedBox(
-                              width:
-                                  constraints.maxWidth > 720.0 ? null : 350.0,
-                              child: AspectRatio(
-                                aspectRatio: 9 / 19.5,
-                                child: PageView.builder(
-                                  onPageChanged: (page) =>
-                                      (page < _currentAppPage)
-                                          ? _prevAppPage()
-                                          : _nextAppPage(),
-                                  controller: PageController(
-                                    initialPage: 0,
+                    child: Padding(
+                      padding: constraints.maxWidth > 720.0
+                          ? EdgeInsets.symmetric(horizontal: 70)
+                          : EdgeInsets.only(left: 16, right: 16, bottom: 32),
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(25),
+                              child: SizedBox(
+                                width:
+                                    constraints.maxWidth > 720.0 ? null : 350.0,
+                                child: AspectRatio(
+                                  aspectRatio: 9 / 19.5,
+                                  child: PageView.builder(
+                                    onPageChanged: (page) =>
+                                        (page < _currentAppPage)
+                                            ? _prevAppPage()
+                                            : _nextAppPage(),
+                                    controller: PageController(
+                                      initialPage: 0,
+                                    ),
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: 5,
+                                    physics: BouncingScrollPhysics(),
+                                    itemBuilder: (context, index) {
+                                      return Image.asset(
+                                        'assets/${apps[_currentApp].id}/$_currentAppPage.png',
+                                      );
+                                    },
                                   ),
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: 5,
-                                  physics: BouncingScrollPhysics(),
-                                  itemBuilder: (context, index) {
-                                    return Image.asset(
-                                      'assets/${apps[_currentApp].id}/r$_currentAppPage.png',
-                                    );
-                                  },
                                 ),
-                              ),
-                            )),
-                        Container(
-                          height: 80,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(25),
-                                bottomRight: Radius.circular(25)),
-                            gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [Colors.transparent, Colors.black87]),
+                              )),
+                          Container(
+                            height: 80,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(25),
+                                  bottomRight: Radius.circular(25)),
+                              gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [Colors.transparent, Colors.black87]),
+                            ),
                           ),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Flexible(
-                                child: IconButton(
-                                  iconSize: 35,
-                                  padding: EdgeInsets.all(0),
-                                  icon: Icon(CupertinoIcons.arrow_left_circle,
-                                      color: Colors.white),
-                                  onPressed: () => _prevAppPage(),
-                                ),
-                              ),
-                              new DotsIndicator(
-                                dotsCount: 5,
-                                position: _currentAppPage.toDouble(),
-                                decorator: DotsDecorator(
-                                  size: const Size.square(9.0),
-                                  activeColor: Colors.white,
-                                  activeSize: const Size(18.0, 9.0),
-                                  activeShape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5.0)),
-                                ),
-                              ),
-                              Flexible(
-                                child: IconButton(
-                                  iconSize: 35,
-                                  padding: EdgeInsets.all(0),
-                                  icon: Icon(
-                                    CupertinoIcons.arrow_right_circle,
-                                    color: Colors.white,
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Flexible(
+                                  child: IconButton(
+                                    iconSize: 35,
+                                    padding: EdgeInsets.all(0),
+                                    icon: Icon(CupertinoIcons.arrow_left_circle,
+                                        color: Colors.white),
+                                    onPressed: () => _prevAppPage(),
                                   ),
-                                  onPressed: () => _nextAppPage(),
                                 ),
-                              ),
-                            ],
-                          ).p(16).pOnly(bottom: 5),
-                        ),
+                                new DotsIndicator(
+                                  dotsCount: 5,
+                                  position: _currentAppPage.toDouble(),
+                                  decorator: DotsDecorator(
+                                    size: const Size.square(9.0),
+                                    activeColor: Colors.white,
+                                    activeSize: const Size(18.0, 9.0),
+                                    activeShape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0)),
+                                  ),
+                                ),
+                                Flexible(
+                                  child: IconButton(
+                                    iconSize: 35,
+                                    padding: EdgeInsets.all(0),
+                                    icon: Icon(
+                                      CupertinoIcons.arrow_right_circle,
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: () => _nextAppPage(),
+                                  ),
+                                ),
+                              ],
+                            ).p(16).pOnly(bottom: 5),
+                          ),
 
-                        // Image.asset(
-                        //   "assets/ios.png",
-                        //   // Set width for image on smaller screen
-                        //   width: constraints.maxWidth > 720.0 ? null : 350.0,
-                        // ),
-                      ],
-                    ).px(80),
+                          // Image.asset(
+                          //   "assets/ios.png",
+                          //   // Set width for image on smaller screen
+                          //   width: constraints.maxWidth > 720.0 ? null : 350.0,
+                          // ),
+                        ],
+                      ),
+                    ),
                   ),
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,

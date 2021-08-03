@@ -11,14 +11,14 @@ List<App> apps = [
         "Reapet is an pet adopting application that takes care of your pet by providing lots of services like: online marketplace for animal food, care taking services & much more!",
   ),
   App(
-    id: 'reapet',
-    name: "ASLYDOST\nHELPER HIRING APP",
+    id: 'keyless',
+    name: "KEYLESS\nCAR REMOTE",
     description:
-        "Reapet is an pet adopting application that takes care of your pet by providing lots of services like: online marketplace for animal food, care taking services & much more!",
+        "Keyless is a car remote app which allows you to control your car via blutooth connection. The app is cross-platform and is carefully developed for flexibility.",
   ),
   App(
     id: 'reapet',
-    name: "KEYLESS\nCAR REMOTE",
+    name: "ASLYDOST\nHELPER HIRING APP",
     description:
         "Reapet is an pet adopting application that takes care of your pet by providing lots of services like: online marketplace for animal food, care taking services & much more!",
   ),
