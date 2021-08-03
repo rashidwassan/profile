@@ -74,7 +74,7 @@ class _IosAppAdState extends State<IosAppAd> {
                       alignment: Alignment.bottomCenter,
                       children: [
                         ClipRRect(
-                            borderRadius: BorderRadius.circular(35),
+                            borderRadius: BorderRadius.circular(25),
                             child: SizedBox(
                               width:
                                   constraints.maxWidth > 720.0 ? null : 350.0,
@@ -104,8 +104,8 @@ class _IosAppAdState extends State<IosAppAd> {
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(35),
-                                bottomRight: Radius.circular(35)),
+                                bottomLeft: Radius.circular(25),
+                                bottomRight: Radius.circular(25)),
                             gradient: LinearGradient(
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
@@ -117,12 +117,14 @@ class _IosAppAdState extends State<IosAppAd> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              IconButton(
-                                iconSize: 35,
-                                padding: EdgeInsets.all(0),
-                                icon: Icon(CupertinoIcons.arrow_left_circle,
-                                    color: Colors.white),
-                                onPressed: () => _prevAppPage(),
+                              Flexible(
+                                child: IconButton(
+                                  iconSize: 35,
+                                  padding: EdgeInsets.all(0),
+                                  icon: Icon(CupertinoIcons.arrow_left_circle,
+                                      color: Colors.white),
+                                  onPressed: () => _prevAppPage(),
+                                ),
                               ),
                               new DotsIndicator(
                                 dotsCount: 5,
@@ -135,14 +137,16 @@ class _IosAppAdState extends State<IosAppAd> {
                                       borderRadius: BorderRadius.circular(5.0)),
                                 ),
                               ),
-                              IconButton(
-                                iconSize: 35,
-                                padding: EdgeInsets.all(0),
-                                icon: Icon(
-                                  CupertinoIcons.arrow_right_circle,
-                                  color: Colors.white,
+                              Flexible(
+                                child: IconButton(
+                                  iconSize: 35,
+                                  padding: EdgeInsets.all(0),
+                                  icon: Icon(
+                                    CupertinoIcons.arrow_right_circle,
+                                    color: Colors.white,
+                                  ),
+                                  onPressed: () => _nextAppPage(),
                                 ),
-                                onPressed: () => _nextAppPage(),
                               ),
                             ],
                           ).p(16).pOnly(bottom: 5),
