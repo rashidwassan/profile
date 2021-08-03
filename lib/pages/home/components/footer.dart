@@ -96,24 +96,25 @@ Widget _buildUi(double width, BuildContext context) {
                                 SizedBox(
                                   height: 15.0,
                                 ),
-                                RichText(
-                                  textAlign: TextAlign.start,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: "${footerItem.text1}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                          height: 1.8,
+                                Expanded(
+                                  child: RichText(
+                                    textAlign: TextAlign.start,
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "${footerItem.text1}\n",
+                                          style: TextStyle(
+                                            color: kCaptionColor,
+                                          ),
                                         ),
-                                      ),
-                                      TextSpan(
-                                        text: "${footerItem.text2}\n",
-                                        style: TextStyle(
-                                          color: kCaptionColor,
-                                        ),
-                                      )
-                                    ],
+                                        TextSpan(
+                                          text: "${footerItem.text2}\n",
+                                          style: TextStyle(
+                                            color: kCaptionColor,
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 )
                               ],
