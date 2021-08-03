@@ -1,12 +1,47 @@
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:web_portfolio/utils/apps.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class IosAppAd extends StatelessWidget {
+class IosAppAd extends StatefulWidget {
+  @override
+  State<IosAppAd> createState() => _IosAppAdState();
+}
+
+class _IosAppAdState extends State<IosAppAd> {
+  int _currentApp = 0;
+  int _currentAppPage = 0;
+
+  void _nextApp() {
+    setState(() {
+      _currentApp = (_currentApp + 1) % apps.length;
+    });
+  }
+
+  void _prevApp() {
+    setState(() {
+      _currentApp = (_currentApp - 1) % apps.length;
+    });
+  }
+
+  void _nextAppPage() {
+    setState(() {
+      _currentAppPage = (_currentAppPage + 1) % 5;
+    });
+  }
+
+  void _prevAppPage() {
+    setState(() {
+      _currentAppPage = (_currentAppPage - 1) % 5;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,24 +71,90 @@ class IosAppAd extends StatelessWidget {
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
                     child: Stack(
-                      alignment: Alignment.center,
+                      alignment: Alignment.bottomCenter,
                       children: [
-                        Padding(
-                          padding: constraints.maxWidth > 720.0
-                              ? EdgeInsets.all(25)
-                              : EdgeInsets.all(35),
-                          child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Image.asset('assets/reapet/r1.png'))
-                              .pOnly(left: 8),
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(35),
+                            child: SizedBox(
+                              width:
+                                  constraints.maxWidth > 720.0 ? null : 350.0,
+                              child: AspectRatio(
+                                aspectRatio: 9 / 19.5,
+                                child: PageView.builder(
+                                  onPageChanged: (page) =>
+                                      (page < _currentAppPage)
+                                          ? _prevAppPage()
+                                          : _nextAppPage(),
+                                  controller: PageController(
+                                    initialPage: 0,
+                                  ),
+                                  scrollDirection: Axis.horizontal,
+                                  itemCount: 5,
+                                  physics: BouncingScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return Image.asset(
+                                      'assets/${apps[_currentApp].id}/r$_currentAppPage.png',
+                                    );
+                                  },
+                                ),
+                              ),
+                            )),
+                        Container(
+                          height: 80,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(35),
+                                bottomRight: Radius.circular(35)),
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [Colors.transparent, Colors.black87]),
+                          ),
                         ),
-                        Image.asset(
-                          "assets/ios.png",
-                          // Set width for image on smaller screen
-                          width: constraints.maxWidth > 720.0 ? null : 350.0,
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              IconButton(
+                                iconSize: 35,
+                                padding: EdgeInsets.all(0),
+                                icon: Icon(CupertinoIcons.arrow_left_circle,
+                                    color: Colors.white),
+                                onPressed: () => _prevAppPage(),
+                              ),
+                              new DotsIndicator(
+                                dotsCount: 5,
+                                position: _currentAppPage.toDouble(),
+                                decorator: DotsDecorator(
+                                  size: const Size.square(9.0),
+                                  activeColor: Colors.white,
+                                  activeSize: const Size(18.0, 9.0),
+                                  activeShape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
+                              ),
+                              IconButton(
+                                iconSize: 35,
+                                padding: EdgeInsets.all(0),
+                                icon: Icon(
+                                  CupertinoIcons.arrow_right_circle,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () => _nextAppPage(),
+                              ),
+                            ],
+                          ).p(16).pOnly(bottom: 5),
                         ),
+
+                        // Image.asset(
+                        //   "assets/ios.png",
+                        //   // Set width for image on smaller screen
+                        //   width: constraints.maxWidth > 720.0 ? null : 350.0,
+                        // ),
                       ],
-                    ),
+                    ).px(80),
                   ),
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
@@ -73,7 +174,7 @@ class IosAppAd extends StatelessWidget {
                           height: 15.0,
                         ),
                         Text(
-                          "REAPET\nPET ADOPTING APP",
+                          apps[_currentApp].name,
                           style: GoogleFonts.oswald(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -85,7 +186,7 @@ class IosAppAd extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "Reapet is an pet adopting application that takes care of your pet by providing lots of services like: online marketplace for animal food, care taking services & much more!",
+                          apps[_currentApp].description,
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,
@@ -97,61 +198,61 @@ class IosAppAd extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
+                            MaterialButton(
+                              color: kPrimaryColor,
+                              hoverElevation: 8,
+                              onPressed: () => _prevApp(),
+                              height: 55.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                side: BorderSide(
                                   color: kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 28.0,
-                                ),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      "EXPLORE MORE",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 28.0),
+                                  child: Text(
+                                    "PREVIOUS APP",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
                             SizedBox(
-                              width: 10.0,
+                              width: 16.0,
                             ),
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
-                                    color: kPrimaryColor,
-                                  ),
+                            MaterialButton(
+                              hoverColor: Colors.white30,
+                              hoverElevation: 8,
+                              onPressed: () => _nextApp(),
+                              height: 55.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                side: BorderSide(
+                                  color: kPrimaryColor,
                                 ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(horizontal: 28.0),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      "NEXT APP",
-                                      style: TextStyle(
-                                        color: kPrimaryColor,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 28.0),
+                                  child: Text(
+                                    "NEXT APP",
+                                    style: TextStyle(
+                                      color: kPrimaryColor,
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         )
                       ],

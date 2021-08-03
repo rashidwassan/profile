@@ -55,19 +55,19 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
       'assets/macos.png'
     ];
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       _imageAnimationController.forward();
       _imageAnimationController.addListener(() {
         setState(() {});
       });
 
-      _flutterFLoatController.forward();
-      _flutterFLoatController.addListener(() {
-        setState(() {});
-      });
+      // _flutterFLoatController.forward();
+      // _flutterFLoatController.addListener(() {
+      //   setState(() {});
+      // });
     });
 
-    changeTechIcon();
+    // changeTechIcon();
   }
 
   @override
@@ -78,14 +78,20 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   }
 
   Future changeTechIcon() async {
+    int _currentCount = 0;
     while (true) {
-      await new Future.delayed(const Duration(seconds: 6), () {
+      await new Future.delayed(const Duration(seconds: 1), () {
         if (_flutterFLoatController.status == AnimationStatus.completed) {
-          Future.delayed(Duration(seconds: 4));
-          _flutterFLoatController.reverse();
+          _currentCount += 1;
+          if (_currentCount == 4) {
+            _flutterFLoatController.reverse();
+            _currentCount = 0;
+          }
         } else {
-          _currentTech = (_currentTech + 1) % _tech.length;
-          _flutterFLoatController.forward();
+          if (_currentCount == 0) {
+            _currentTech = (_currentTech + 1) % _tech.length;
+            _flutterFLoatController.forward();
+          }
         }
       });
     }
@@ -283,23 +289,26 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                   ),
                   SizedBox(
                     width: 150,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Colors.black38,
-                                offset: Offset(-3, 3),
-                                blurRadius: 4,
-                                spreadRadius: 0.1)
-                          ],
-                          color: Color(0xFFff03f7).withOpacity(0.9),
-                          shape: BoxShape.circle),
-                      child: Center(
-                        child: Image.asset(
-                          _tech[_currentTech],
-                          height: _flutterIconAnimation.value * 90,
-                          width: _flutterIconAnimation.value * 90,
-                        ).p(5),
+                    child: Opacity(
+                      // opacity: (_flutterFLoatController.value + 0.00001) % 1,
+                      opacity: 1,
+                      child: Container(
+                        decoration: BoxDecoration(boxShadow: [
+                          BoxShadow(
+                              color: Colors.black38,
+                              offset: Offset(-3, 3),
+                              blurRadius: 4,
+                              spreadRadius: 0.1)
+                        ], color: Color(0xFFff03f7), shape: BoxShape.circle),
+                        child: Center(
+                          child: Image.asset(
+                            _tech[_currentTech],
+                            width: 90,
+                            height: 90,
+                            //   height: _flutterIconAnimation.value * 90,
+                            //   width: _flutterIconAnimation.value * 90,
+                          ).p(5),
+                        ),
                       ),
                     ),
                   )
