@@ -75,30 +75,29 @@ class WebsiteAd extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Flexible(
-                              child: MaterialButton(
-                                color: kPrimaryColor,
-                                hoverElevation: 8,
-                                onPressed: () => {},
-                                height: 55.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  side: BorderSide(
-                                    color: kPrimaryColor,
-                                  ),
+                            MaterialButton(
+                              color: kPrimaryColor,
+                              hoverElevation: 8,
+                              onPressed: () => {},
+                              height: 55.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                                side: BorderSide(
+                                  color: kPrimaryColor,
                                 ),
-                                child: Center(
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 28.0),
-                                    child: Text(
-                                      "EXPLORE MORE",
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 28.0),
+                                  child: Text(
+                                    "EXPLORE MORE",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 13.0,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
@@ -136,6 +135,7 @@ class WebsiteAd extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            Flexible(child: SizedBox()),
                           ],
                         ),
                         SizedBox(

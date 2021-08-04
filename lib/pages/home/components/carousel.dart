@@ -26,7 +26,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   Animation _flutterIconAnimation;
   Animation _mainImageAnimation;
   List<String> _tech;
-  int _currentTech = 0;
+  int _currentTech = 1;
 
   @override
   void initState() {
@@ -299,10 +299,10 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             ),
           ),
           SizedBox(
-            width: 130,
+            width: 90,
             child: Opacity(
               // opacity: (_flutterFLoatController.value + 0.00001) % 1,
-              opacity: 1,
+              opacity: _mainImageAnimation.value,
               child: Container(
                 decoration: BoxDecoration(boxShadow: [
                   BoxShadow(
@@ -318,7 +318,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                     height: 90,
                     //   height: _flutterIconAnimation.value * 90,
                     //   width: _flutterIconAnimation.value * 90,
-                  ).p(5),
+                  ).p(12),
                 ),
               ),
             ),

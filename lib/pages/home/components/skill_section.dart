@@ -4,6 +4,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/skill.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 List<Skill> skills = [
   Skill(
@@ -57,7 +58,7 @@ class SkillSection extends StatelessWidget {
                   child: Image.asset(
                     "assets/person_small.png",
                     width: 300.0,
-                  ),
+                  ).pOnly(bottom: 32),
                 ),
                 SizedBox(
                   width: 50.0,
@@ -104,11 +105,11 @@ class SkillSection extends StatelessWidget {
                                         child: Container(
                                           padding: EdgeInsets.only(left: 10.0),
                                           alignment: Alignment.centerLeft,
-                                          height: 35.0,
+                                          height: 30.0,
                                           child: Text(
                                             skill.skill,
                                             style: TextStyle(
-                                                color: Colors.white70,
+                                                color: Colors.white,
                                                 fontWeight: FontWeight.bold),
                                           ),
                                           decoration: BoxDecoration(

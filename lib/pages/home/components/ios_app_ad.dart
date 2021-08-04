@@ -300,6 +300,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                 ),
                               ),
                             ),
+                            Flexible(child: SizedBox()),
                           ],
                         )
                       ],
