@@ -75,22 +75,25 @@ class WebsiteAd extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: kPrimaryColor,
+                            Flexible(
+                              child: MaterialButton(
+                                color: kPrimaryColor,
+                                hoverElevation: 8,
+                                onPressed: () => {},
+                                height: 55.0,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
+                                  side: BorderSide(
+                                    color: kPrimaryColor,
+                                  ),
                                 ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 28.0,
-                                ),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
+                                child: Center(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 28.0),
                                     child: Text(
                                       "EXPLORE MORE",
+                                      maxLines: 1,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 13.0,
@@ -102,24 +105,27 @@ class WebsiteAd extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 10.0,
+                              width: 16.0,
                             ),
-                            MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: Container(
-                                decoration: BoxDecoration(
+                            Flexible(
+                              child: MaterialButton(
+                                hoverColor: Colors.white30,
+                                hoverElevation: 8,
+                                onPressed: () {},
+                                height: 55.0,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
-                                  border: Border.all(
+                                  side: BorderSide(
                                     color: kPrimaryColor,
                                   ),
                                 ),
-                                height: 48.0,
-                                padding: EdgeInsets.symmetric(horizontal: 28.0),
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Center(
+                                child: Center(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 28.0),
                                     child: Text(
                                       "NEXT APP",
+                                      maxLines: 1,
                                       style: TextStyle(
                                         color: kPrimaryColor,
                                         fontSize: 13.0,
@@ -129,7 +135,7 @@ class WebsiteAd extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                         SizedBox(

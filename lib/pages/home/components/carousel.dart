@@ -6,7 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
+import 'package:web_portfolio/pages/home/components/dialogs.dart';
 import 'package:web_portfolio/utils/constants.dart';
+import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'dart:async';
@@ -236,7 +238,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             ),
             MaterialButton(
               hoverElevation: 10,
-              hoverColor: Colors.green,
+              hoverColor: Colors.white24,
               height: 48.0,
               color: kPrimaryColor,
               padding: EdgeInsets.symmetric(
@@ -245,7 +247,8 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              onPressed: () {},
+              onPressed: () =>
+                  showGetStartedDialog(Globals.scaffoldKey.currentContext),
               child: Text(
                 "GET STARTED",
                 style: TextStyle(
@@ -273,84 +276,93 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             Expanded(
               child: text,
             ),
-            Expanded(
-              child: Stack(
-                alignment: Alignment.topLeft,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(0),
-                    child: Container(
-                      child: Image.asset(
-                        "assets/rashid.png",
-                        opacity: _imageAnimationController,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 150,
-                    child: Opacity(
-                      // opacity: (_flutterFLoatController.value + 0.00001) % 1,
-                      opacity: 1,
-                      child: Container(
-                        decoration: BoxDecoration(boxShadow: [
-                          BoxShadow(
-                              color: Colors.black38,
-                              offset: Offset(-3, 3),
-                              blurRadius: 4,
-                              spreadRadius: 0.1)
-                        ], color: Color(0xFFff03f7), shape: BoxShape.circle),
-                        child: Center(
-                          child: Image.asset(
-                            _tech[_currentTech],
-                            width: 90,
-                            height: 90,
-                            //   height: _flutterIconAnimation.value * 90,
-                            //   width: _flutterIconAnimation.value * 90,
-                          ).p(5),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            )
+            _buildMainImage()
           ],
         ),
       ),
     );
   }
-}
 
-// Mid screens
-Widget _buildTablet(BuildContext context, Widget text, Widget image) {
-  return Center(
-    child: ResponsiveWrapper(
-      maxWidth: kTabletMaxWidth,
-      minWidth: kTabletMaxWidth,
-      defaultScale: false,
-      child: Row(
+  Expanded _buildMainImage() {
+    return Expanded(
+      child: Stack(
+        alignment: Alignment.topLeft,
         children: [
-          Expanded(
-            child: text,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(0),
+            child: Container(
+              child: Image.asset(
+                "assets/rashid.png",
+                opacity: _imageAnimationController,
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
-          Expanded(
-            child: image,
+          SizedBox(
+            width: 130,
+            child: Opacity(
+              // opacity: (_flutterFLoatController.value + 0.00001) % 1,
+              opacity: 1,
+              child: Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.black38,
+                      offset: Offset(-3, 3),
+                      blurRadius: 4,
+                      spreadRadius: 0.1)
+                ], color: Color(0xFFff03f7), shape: BoxShape.circle),
+                child: Center(
+                  child: Image.asset(
+                    _tech[_currentTech],
+                    width: 90,
+                    height: 90,
+                    //   height: _flutterIconAnimation.value * 90,
+                    //   width: _flutterIconAnimation.value * 90,
+                  ).p(5),
+                ),
+              ),
+            ),
           )
         ],
       ),
-    ),
-  );
-}
+    );
+  }
+
+// Mid screens
+  Widget _buildTablet(BuildContext context, Widget text, Widget image) {
+    return Center(
+      child: ResponsiveWrapper(
+        maxWidth: kTabletMaxWidth,
+        minWidth: kTabletMaxWidth,
+        defaultScale: false,
+        child: Row(
+          children: [
+            Expanded(
+              child: text,
+            ),
+            _buildMainImage(),
+          ],
+        ),
+      ),
+    );
+  }
 
 // SMall Screens
 
-Widget _buildMobile(BuildContext context, Widget text, Widget image) {
-  return Container(
-    constraints: BoxConstraints(
-      maxWidth: getMobileMaxWidth(context),
-    ),
-    width: double.infinity,
-    child: text,
-  );
+  Widget _buildMobile(BuildContext context, Widget text, Widget image) {
+    return Container(
+      constraints: BoxConstraints(
+        maxWidth: getMobileMaxWidth(context),
+      ),
+      width: double.infinity,
+      child: Column(
+        children: [
+          _buildMainImage(),
+          24.heightBox,
+          text,
+          24.heightBox,
+        ],
+      ),
+    );
+  }
 }

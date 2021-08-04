@@ -81,7 +81,7 @@ class Home extends StatelessWidget {
               ),
               Carousel(),
               SizedBox(
-                height: 20.0,
+                height: 24.0,
               ),
               CvSection(),
               IosAppAd(),

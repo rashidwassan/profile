@@ -115,7 +115,11 @@ class _IosAppAdState extends State<IosAppAd> {
                               gradient: LinearGradient(
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
-                                  colors: [Colors.transparent, Colors.black87]),
+                                  colors: [
+                                    Colors.transparent,
+                                    Colors.black.withOpacity(0.6),
+                                    Colors.black87
+                                  ]),
                             ),
                           ),
                           Align(
@@ -125,7 +129,7 @@ class _IosAppAdState extends State<IosAppAd> {
                               children: [
                                 Flexible(
                                   child: IconButton(
-                                    iconSize: 35,
+                                    iconSize: 32,
                                     padding: EdgeInsets.all(0),
                                     icon: Icon(CupertinoIcons.arrow_left_circle,
                                         color: Colors.white),
@@ -146,7 +150,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                 ),
                                 Flexible(
                                   child: IconButton(
-                                    iconSize: 35,
+                                    iconSize: 32,
                                     padding: EdgeInsets.all(0),
                                     icon: Icon(
                                       CupertinoIcons.arrow_right_circle,
@@ -158,6 +162,22 @@ class _IosAppAdState extends State<IosAppAd> {
                               ],
                             ).p(16).pOnly(bottom: 5),
                           ),
+
+                          // Container(
+                          //   color: Colors.black54,
+                          //   child: AspectRatio(
+                          //     aspectRatio: 9 / 19.6,
+                          //     child: Center(
+                          //       child: Text(
+                          //         'Please swipe or click any arrow button to navigate betweeen images',
+                          //         style: TextStyle(
+                          //           color: Colors.white,
+                          //           fontSize: 20,
+                          //         ),
+                          //       ).p(16),
+                          //     ),
+                          //   ),
+                          // )
 
                           // Image.asset(
                           //   "assets/ios.png",
@@ -210,27 +230,30 @@ class _IosAppAdState extends State<IosAppAd> {
                         ),
                         Row(
                           children: [
-                            MaterialButton(
-                              color: kPrimaryColor,
-                              hoverElevation: 8,
-                              onPressed: () => _prevApp(),
-                              height: 55.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                side: BorderSide(
-                                  color: kPrimaryColor,
+                            Flexible(
+                              child: MaterialButton(
+                                color: kPrimaryColor,
+                                hoverElevation: 8,
+                                onPressed: () => _prevApp(),
+                                height: 55.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  side: BorderSide(
+                                    color: kPrimaryColor,
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 28.0),
-                                  child: Text(
-                                    "PREVIOUS APP",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 13.0,
-                                      fontWeight: FontWeight.bold,
+                                child: Center(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 28.0),
+                                    child: Text(
+                                      "PREVIOUS APP",
+                                      maxLines: 1,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -239,27 +262,30 @@ class _IosAppAdState extends State<IosAppAd> {
                             SizedBox(
                               width: 16.0,
                             ),
-                            MaterialButton(
-                              hoverColor: Colors.white30,
-                              hoverElevation: 8,
-                              onPressed: () => _nextApp(),
-                              height: 55.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                side: BorderSide(
-                                  color: kPrimaryColor,
+                            Flexible(
+                              child: MaterialButton(
+                                hoverColor: Colors.white30,
+                                hoverElevation: 8,
+                                onPressed: () => _nextApp(),
+                                height: 55.0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  side: BorderSide(
+                                    color: kPrimaryColor,
+                                  ),
                                 ),
-                              ),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 28.0),
-                                  child: Text(
-                                    "NEXT APP",
-                                    style: TextStyle(
-                                      color: kPrimaryColor,
-                                      fontSize: 13.0,
-                                      fontWeight: FontWeight.bold,
+                                child: Center(
+                                  child: Padding(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 28.0),
+                                    child: Text(
+                                      "NEXT APP",
+                                      maxLines: 1,
+                                      style: TextStyle(
+                                        color: kPrimaryColor,
+                                        fontSize: 13.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ),

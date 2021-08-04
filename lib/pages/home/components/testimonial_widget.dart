@@ -16,7 +16,7 @@ final List<Testimonial> testimonials = [
   ),
   Testimonial(
     text:
-        "This is a testimonial text from Muzzamil Nawaz. Rashid is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
+        "Rashid is a young professional with special set of skills and passion. I find him very fascinating how he manage to keep his learning consistent. I personally have worked with him regarding Android and MERN stack development and would highly recommend him for his expertise in technologies mentioned above.",
     occupation: "MERN Stack Developer",
     personName: "MUZAMMIL NAWAZ",
     profilePhoto:
@@ -71,7 +71,7 @@ Widget _buildUi(double width) {
                         style: TextStyle(color: Colors.white, height: 1.8),
                       ),
                       TextSpan(
-                          text: " click here to learn more",
+                          text: " click here to read more!",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w700,
