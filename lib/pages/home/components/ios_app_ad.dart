@@ -76,115 +76,124 @@ class _IosAppAdState extends State<IosAppAd> {
                       padding: constraints.maxWidth > 720.0
                           ? EdgeInsets.symmetric(horizontal: 70)
                           : EdgeInsets.only(left: 16, right: 16, bottom: 32),
-                      child: Stack(
-                        alignment: Alignment.bottomCenter,
-                        children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(25),
-                              child: SizedBox(
-                                width:
-                                    constraints.maxWidth > 720.0 ? null : 350.0,
-                                child: AspectRatio(
-                                  aspectRatio: 9 / 19.5,
-                                  child: PageView.builder(
-                                    onPageChanged: (page) =>
-                                        (page < _currentAppPage)
-                                            ? _prevAppPage()
-                                            : _nextAppPage(),
-                                    controller: PageController(
-                                      initialPage: 0,
-                                    ),
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: 5,
-                                    physics: BouncingScrollPhysics(),
-                                    itemBuilder: (context, index) {
-                                      return Image.asset(
-                                        'assets/${apps[_currentApp].id}/$_currentAppPage.png',
-                                      );
-                                    },
-                                  ),
-                                ),
-                              )),
-                          Container(
-                            height: 80,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(25),
-                                  bottomRight: Radius.circular(25)),
-                              gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Colors.transparent,
-                                    Colors.black.withOpacity(0.6),
-                                    Colors.black87
-                                  ]),
-                            ),
-                          ),
-                          Align(
+                      child: SizedBox(
+                        width: constraints.maxWidth > 720.0 ? null : 350.0,
+                        child: AspectRatio(
+                          aspectRatio: 9 / 19.5,
+                          child: Stack(
                             alignment: Alignment.bottomCenter,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Flexible(
-                                  child: IconButton(
-                                    iconSize: 32,
-                                    padding: EdgeInsets.all(0),
-                                    icon: Icon(CupertinoIcons.arrow_left_circle,
-                                        color: Colors.white),
-                                    onPressed: () => _prevAppPage(),
-                                  ),
-                                ),
-                                new DotsIndicator(
-                                  dotsCount: 5,
-                                  position: _currentAppPage.toDouble(),
-                                  decorator: DotsDecorator(
-                                    size: const Size.square(9.0),
-                                    activeColor: Colors.white,
-                                    activeSize: const Size(18.0, 9.0),
-                                    activeShape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5.0)),
-                                  ),
-                                ),
-                                Flexible(
-                                  child: IconButton(
-                                    iconSize: 32,
-                                    padding: EdgeInsets.all(0),
-                                    icon: Icon(
-                                      CupertinoIcons.arrow_right_circle,
-                                      color: Colors.white,
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(25),
+                                  child: SizedBox(
+                                    width: constraints.maxWidth > 720.0
+                                        ? null
+                                        : 350.0,
+                                    child: AspectRatio(
+                                      aspectRatio: 9 / 19.5,
+                                      child: PageView.builder(
+                                        onPageChanged: (page) =>
+                                            (page < _currentAppPage)
+                                                ? _prevAppPage()
+                                                : _nextAppPage(),
+                                        controller: PageController(
+                                          initialPage: 0,
+                                        ),
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: 5,
+                                        physics: BouncingScrollPhysics(),
+                                        itemBuilder: (context, index) {
+                                          return Image.asset(
+                                            'assets/${apps[_currentApp].id}/$_currentAppPage.png',
+                                          );
+                                        },
+                                      ),
                                     ),
-                                    onPressed: () => _nextAppPage(),
-                                  ),
+                                  )),
+                              Container(
+                                height: 80,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(25),
+                                      bottomRight: Radius.circular(25)),
+                                  gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.transparent,
+                                        Colors.black.withOpacity(0.6),
+                                        Colors.black87
+                                      ]),
                                 ),
-                              ],
-                            ).p(16).pOnly(bottom: 5),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Flexible(
+                                      child: IconButton(
+                                        iconSize: 32,
+                                        padding: EdgeInsets.all(0),
+                                        icon: Icon(
+                                            CupertinoIcons.arrow_left_circle,
+                                            color: Colors.white),
+                                        onPressed: () => _prevAppPage(),
+                                      ),
+                                    ),
+                                    new DotsIndicator(
+                                      dotsCount: 5,
+                                      position: _currentAppPage.toDouble(),
+                                      decorator: DotsDecorator(
+                                        size: const Size.square(9.0),
+                                        activeColor: Colors.white,
+                                        activeSize: const Size(18.0, 9.0),
+                                        activeShape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(5.0)),
+                                      ),
+                                    ),
+                                    Flexible(
+                                      child: IconButton(
+                                        iconSize: 32,
+                                        padding: EdgeInsets.all(0),
+                                        icon: Icon(
+                                          CupertinoIcons.arrow_right_circle,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () => _nextAppPage(),
+                                      ),
+                                    ),
+                                  ],
+                                ).p(16).pOnly(bottom: 5),
+                              ),
+
+                              // Container(
+                              //   color: Colors.black54,
+                              //   child: AspectRatio(
+                              //     aspectRatio: 9 / 19.6,
+                              //     child: Center(
+                              //       child: Text(
+                              //         'Please swipe or click any arrow button to navigate betweeen images',
+                              //         style: TextStyle(
+                              //           color: Colors.white,
+                              //           fontSize: 20,
+                              //         ),
+                              //       ).p(16),
+                              //     ),
+                              //   ),
+                              // )
+
+                              // Image.asset(
+                              //   "assets/ios.png",
+                              //   // Set width for image on smaller screen
+                              //   width: constraints.maxWidth > 720.0 ? null : 350.0,
+                              // ),
+                            ],
                           ),
-
-                          // Container(
-                          //   color: Colors.black54,
-                          //   child: AspectRatio(
-                          //     aspectRatio: 9 / 19.6,
-                          //     child: Center(
-                          //       child: Text(
-                          //         'Please swipe or click any arrow button to navigate betweeen images',
-                          //         style: TextStyle(
-                          //           color: Colors.white,
-                          //           fontSize: 20,
-                          //         ),
-                          //       ).p(16),
-                          //     ),
-                          //   ),
-                          // )
-
-                          // Image.asset(
-                          //   "assets/ios.png",
-                          //   // Set width for image on smaller screen
-                          //   width: constraints.maxWidth > 720.0 ? null : 350.0,
-                          // ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
