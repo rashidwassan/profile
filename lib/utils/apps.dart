@@ -22,4 +22,10 @@ List<App> apps = [
     description:
         "The Chat App is mnimalistic but feature-packed app desinged for Asian people. This is a cross-platform app. The uses page views for buttery smooth navigations.",
   ),
+  App(
+    id: 'lgn',
+    name: "LGN (لقن))\nONLINE SHOPPING SOLUTION",
+    description:
+        "LGN is an e-commerce app developed to facilitate people of UAE with online shopping solution. The app is a marketpalce for food and groceries.",
+  ),
 ];
