@@ -16,4 +16,10 @@ List<App> apps = [
     description:
         "Keyless is a car remote app which allows you to control your car via blutooth connection. The app is cross-platform and is carefully developed for flexibility.",
   ),
+  App(
+    id: 'chatapp',
+    name: "THE (사파리)\nSAFARI CHAT APP",
+    description:
+        "The Chat App is mnimalistic but feature-packed app desinged for Asian people. This is a cross-platform app. The uses page views for buttery smooth navigations.",
+  ),
 ];
