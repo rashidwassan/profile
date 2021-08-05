@@ -24,7 +24,7 @@ List<App> apps = [
   ),
   App(
     id: 'lgn',
-    name: "LGN (لقن))\nONLINE SHOPPING SOLUTION",
+    name: "LGN (لقن)\nONLINE SHOPPING SOLUTION",
     description:
         "LGN is an e-commerce app developed to facilitate people of UAE with online shopping solution. The app is a marketpalce for food and groceries.",
   ),
