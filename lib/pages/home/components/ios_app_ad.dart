@@ -76,12 +76,21 @@ class _IosAppAdState extends State<IosAppAd> {
                       padding: constraints.maxWidth > 720.0
                           ? EdgeInsets.symmetric(horizontal: 70)
                           : EdgeInsets.only(left: 16, right: 16, bottom: 32),
-                      child: SizedBox(
+                      child: Container(
                         width: constraints.maxWidth > 720.0 ? null : 350.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            border: Border.all(width: 2, color: Colors.black),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black45,
+                                  spreadRadius: 2,
+                                  blurRadius: 8)
+                            ]),
                         child: AspectRatio(
                           aspectRatio: 9 / 19.5,
                           child: Stack(
-                            alignment: Alignment.bottomCenter,
+                            //    alignment: Alignment.bottomCenter,
                             children: [
                               ClipRRect(
                                   borderRadius: BorderRadius.circular(25),
@@ -110,21 +119,45 @@ class _IosAppAdState extends State<IosAppAd> {
                                       ),
                                     ),
                                   )),
-                              Container(
-                                height: 80,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(25),
-                                      bottomRight: Radius.circular(25)),
-                                  gradient: LinearGradient(
-                                      begin: Alignment.topCenter,
-                                      end: Alignment.bottomCenter,
-                                      colors: [
-                                        Colors.transparent,
-                                        Colors.black.withOpacity(0.6),
-                                        Colors.black87
-                                      ]),
+                              Align(
+                                alignment: Alignment.topCenter,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: Colors.black38,
+                                          spreadRadius: 1,
+                                          blurRadius: 2)
+                                    ],
+                                    borderRadius: BorderRadiusDirectional.only(
+                                        bottomEnd: Radius.circular(15),
+                                        bottomStart: Radius.circular(15)),
+                                  ),
+                                  height: 30,
+                                  width: 80,
+                                  child: Image.asset('assets/camera_lens.png')
+                                      .py(3),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Container(
+                                  height: 80,
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(25),
+                                        bottomRight: Radius.circular(25)),
+                                    gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [
+                                          Colors.transparent,
+                                          Colors.black.withOpacity(0.6),
+                                          Colors.black87
+                                        ]),
+                                  ),
                                 ),
                               ),
                               Align(
@@ -147,7 +180,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                       dotsCount: 5,
                                       position: _currentAppPage.toDouble(),
                                       decorator: DotsDecorator(
-                                        size: const Size.square(9.0),
+                                        size: const Size.square(8.0),
                                         activeColor: Colors.white,
                                         activeSize: const Size(18.0, 9.0),
                                         activeShape: RoundedRectangleBorder(
@@ -167,7 +200,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                       ),
                                     ),
                                   ],
-                                ).p(16).pOnly(bottom: 5),
+                                ).p(16),
                               ),
 
                               // Container(
@@ -300,7 +333,9 @@ class _IosAppAdState extends State<IosAppAd> {
                                 ),
                               ),
                             ),
-                            Flexible(child: SizedBox()),
+                            constraints.maxWidth > 720.0
+                                ? Flexible(child: SizedBox())
+                                : SizedBox.shrink(),
                           ],
                         )
                       ],

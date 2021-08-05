@@ -135,7 +135,9 @@ class WebsiteAd extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Flexible(child: SizedBox()),
+                            constraints.maxWidth > 720.0
+                                ? Flexible(child: SizedBox())
+                                : SizedBox.shrink(),
                           ],
                         ),
                         SizedBox(
