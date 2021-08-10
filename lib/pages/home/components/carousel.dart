@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
@@ -192,13 +193,24 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             SizedBox(
               height: 10.0,
             ),
-            Text(
-              "Flutter & Python developer, based in Pakistan 🇵🇰",
-              style: TextStyle(
-                color: kCaptionColor,
-                fontSize: 15.0,
-                height: 1.0,
-              ),
+            Row(
+              children: [
+                Text(
+                  "Flutter & Python developer, based in Pakistan ",
+                  style: TextStyle(
+                    color: kCaptionColor,
+                    fontSize: 15.0,
+                    height: 1.0,
+                  ),
+                ),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: Image.asset(
+                    'assets/pk.jpeg',
+                    height: 13,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 10.0,
@@ -219,7 +231,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                       launchURL('https://www.instagram.com/rashidwassaan/');
                     },
                     child: MouseRegion(
-                      onHover: (v) {},
+                      cursor: MouseCursor.defer,
                       child: Text(
                         " Got a project? Let's talk.",
                         style: TextStyle(
@@ -247,8 +259,19 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              onPressed: () =>
-                  showGetStartedDialog(Globals.scaffoldKey.currentContext),
+              onPressed: () async {
+                final Email email = Email(
+                  body: 'Hi there! Just wanted to say hi!',
+                  subject: 'Email from portfolio web',
+                  recipients: ['rashidwassaan@gmail.com'],
+                  // cc: ['cc@example.com'],
+                  // bcc: ['bcc@example.com'],
+                  //  attachmentPaths: ['/path/to/attachment.zip'],
+                  isHTML: false,
+                );
+
+                await FlutterEmailSender.send(email);
+              },
               child: Text(
                 "GET STARTED",
                 style: TextStyle(

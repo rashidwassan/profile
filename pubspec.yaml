@@ -9,10 +9,12 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.2
+  dots_indicator: ^2.0.0
+  flutter:
+    sdk: flutter
+  flutter_email_sender: ^5.0.2
   flutter_icons: ^1.1.0
   google_fonts: ^1.1.2
   lottie: ^1.1.0
@@ -20,12 +22,10 @@ dependencies:
   smooth_page_indicator: ^0.2.0
   url_launcher: ^6.0.9
   velocity_x: ^3.3.0
-  dots_indicator: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true
@@ -49,17 +49,16 @@ flutter:
   fonts:
     - family: Oswald
       fonts:
-        - asset: fonts/Oswald-Regular.ttf 
+        - asset: fonts/Oswald-Regular.ttf
         - asset: fonts/Oswald-Light.ttf
           weight: 300
         - asset: fonts/Oswald-Bold.ttf
           weight: 900
-    
+
     - family: Lato
       fonts:
-        - asset: fonts/Lato-Regular.ttf 
+        - asset: fonts/Lato-Regular.ttf
         - asset: fonts/Lato-Light.ttf
           weight: 300
         - asset: fonts/Lato-Bold.ttf
           weight: 900
-

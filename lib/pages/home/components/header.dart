@@ -5,9 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
+import 'package:web_portfolio/pages/home/home.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 List<HeaderItem> headerItems = [
   HeaderItem(
@@ -17,7 +19,12 @@ List<HeaderItem> headerItems = [
   HeaderItem(title: "MY INTRO", onTap: () {}),
   HeaderItem(title: "SERVICES", onTap: () {}),
   HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(title: "TESTIMONIALS", onTap: () {}),
+  HeaderItem(
+      title: "TESTIMONIALS",
+      onTap: () {
+        Globals.scaffoldKey.currentState
+            .build(Globals.scaffoldKey.currentContext);
+      }),
   HeaderItem(
       title: "ARTICLES",
       onTap: () {
@@ -42,7 +49,7 @@ class HeaderLogo extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: "R",
+                  text: "RW",
                   style: GoogleFonts.oswald(
                     color: Colors.white,
                     fontSize: 32.0,
@@ -100,23 +107,21 @@ class HeaderRow extends StatelessWidget {
                         ),
                       ),
                     )
-                  : MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Container(
-                        margin: EdgeInsets.only(right: 30.0),
-                        child: GestureDetector(
-                          onTap: item.onTap,
-                          child: Text(
-                            item.title,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                  : MaterialButton(
+                      height: 40,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80)),
+                      hoverColor: kPrimaryColor,
+                      onPressed: item.onTap,
+                      child: Text(
+                        item.title,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
+                    ).px(8),
             )
             .toList(),
       ),

@@ -15,7 +15,28 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class Home extends StatelessWidget {
+import '../testimonials_page.dart';
+
+int currentPageIndex = 0;
+
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<Widget> _pageList;
+  @override
+  void initState() {
+    _pageList = [
+      _buildHomeWidgets(),
+      _buildHomeWidgets(),
+      _buildHomeWidgets(),
+      TestimonialsPage(),
+    ];
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,42 +100,51 @@ class Home extends StatelessWidget {
               Container(
                 child: Header(),
               ),
-              Carousel(),
-              SizedBox(
-                height: 24.0,
-              ),
-              CvSection(),
-              IosAppAd(),
-              SizedBox(
-                height: 70.0,
-              ),
-              WebsiteAd(),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 28.0),
-                child: PortfolioStats(),
-              ),
-              SizedBox(
-                height: 50.0,
-              ),
-              EducationSection(),
-              SizedBox(
-                height: 50.0,
-              ),
-              SkillSection(),
-              SizedBox(
-                height: 50.0,
-              ),
-              Sponsors(),
-              SizedBox(
-                height: 50.0,
-              ),
-              TestimonialWidget(),
+              //_buildHomeWidgets(),
+              _pageList[currentPageIndex],
               Footer(),
               24.heightBox
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Column _buildHomeWidgets() {
+    return Column(
+      children: [
+        Carousel(),
+        SizedBox(
+          height: 24.0,
+        ),
+        CvSection(),
+        IosAppAd(),
+        SizedBox(
+          height: 70.0,
+        ),
+        WebsiteAd(),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 28.0),
+          child: PortfolioStats(),
+        ),
+        SizedBox(
+          height: 50.0,
+        ),
+        EducationSection(),
+        SizedBox(
+          height: 50.0,
+        ),
+        SkillSection(),
+        SizedBox(
+          height: 50.0,
+        ),
+        Sponsors(),
+        SizedBox(
+          height: 50.0,
+        ),
+        TestimonialWidget(),
+      ],
     );
   }
 }
