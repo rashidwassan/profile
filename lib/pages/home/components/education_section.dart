@@ -63,7 +63,7 @@ class EducationSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              "EDUCATION",
+              "ALMA MATER",
               style: GoogleFonts.oswald(
                 color: Colors.white,
                 fontWeight: FontWeight.w900,

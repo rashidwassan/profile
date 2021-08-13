@@ -15,81 +15,27 @@ import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../testimonials_page.dart';
-
-int currentPageIndex = 0;
-
 class Home extends StatefulWidget {
+  Home({this.child});
+  Widget child;
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  List<Widget> _pageList;
-  @override
-  void initState() {
-    _pageList = [
-      _buildHomeWidgets(),
-      _buildHomeWidgets(),
-      _buildHomeWidgets(),
-      TestimonialsPage(),
-    ];
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: Globals.scaffoldKey,
+      //  key: Globals.scaffoldKey,
       endDrawer: Drawer(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 24.0,
-            ),
-            child: ListView.separated(
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (BuildContext context, int index) {
-                return headerItems[index].isButton
-                    ? MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: kDangerColor,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          padding: EdgeInsets.symmetric(horizontal: 28.0),
-                          child: TextButton(
-                            onPressed: headerItems[index].onTap,
-                            child: Text(
-                              headerItems[index].title,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    : ListTile(
-                        title: Text(
-                          headerItems[index].title,
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      );
-              },
-              separatorBuilder: (BuildContext context, int index) {
-                return SizedBox(
-                  height: 10.0,
-                );
-              },
-              itemCount: headerItems.length,
-            ),
-          ),
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 24.0,
+              ),
+              // drawer for mobile to be designed
+              child: SizedBox()),
         ),
       ),
       body: Container(
@@ -100,8 +46,7 @@ class _HomeState extends State<Home> {
               Container(
                 child: Header(),
               ),
-              //_buildHomeWidgets(),
-              _pageList[currentPageIndex],
+              (widget.child == null) ? _buildHomeWidgets() : widget.child,
               Footer(),
               24.heightBox
             ],

@@ -6,36 +6,11 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
 import 'package:web_portfolio/pages/home/home.dart';
+import 'package:web_portfolio/pages/testimonials_page.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
-
-List<HeaderItem> headerItems = [
-  HeaderItem(
-    title: "HOME",
-    onTap: () {},
-  ),
-  HeaderItem(title: "MY INTRO", onTap: () {}),
-  HeaderItem(title: "SERVICES", onTap: () {}),
-  HeaderItem(title: "PORTFOLIO", onTap: () {}),
-  HeaderItem(
-      title: "TESTIMONIALS",
-      onTap: () {
-        Globals.scaffoldKey.currentState
-            .build(Globals.scaffoldKey.currentContext);
-      }),
-  HeaderItem(
-      title: "ARTICLES",
-      onTap: () {
-        launchURL('https://medium.com/@rashidwassaan');
-      }),
-  HeaderItem(
-    title: "HIRE ME",
-    onTap: () {},
-    isButton: true,
-  ),
-];
 
 class HeaderLogo extends StatelessWidget {
   @override
@@ -44,7 +19,10 @@ class HeaderLogo extends StatelessWidget {
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => Home()));
+          },
           child: RichText(
             text: TextSpan(
               children: [
@@ -76,13 +54,43 @@ class HeaderLogo extends StatelessWidget {
 class HeaderRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<HeaderItem> desktopHeaderItems = [
+      HeaderItem(
+        title: "HOME",
+        onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Home()));
+        },
+      ),
+      HeaderItem(title: "MY INTRO", onTap: () {}),
+      HeaderItem(title: "SERVICES", onTap: () {}),
+      HeaderItem(title: "PORTFOLIO", onTap: () {}),
+      HeaderItem(
+          title: "TESTIMONIALS",
+          onTap: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Home(child: TestimonialsPage())));
+          }),
+      HeaderItem(
+          title: "ARTICLES",
+          onTap: () {
+            launchURL('https://medium.com/@rashidwassaan');
+          }),
+      HeaderItem(
+        title: "HIRE ME",
+        onTap: () {},
+        isButton: true,
+      ),
+    ];
     return ResponsiveVisibility(
       visible: false,
       visibleWhen: [
         Condition.largerThan(name: MOBILE),
       ],
       child: Row(
-        children: headerItems
+        children: desktopHeaderItems
             .map(
               (item) => item.isButton
                   ? MouseRegion(
@@ -159,7 +167,7 @@ class Header extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 // Lets open drawer using global key
-                Globals.scaffoldKey.currentState.openEndDrawer();
+                //   Globals.scaffoldKey.currentState.openEndDrawer();
               },
               child: Icon(
                 FlutterIcons.menu_fea,

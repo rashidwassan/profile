@@ -1,28 +1,13 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/models/testimonial.dart';
+import 'package:web_portfolio/pages/testimonials_page.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:web_portfolio/utils/testimonials.dart';
 
-final List<Testimonial> testimonials = [
-  Testimonial(
-    text:
-        "This is a testimonial text from Saad Mujeeb. Rashid is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
-    occupation: "CEO IsaaTech",
-    personName: "SAAD MUJEEB",
-    profilePhoto:
-        "https://scontent.fkhi4-1.fna.fbcdn.net/v/t31.18172-8/10989230_10202588311147770_7304844486081199964_o.jpg?_nc_cat=103&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeH6JEuX7AYI8b_cdfzvFszyv92IRnxqezq_3YhGfGp7OmX0GrclCovlkyVjfbtx0FYRe9TcLE4P9jTmadJfozw0&_nc_ohc=LTHDmtsm0XUAX9V0Azn&_nc_ht=scontent.fkhi4-1.fna&oh=a04ba873bada8cf35f3c907297356ba2&oe=612BAF6A",
-  ),
-  Testimonial(
-    text:
-        "Rashid is a young professional with special set of skills and passion. I find him very fascinating how he manage to keep his learning consistent. I personally have worked with him regarding Android and MERN stack development and would highly recommend him for his expertise in technologies mentioned above.",
-    occupation: "MERN Stack Developer",
-    personName: "MUZAMMIL NAWAZ",
-    profilePhoto:
-        "https://scontent.fkhi4-2.fna.fbcdn.net/v/t1.6435-9/133366322_2859342830950543_7865627328469365281_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=ad2b24&_nc_eui2=AeHSutzNK0Gi6OffeN-_sfNcxZ2gcOywNqTFnaBw7LA2pJPU_1Pp5bMsGZCO6RnfLtAJSSJWTa3vHOacvznGaqqS&_nc_ohc=2q0qII1stBoAX9vaJ0d&_nc_ht=scontent.fkhi4-2.fna&oh=61c24f5c10a74ab982cb8d0707910761&oe=612BD8A9",
-  )
-];
+import '../home.dart';
 
 class TestimonialWidget extends StatelessWidget {
   @override
@@ -72,6 +57,14 @@ Widget _buildUi(double width) {
                       ),
                       TextSpan(
                           text: " click here to read more!",
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Home(child: TestimonialsPage())));
+                            },
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w700,
@@ -89,7 +82,7 @@ Widget _buildUi(double width) {
                     ? Axis.vertical
                     : Axis.horizontal,
                 // Lets map
-                children: testimonials.map((testimonial) {
+                children: highlightedTestimonials.map((testimonial) {
                   return Expanded(
                     flex: ScreenHelper.isMobile(context) ? 0 : 1,
                     child: Container(
@@ -109,6 +102,8 @@ Widget _buildUi(double width) {
                           ),
                           Text(
                             testimonial.text,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               color: kCaptionColor,
                               height: 1.8,
