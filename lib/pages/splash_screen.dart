@@ -16,9 +16,9 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
     _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
+        vsync: this, duration: Duration(milliseconds: 1000));
     _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn);
+        CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
     _controller.forward();
     _controller.addListener(() {
       setState(() {});
@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Home()));
     });

@@ -28,4 +28,10 @@ List<App> apps = [
     description:
         "LGN is an e-commerce app developed to facilitate people of UAE with online shopping solution. The app is a marketpalce for food and groceries.",
   ),
+  App(
+    id: 'labouronline',
+    name: "LABOURONLINE\nTHE LABOUR HIRING APP",
+    description:
+        "LabourOnline is the app that allows you to hire the workers available nearby. The app has separate UI for labourer which is much simpler and accessible & has flashy design dashboard for users.",
+  ),
 ];

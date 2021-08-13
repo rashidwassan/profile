@@ -16,7 +16,7 @@ class IosAppAd extends StatefulWidget {
 
 class _IosAppAdState extends State<IosAppAd> {
   int _currentApp = 0;
-  int _currentAppPage = 1;
+  int _currentAppPage = 0;
 
   void _nextApp() {
     setState(() {
