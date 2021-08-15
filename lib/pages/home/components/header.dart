@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
+import 'package:web_portfolio/pages/home/components/dialogs.dart';
 import 'package:web_portfolio/pages/home/home.dart';
 import 'package:web_portfolio/pages/testimonials_page.dart';
 import 'package:web_portfolio/utils/constants.dart';
@@ -63,7 +64,11 @@ class HeaderRow extends StatelessWidget {
         },
       ),
       HeaderItem(title: "MY INTRO", onTap: () {}),
-      HeaderItem(title: "SERVICES", onTap: () {}),
+      HeaderItem(
+          title: "MY CODE",
+          onTap: () {
+            launchURL('https://github.com/rashidwassan');
+          }),
       HeaderItem(title: "PORTFOLIO", onTap: () {}),
       HeaderItem(
           title: "TESTIMONIALS",
@@ -80,7 +85,9 @@ class HeaderRow extends StatelessWidget {
           }),
       HeaderItem(
         title: "HIRE ME",
-        onTap: () {},
+        onTap: () {
+          showGetStartedDialog(context);
+        },
         isButton: true,
       ),
     ];

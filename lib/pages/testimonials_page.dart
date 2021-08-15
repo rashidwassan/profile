@@ -55,7 +55,7 @@ Widget _buildUi(double width) {
                         children: [
                           TextSpan(
                             text:
-                                "This is section contains some testimonials from worthy people I have worked with.",
+                                "This is section contains some testimonials from worthy people I have worked with. If you want to write one, consider visting my LinkedIn profile.",
                             style: TextStyle(color: Colors.white, height: 1.8),
                           ),
                         ],

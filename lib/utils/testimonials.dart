@@ -3,6 +3,14 @@ import 'package:web_portfolio/models/testimonial.dart';
 final List<Testimonial> allTestimonials = [
   Testimonial(
     text:
+        "Rashid is a highly motivated and talented individual with variety of knowledge and expertise. He has been a mentor and a code partner to me for more than a year and has never failed to astonish me with his skills and logics! Highly recommended!",
+    occupation: "SWE Student",
+    personName: "MILTON CHELANI",
+    profilePhoto:
+        "https://media-exp1.licdn.com/dms/image/C5635AQGcu9VxcFfsvA/profile-framedphoto-shrink_400_400/0/1619196913838?e=1629133200&v=beta&t=IB6P5LDJfA9hrQDZL74tAWogw4P-oHni7tJaP3P38NI",
+  ),
+  Testimonial(
+    text:
         "This is a testimonial text from Saad Mujeeb. Rashid is a professional at what he does and never ceases to amaze me with his beautiful works. I will like to work with him in the future again.",
     occupation: "CEO IsaaTech",
     personName: "SAAD MUJEEB",

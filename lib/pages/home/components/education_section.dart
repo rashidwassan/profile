@@ -16,22 +16,11 @@ final List<Education> educationList = [
     period: "2019 - PRESENT",
   ),
   Education(
-    description: "Parimary, Secondary, & Higher Secondary sections.",
-    linkName: "www.mazharcollege.edu.pk",
+    description:
+        "Parimary, Secondary, & Higher Secondary sections.\nMy group was Pre-Engineering.",
+    linkName: "www.mazharcollege.edu.pk\n",
     period: "2011 - 2019",
   ),
-  // Education(
-  //   description:
-  //       "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below",
-  //   linkName: "www.flutterpanda.com",
-  //   period: "2017 - 2018",
-  // ),
-  // Education(
-  //   description:
-  //       "This is a sample education and details about it is stated below. This is a sample education and details about it is stated below",
-  //   linkName: "www.flutterpanda.com",
-  //   period: "2016 - 2017",
-  // ),
 ];
 
 class EducationSection extends StatelessWidget {

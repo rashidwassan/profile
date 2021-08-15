@@ -21,14 +21,14 @@ class _IosAppAdState extends State<IosAppAd> {
   void _nextApp() {
     setState(() {
       _currentApp = (_currentApp + 1) % apps.length;
-      _currentAppPage = 0;
+      // _currentAppPage = 0;
     });
   }
 
   void _prevApp() {
     setState(() {
       _currentApp = (_currentApp - 1) % apps.length;
-      _currentAppPage = 0;
+      // _currentAppPage = 0;
     });
   }
 
@@ -306,7 +306,7 @@ class _IosAppAdState extends State<IosAppAd> {
                             ),
                             Flexible(
                               child: MaterialButton(
-                                hoverColor: Colors.white30,
+                                hoverColor: Colors.white,
                                 hoverElevation: 8,
                                 onPressed: () => _nextApp(),
                                 height: 55.0,

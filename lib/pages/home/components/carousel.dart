@@ -27,7 +27,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   Animation _flutterIconAnimation;
   Animation _mainImageAnimation;
   List<String> _tech;
-  int _currentTech = 1;
+  int _currentTech = 2;
 
   @override
   void initState() {
@@ -40,7 +40,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
     _imageAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 4),
+      duration: Duration(seconds: 3),
     );
 
     _flutterIconAnimation = CurvedAnimation(
@@ -228,7 +228,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                   ),
                   GestureDetector(
                     onTap: () {
-                      launchURL('https://www.instagram.com/rashidwassaan/');
+                      launchURL('https://www.linkedin.com/in/rashidwassan');
                     },
                     child: MouseRegion(
                       cursor: MouseCursor.defer,
@@ -260,17 +260,17 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                 borderRadius: BorderRadius.circular(8.0),
               ),
               onPressed: () async {
-                final Email email = Email(
-                  body: 'Hi there! Just wanted to say hi!',
-                  subject: 'Email from portfolio web',
-                  recipients: ['rashidwassaan@gmail.com'],
-                  // cc: ['cc@example.com'],
-                  // bcc: ['bcc@example.com'],
-                  //  attachmentPaths: ['/path/to/attachment.zip'],
-                  isHTML: false,
-                );
+                // final Email email = Email(
+                //   body: 'Hi there! Just wanted to say hi!',
+                //   subject: 'Email from portfolio web',
+                //   recipients: ['rashidwassaan@gmail.com'],
+                //   // cc: ['cc@example.com'],
+                //   // bcc: ['bcc@example.com'],
+                //   //  attachmentPaths: ['/path/to/attachment.zip'],
+                //   isHTML: false,
+                // );
 
-                await FlutterEmailSender.send(email);
+                // await FlutterEmailSender.send(email);
               },
               child: Text(
                 "GET STARTED",

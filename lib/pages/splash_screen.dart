@@ -17,8 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
   _animateLogo() {
     _controller = AnimationController(
         vsync: this, duration: Duration(milliseconds: 1000));
-    _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
     _controller.forward();
     _controller.addListener(() {
       setState(() {});
@@ -36,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
   Animation _animation;
   @override
   void initState() {
-    //  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     super.initState();
     _animateLogo();
     _navigate();
@@ -84,13 +83,13 @@ class _SplashScreenState extends State<SplashScreen>
                   Flexible(
                     child: Text(
                       'Made with',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
+                      style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                   ),
                   Flexible(
                     child: LottieBuilder.asset(
                       'assets/flutter_anim.json',
-                      height: 14,
+                      height: 15,
                     ).px(8),
                   ),
                   Text(
@@ -100,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen>
                   Icon(
                     Icons.favorite,
                     color: Colors.red,
-                    size: 14,
+                    size: 15,
                   )
                 ],
               ),
