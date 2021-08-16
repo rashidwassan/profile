@@ -308,6 +308,7 @@ class _IosAppAdState extends State<IosAppAd> {
                               child: MaterialButton(
                                 hoverColor: Colors.white,
                                 hoverElevation: 8,
+                                highlightColor: Colors.white,
                                 onPressed: () => _nextApp(),
                                 height: 55.0,
                                 shape: RoundedRectangleBorder(

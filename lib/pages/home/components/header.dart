@@ -154,36 +154,8 @@ class Header extends StatelessWidget {
           child: buildHeader(),
         ),
         // We will make this in a bit
-        mobile: buildMobileHeader(),
+        mobile: MobileHeader(),
         tablet: buildHeader(),
-      ),
-    );
-  }
-
-  // mobile header
-  Widget buildMobileHeader() {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            HeaderLogo(),
-            // Restart server to make icons work
-            // Lets make a scaffold key and create a drawer
-            GestureDetector(
-              onTap: () {
-                // Lets open drawer using global key
-                //   Globals.scaffoldKey.currentState.openEndDrawer();
-              },
-              child: Icon(
-                FlutterIcons.menu_fea,
-                color: Colors.white,
-                size: 28.0,
-              ),
-            )
-          ],
-        ),
       ),
     );
   }
@@ -198,6 +170,39 @@ class Header extends StatelessWidget {
           HeaderLogo(),
           HeaderRow(),
         ],
+      ),
+    );
+  }
+}
+
+// mobile header
+class MobileHeader extends StatelessWidget {
+  const MobileHeader({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            HeaderLogo(),
+            // Restart server to make icons work
+            // Lets make a scaffold key and create a drawer
+            GestureDetector(
+              onTap: () {
+                // Lets open drawer using global key
+                Scaffold.of(context).openEndDrawer();
+              },
+              child: Icon(
+                FlutterIcons.menu_fea,
+                color: Colors.white,
+                size: 28.0,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -15,9 +15,10 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
-    _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+    _controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+    _animation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
     _controller.forward();
     _controller.addListener(() {
       setState(() {});

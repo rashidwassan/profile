@@ -204,7 +204,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                   ),
                 ),
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(3),
                   child: Image.asset(
                     'assets/pk.jpeg',
                     height: 13,
