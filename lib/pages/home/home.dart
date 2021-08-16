@@ -65,61 +65,65 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(child: Image.asset('assets/rashid.png').p(32)),
+              Flexible(flex: 1, child: Image.asset('assets/rashid.png').p(32)),
               Divider(
                 color: Colors.white60,
                 height: 4,
               ),
               Expanded(
+                  flex: 2,
                   child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    _buildEndDrawerButton(
-                        title: 'HOME',
-                        icon: CupertinoIcons.home,
-                        onPressed: () {
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) => Home()));
-                        }),
-                    _buildEndDrawerButton(
-                            title: 'MY INTRO',
-                            icon: MaterialIcons.info,
-                            onPressed: () {})
-                        .py(16),
-                    _buildEndDrawerButton(
-                        title: 'MY CODE',
-                        icon: MaterialIcons.code,
-                        onPressed: () {
-                          launchURL('https://github.com/rashidwassan');
-                        }),
-                    _buildEndDrawerButton(
-                        title: 'TESTIMONIALS',
-                        icon: CupertinoIcons.book,
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      Home(child: TestimonialsPage())));
-                        }).py(16),
-                    _buildEndDrawerButton(
-                        title: 'ARTICLES',
-                        icon: MaterialIcons.book,
-                        onPressed: () {
-                          launchURL('https://medium.com/@rashidwassaan');
-                        }),
-                    16.heightBox,
-                    _buildEndDrawerButton(
-                        title: 'HIRE ME',
-                        color: kDangerColor,
-                        icon: MaterialIcons.add,
-                        onPressed: () {
-                          showGetStartedDialog(context);
-                        }).py(16),
-                  ],
-                ),
-              )),
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      children: [
+                        16.heightBox,
+                        _buildEndDrawerButton(
+                            title: 'HOME',
+                            icon: CupertinoIcons.home,
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Home()));
+                            }),
+                        _buildEndDrawerButton(
+                                title: 'MY INTRO',
+                                icon: MaterialIcons.info,
+                                onPressed: () {})
+                            .py(16),
+                        _buildEndDrawerButton(
+                            title: 'MY CODE',
+                            icon: MaterialIcons.code,
+                            onPressed: () {
+                              launchURL('https://github.com/rashidwassan');
+                            }),
+                        _buildEndDrawerButton(
+                            title: 'TESTIMONIALS',
+                            icon: CupertinoIcons.book,
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          Home(child: TestimonialsPage())));
+                            }).py(16),
+                        _buildEndDrawerButton(
+                            title: 'ARTICLES',
+                            icon: MaterialIcons.book,
+                            onPressed: () {
+                              launchURL('https://medium.com/@rashidwassaan');
+                            }),
+                        16.heightBox,
+                        _buildEndDrawerButton(
+                            title: 'HIRE ME',
+                            color: kDangerColor,
+                            icon: MaterialIcons.add,
+                            onPressed: () {
+                              showGetStartedDialog(context);
+                            }).py(16),
+                      ],
+                    ),
+                  )),
               24.heightBox,
               Divider(
                 color: Colors.white60,
