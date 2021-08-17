@@ -34,6 +34,7 @@ Widget _buildUi(double width) {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Wrap(
+            alignment: WrapAlignment.center,
             runSpacing: 50.0,
             spacing: 50.0,
             children: sponsorsLogo
