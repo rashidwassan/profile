@@ -121,24 +121,9 @@ class _IosAppAdState extends State<IosAppAd> {
                                   )),
                               Align(
                                 alignment: Alignment.topCenter,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black38,
-                                          spreadRadius: 1,
-                                          blurRadius: 2)
-                                    ],
-                                    borderRadius: BorderRadiusDirectional.only(
-                                        bottomEnd: Radius.circular(15),
-                                        bottomStart: Radius.circular(15)),
-                                  ),
-                                  height: 30,
-                                  width: 80,
-                                  child: Image.asset('assets/camera_lens.png')
-                                      .py(3),
-                                ),
+                                child: Image.asset('assets/camera_lens.png',
+                                        height: 28)
+                                    .py(5),
                               ),
                               Align(
                                 alignment: Alignment.bottomCenter,
@@ -334,9 +319,8 @@ class _IosAppAdState extends State<IosAppAd> {
                                 ),
                               ),
                             ),
-                            constraints.maxWidth > 720.0
-                                ? Flexible(child: SizedBox())
-                                : SizedBox.shrink(),
+                            if (constraints.maxWidth > 720.0)
+                              Flexible(child: SizedBox())
                           ],
                         )
                       ],

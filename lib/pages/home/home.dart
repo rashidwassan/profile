@@ -197,7 +197,7 @@ class _HomeState extends State<Home> {
         SizedBox(
           height: 50.0,
         ),
-        TestimonialWidget(),
+        //   TestimonialWidget(),
       ],
     );
   }

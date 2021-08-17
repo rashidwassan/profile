@@ -40,7 +40,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
     _imageAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 2),
     );
 
     _flutterIconAnimation = CurvedAnimation(
@@ -49,7 +49,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
         reverseCurve: Curves.bounceOut);
 
     _mainImageAnimation = CurvedAnimation(
-        parent: _imageAnimationController, curve: Curves.easeIn);
+        parent: _imageAnimationController, curve: Curves.bounceInOut);
 
     _tech = [
       'assets/f3.png',
@@ -105,7 +105,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     double carouselContainerHeight = MediaQuery.of(context).size.height *
-        (ScreenHelper.isMobile(context) ? .7 : .85);
+        (ScreenHelper.isMobile(context) ? .80 : .85);
     return Container(
       height: carouselContainerHeight,
       width: double.infinity,
@@ -311,15 +311,10 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
       child: Stack(
         alignment: Alignment.topLeft,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(0),
-            child: Container(
-              child: Image.asset(
-                "assets/rashid.png",
-                opacity: _imageAnimationController,
-                fit: BoxFit.contain,
-              ),
-            ),
+          Image.asset(
+            "assets/rashid.png",
+            opacity: _imageAnimationController,
+            fit: BoxFit.cover,
           ),
           SizedBox(
             width: 90,
@@ -341,7 +336,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                     height: 90,
                     //   height: _flutterIconAnimation.value * 90,
                     //   width: _flutterIconAnimation.value * 90,
-                  ).p(12),
+                  ).p(16),
                 ),
               ),
             ),
@@ -380,10 +375,14 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
       width: double.infinity,
       child: Column(
         children: [
-          _buildMainImage(),
+          Spacer(),
+          Image.asset(
+            "assets/rashid.png",
+            opacity: _imageAnimationController,
+          ),
+          Spacer(),
           24.heightBox,
           text,
-          24.heightBox,
         ],
       ),
     );

@@ -196,7 +196,7 @@ class MobileHeader extends StatelessWidget {
                 Scaffold.of(context).openEndDrawer();
               },
               child: Icon(
-                FlutterIcons.menu_fea,
+                FlutterIcons.xbox_controller_menu_mco,
                 color: Colors.white,
                 size: 28.0,
               ),
