@@ -1,15 +1,9 @@
-import 'dart:io';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/carousel_item_model.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
-import 'package:web_portfolio/pages/home/components/dialogs.dart';
 import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/globals.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'dart:async';
@@ -313,7 +307,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
         children: [
           Image.asset(
             "assets/rashid.png",
-            opacity: _imageAnimationController,
+            // opacity: _imageAnimationController,
             fit: BoxFit.cover,
           ),
           SizedBox(
@@ -381,7 +375,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             elevation: 12,
             child: Image.asset(
               "assets/rashid.png",
-              opacity: _imageAnimationController,
+              //   opacity: _imageAnimationController,
             ),
           ),
           24.heightBox,

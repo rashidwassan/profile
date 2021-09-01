@@ -105,11 +105,20 @@ Widget _buildUi(double width) {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    CircleAvatar(
-                                      radius: 25.0,
-                                      backgroundColor: Colors.transparent,
-                                      backgroundImage: NetworkImage(
-                                        testimonial.profilePhoto,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.transparent,
+                                          border: Border.all(
+                                              width: 2, color: kPrimaryColor)),
+                                      child: CircleAvatar(
+                                        radius: 25.0,
+                                        backgroundColor: Colors.transparent,
+                                        // backgroundImage: NetworkImage(
+                                        //   testimonial.profilePhoto,
+                                        // ),
+                                        child: Icon(Icons.person_outline,
+                                            color: kPrimaryColor),
                                       ),
                                     ),
                                     SizedBox(
@@ -135,7 +144,7 @@ Widget _buildUi(double width) {
                                           style: TextStyle(
                                             color: kCaptionColor,
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ],

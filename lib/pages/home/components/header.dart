@@ -190,15 +190,28 @@ class MobileHeader extends StatelessWidget {
             HeaderLogo(),
             // Restart server to make icons work
             // Lets make a scaffold key and create a drawer
-            GestureDetector(
-              onTap: () {
-                // Lets open drawer using global key
-                Scaffold.of(context).openEndDrawer();
-              },
-              child: Icon(
-                FlutterIcons.xbox_controller_menu_mco,
-                color: Colors.white,
-                size: 28.0,
+            SizedBox(
+              height: 45,
+              width: 45,
+              child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(500)),
+                padding: EdgeInsets.all(2),
+                onPressed: () {
+                  // Lets open drawer using global key
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    FlutterIcons.xbox_controller_menu_mco,
+                    color: kBackgroundColor,
+                    size: 38.0,
+                  ),
+                ),
               ),
             )
           ],

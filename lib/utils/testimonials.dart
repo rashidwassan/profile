@@ -36,7 +36,7 @@ final List<Testimonial> allTestimonials = [
   Testimonial(
     text:
         "A person with multitalented skills with high IQ expertise in Flutter web development.",
-    occupation: "Accounts Manager at MTBC",
+    occupation: "Accounts Manager",
     personName: "ABBAS RAZA",
     profilePhoto:
         "https://media-exp1.licdn.com/dms/image/C4E35AQG-jkl3x0FWLQ/profile-framedphoto-shrink_800_800/0/1608495940473?e=1628942400&v=beta&t=dNa63UYjSsW7xj48yJTOrUKUdrdK4GCSNdpKMXK52HQ",
