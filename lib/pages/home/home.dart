@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
                             title: 'ARTICLES',
                             icon: MaterialIcons.book,
                             onPressed: () {
-                              launchURL('https://medium.com/@rashidwassaan');
+                              launchURL('https://medium.com/@rashidwassan');
                             }),
                         16.heightBox,
                         _buildEndDrawerButton(
