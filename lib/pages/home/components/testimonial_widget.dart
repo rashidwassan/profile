@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rashidwassan/pages/home/components/social_button_row.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/pages/testimonials_page.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -114,24 +116,10 @@ Widget _buildUi(double width) {
                           ),
                           Row(
                             children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.transparent,
-                                    border: Border.all(
-                                        width: 2, color: kPrimaryColor)),
-                                child: CircleAvatar(
-                                  radius: 25.0,
-                                  backgroundColor: Colors.transparent,
-                                  // backgroundImage: NetworkImage(
-                                  //   testimonial.profilePhoto,
-                                  // ),
-                                  child: Icon(Icons.person_outline,
-                                      color: kPrimaryColor),
-                                ),
-                              ),
+                              SocialButtonWithShadow(
+                                  icon: FontAwesome.user, color: kPrimaryColor),
                               SizedBox(
-                                width: 20.0,
+                                width: 24.0,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

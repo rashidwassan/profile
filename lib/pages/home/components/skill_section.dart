@@ -25,7 +25,7 @@ List<Skill> skills = [
   ),
   Skill(
     skill: "C++",
-    percentage: 60,
+    percentage: 70,
   ),
 ];
 
@@ -105,7 +105,7 @@ class SkillSection extends StatelessWidget {
                                         child: Container(
                                           padding: EdgeInsets.only(left: 10.0),
                                           alignment: Alignment.centerLeft,
-                                          height: 30.0,
+                                          height: 33.0,
                                           child: Text(
                                             skill.skill,
                                             style: TextStyle(
@@ -120,6 +120,14 @@ class SkillSection extends StatelessWidget {
                                                 topLeft: Radius.circular(30),
                                                 bottomLeft:
                                                     Radius.circular(30)),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  offset: Offset(2, 3),
+                                                  color: kPrimaryColor
+                                                      .withOpacity(0.3),
+                                                  blurRadius: 8,
+                                                  spreadRadius: 0.1)
+                                            ],
                                             color: kPrimaryColor,
                                           ),
                                         ),

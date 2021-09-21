@@ -141,7 +141,7 @@ Widget _buildUi(double width, BuildContext context) {
               ),
               SocialIconButtonsRow(),
               SizedBox(
-                height: 32.0,
+                height: 48.0,
               ),
               Flex(
                 direction: ScreenHelper.isMobile(context)

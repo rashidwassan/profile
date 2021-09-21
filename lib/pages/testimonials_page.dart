@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:rashidwassan/models/testimonial.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:rashidwassan/utils/testimonials.dart';
+
+import 'home/components/social_button_row.dart';
 
 class TestimonialsPage extends StatelessWidget {
   @override
@@ -105,24 +108,11 @@ Widget _buildUi(double width) {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: Colors.transparent,
-                                          border: Border.all(
-                                              width: 2, color: kPrimaryColor)),
-                                      child: CircleAvatar(
-                                        radius: 25.0,
-                                        backgroundColor: Colors.transparent,
-                                        // backgroundImage: NetworkImage(
-                                        //   testimonial.profilePhoto,
-                                        // ),
-                                        child: Icon(Icons.person_outline,
-                                            color: kPrimaryColor),
-                                      ),
-                                    ),
+                                    SocialButtonWithShadow(
+                                        icon: FontAwesome.user,
+                                        color: kPrimaryColor),
                                     SizedBox(
-                                      width: 20.0,
+                                      width: 24.0,
                                     ),
                                     Column(
                                       crossAxisAlignment:
