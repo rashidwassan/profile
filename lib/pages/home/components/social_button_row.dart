@@ -4,13 +4,17 @@ import 'package:velocity_x/velocity_x.dart';
 
 class SocialIconButtonsRow extends StatelessWidget {
   const SocialIconButtonsRow({
+    this.isMobile,
     Key key,
   }) : super(key: key);
+
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment:
+          (isMobile) ? MainAxisAlignment.spaceAround : MainAxisAlignment.center,
       children: [
         const SizedBox(),
         SocialButtonWithShadow(
@@ -22,7 +26,7 @@ class SocialIconButtonsRow extends StatelessWidget {
           icon: FontAwesomeIcons.twitter,
           color: const Color(0xFF1DA1F2),
           onPressed: () {},
-        ),
+        ).px(24),
         SocialButtonWithShadow(
           icon: FontAwesomeIcons.googlePlusG,
           color: const Color(0xFFDB4437),
@@ -46,8 +50,8 @@ class SocialButtonWithShadow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 45,
-      height: 45,
+      width: 50,
+      height: 50,
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(

@@ -128,7 +128,7 @@ Widget _buildUi(double width, BuildContext context) {
               ),
               Center(
                 child: Text(
-                  'Contact me on...',
+                  'CONTACT ME ON',
                   style: GoogleFonts.oswald(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w700,
@@ -139,7 +139,9 @@ Widget _buildUi(double width, BuildContext context) {
               SizedBox(
                 height: 24,
               ),
-              SocialIconButtonsRow(),
+              SocialIconButtonsRow(
+                isMobile: ScreenHelper.isMobile(context),
+              ),
               SizedBox(
                 height: 32.0,
               ),
