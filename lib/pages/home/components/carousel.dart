@@ -370,17 +370,14 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
       width: double.infinity,
       child: Column(
         children: [
-          Material(
-            color: kPrimaryColor,
-            borderRadius: BorderRadius.circular(500),
-            elevation: 12,
+          Expanded(
             child: Image.asset(
-              "assets/rashid.png",
+              "assets/rashid2.png",
               //   opacity: _imageAnimationController,
             ),
           ),
-          24.heightBox,
           text,
+          24.heightBox,
         ],
       ),
     );

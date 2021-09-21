@@ -103,10 +103,10 @@ Widget _buildUi(double width) {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 15.0,
+                                  height: 24.0,
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     SocialButtonWithShadow(
                                         icon: FontAwesome.user,
