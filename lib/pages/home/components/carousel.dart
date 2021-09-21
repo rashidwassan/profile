@@ -25,7 +25,6 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _flutterFLoatController = AnimationController(
       vsync: this,
@@ -242,36 +241,38 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             SizedBox(
               height: 25.0,
             ),
-            MaterialButton(
-              hoverElevation: 10,
-              hoverColor: Colors.white24,
-              height: 48.0,
-              color: kPrimaryColor,
-              padding: EdgeInsets.symmetric(
-                horizontal: 28.0,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              onPressed: () async {
-                // final Email email = Email(
-                //   body: 'Hi there! Just wanted to say hi!',
-                //   subject: 'Email from portfolio web',
-                //   recipients: ['rashidwassaan@gmail.com'],
-                //   // cc: ['cc@example.com'],
-                //   // bcc: ['bcc@example.com'],
-                //   //  attachmentPaths: ['/path/to/attachment.zip'],
-                //   isHTML: false,
-                // );
+            SizedBox(
+              child: TextButton(
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
+                      horizontal: 16, vertical: 12.5)),
+                  elevation: MaterialStateProperty.all(12),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50))),
+                  backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+                  shadowColor:
+                      MaterialStateProperty.all(kPrimaryColor.withOpacity(0.5)),
+                ),
+                onPressed: () async {
+                  // final Email email = Email(
+                  //   body: 'Hi there! Just wanted to say hi!',
+                  //   subject: 'Email from portfolio web',
+                  //   recipients: ['rashidwassaan@gmail.com'],
+                  //   // cc: ['cc@example.com'],
+                  //   // bcc: ['bcc@example.com'],
+                  //   //  attachmentPaths: ['/path/to/attachment.zip'],
+                  //   isHTML: false,
+                  // );
 
-                // await FlutterEmailSender.send(email);
-              },
-              child: Text(
-                "GET STARTED",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.bold,
+                  // await FlutterEmailSender.send(email);
+                },
+                child: Text(
+                  "GET STARTED",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             )
