@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/models/carousel_item_model.dart';
-import 'package:web_portfolio/pages/home/components/cv_section.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:rashidwassan/models/carousel_item_model.dart';
+import 'package:rashidwassan/pages/home/components/cv_section.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'dart:async';
 

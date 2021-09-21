@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/pages/home/home.dart';
-import 'package:web_portfolio/pages/splash_screen.dart';
-import 'package:web_portfolio/utils/constants.dart';
+import 'package:rashidwassan/pages/home/home.dart';
+import 'package:rashidwassan/pages/splash_screen.dart';
+import 'package:rashidwassan/utils/constants.dart';
 
 void main() {
   runApp(MyApp());

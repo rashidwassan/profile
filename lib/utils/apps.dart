@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_portfolio/models/app_model.dart';
+import 'package:rashidwassan/models/app_model.dart';
 
 // here id and the folder of assets should be having same name.
 

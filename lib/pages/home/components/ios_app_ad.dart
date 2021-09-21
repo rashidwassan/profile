@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/utils/apps.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:rashidwassan/utils/apps.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class IosAppAd extends StatefulWidget {

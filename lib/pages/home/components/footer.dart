@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/models/footer_item.dart';
-import 'package:web_portfolio/pages/home/components/social_button_row.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:rashidwassan/models/footer_item.dart';
+import 'package:rashidwassan/pages/home/components/social_button_row.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
 
 final List<FooterItem> footerItems = [
   FooterItem(

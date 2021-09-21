@@ -2,10 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/pages/testimonials_page.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
-import 'package:web_portfolio/utils/testimonials.dart';
+import 'package:rashidwassan/pages/testimonials_page.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
+import 'package:rashidwassan/utils/testimonials.dart';
 
 import '../home.dart';
 

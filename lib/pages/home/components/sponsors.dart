@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
 
 final List<String> sponsorsLogo = [
   "assets/brand1.png",

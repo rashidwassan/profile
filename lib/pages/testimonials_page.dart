@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
-import 'package:web_portfolio/models/testimonial.dart';
-import 'package:web_portfolio/utils/constants.dart';
-import 'package:web_portfolio/utils/screen_helper.dart';
-import 'package:web_portfolio/utils/testimonials.dart';
+import 'package:rashidwassan/models/testimonial.dart';
+import 'package:rashidwassan/utils/constants.dart';
+import 'package:rashidwassan/utils/screen_helper.dart';
+import 'package:rashidwassan/utils/testimonials.dart';
 
 class TestimonialsPage extends StatelessWidget {
   @override

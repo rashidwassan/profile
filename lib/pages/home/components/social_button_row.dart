@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:web_portfolio/pages/home/components/cv_section.dart';
+import 'package:rashidwassan/pages/home/components/cv_section.dart';
 
 class SocialIconButtonsRow extends StatelessWidget {
   const SocialIconButtonsRow({
@@ -93,8 +93,8 @@ class SocialButtonWithShadow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50,
-      height: 50,
+      width: 45,
+      height: 45,
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(

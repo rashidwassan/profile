@@ -1,4 +1,4 @@
-import 'package:web_portfolio/models/testimonial.dart';
+import 'package:rashidwassan/models/testimonial.dart';
 
 final List<Testimonial> allTestimonials = [
   Testimonial(

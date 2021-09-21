@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:web_portfolio/pages/home/home.dart';
-import 'package:web_portfolio/utils/constants.dart';
+import 'package:rashidwassan/pages/home/home.dart';
+import 'package:rashidwassan/utils/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = '/';

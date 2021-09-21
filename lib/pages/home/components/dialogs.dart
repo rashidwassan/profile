@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:web_portfolio/utils/constants.dart';
+import 'package:rashidwassan/utils/constants.dart';
 
 dynamic showGetStartedDialog(context) {
   return showDialog(
