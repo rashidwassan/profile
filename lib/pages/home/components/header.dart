@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/header_item.dart';
 import 'package:web_portfolio/pages/home/components/cv_section.dart';
@@ -110,6 +111,19 @@ class HeaderRow extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: 20.0, vertical: 5.0),
                         child: TextButton(
+                          style: ButtonStyle(
+                            // padding: MaterialStateProperty.all(
+                            //     const EdgeInsets.symmetric(
+                            //         horizontal: 16, vertical: 16)),
+                            elevation: MaterialStateProperty.all(12),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50))),
+                            backgroundColor:
+                                MaterialStateProperty.all(kDangerColor),
+                            shadowColor: MaterialStateProperty.all(
+                                kDangerColor.withOpacity(0.5)),
+                          ),
                           onPressed: item.onTap,
                           child: Text(
                             item.title,
@@ -191,28 +205,18 @@ class MobileHeader extends StatelessWidget {
             // Restart server to make icons work
             // Lets make a scaffold key and create a drawer
             SizedBox(
-              height: 45,
-              width: 45,
+              height: 60,
+              width: 60,
               child: MaterialButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(500)),
-                padding: EdgeInsets.all(2),
-                onPressed: () {
-                  // Lets open drawer using global key
-                  Scaffold.of(context).openEndDrawer();
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: kPrimaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    FlutterIcons.xbox_controller_menu_mco,
-                    color: kBackgroundColor,
-                    size: 38.0,
-                  ),
-                ),
-              ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(500)),
+                  padding: EdgeInsets.all(0),
+                  onPressed: () {
+                    // Lets open drawer using global key
+                    Scaffold.of(context).openEndDrawer();
+                  },
+                  child: Lottie.asset('assets/anims/menu.json',
+                      height: 45, reverse: false)),
             )
           ],
         ),

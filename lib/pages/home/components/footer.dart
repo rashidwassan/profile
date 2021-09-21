@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_portfolio/models/footer_item.dart';
+import 'package:web_portfolio/pages/home/components/social_button_row.dart';
 import 'package:web_portfolio/utils/constants.dart';
 import 'package:web_portfolio/utils/screen_helper.dart';
 
@@ -58,7 +59,7 @@ Widget _buildUi(double width, BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 50.0),
+                padding: EdgeInsets.symmetric(vertical: 32.0),
                 child: Wrap(
                   spacing: 20.0,
                   runSpacing: 20.0,
@@ -125,8 +126,22 @@ Widget _buildUi(double width, BuildContext context) {
                       .toList(),
                 ),
               ),
+              Center(
+                child: Text(
+                  'Contact me on...',
+                  style: GoogleFonts.oswald(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               SizedBox(
-                height: 20.0,
+                height: 24,
+              ),
+              SocialIconButtonsRow(),
+              SizedBox(
+                height: 32.0,
               ),
               Flex(
                 direction: ScreenHelper.isMobile(context)

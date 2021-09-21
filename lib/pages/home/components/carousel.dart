@@ -244,14 +244,14 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             SizedBox(
               child: TextButton(
                 style: ButtonStyle(
-                  padding: MaterialStateProperty.all(const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 12.5)),
+                  padding: MaterialStateProperty.all(
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16)),
                   elevation: MaterialStateProperty.all(12),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50))),
                   backgroundColor: MaterialStateProperty.all(kPrimaryColor),
                   shadowColor:
-                      MaterialStateProperty.all(kPrimaryColor.withOpacity(0.5)),
+                      MaterialStateProperty.all(kPrimaryColor.withOpacity(0.6)),
                 ),
                 onPressed: () async {
                   // final Email email = Email(

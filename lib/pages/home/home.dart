@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Flexible(flex: 1, child: Image.asset('assets/rashid.png').p(32)),
+              Flexible(flex: 1, child: Image.asset('assets/rashid2.png').p(32)),
               Divider(
                 color: Colors.white60,
                 height: 4,
