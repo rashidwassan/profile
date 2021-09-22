@@ -56,7 +56,7 @@ Widget _buildUi(double width, BuildContext context) {
       child: LayoutBuilder(
         builder: (context, constraints) {
           return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 32.0),

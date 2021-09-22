@@ -33,16 +33,24 @@ class _HomeState extends State<Home> {
       endDrawer: _buildEndDrawer(context),
       body: Container(
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Header(),
-              ),
-              (widget.child == null) ? _buildHomeWidgets() : widget.child,
-              Footer(),
-              24.heightBox
-            ],
+          child: Container(
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      'assets/mainbg.jpg',
+                    ),
+                    fit: BoxFit.cover)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Header(),
+                ),
+                (widget.child == null) ? _buildHomeWidgets() : widget.child,
+                Footer(),
+                24.heightBox
+              ],
+            ),
           ),
         ),
       ),
