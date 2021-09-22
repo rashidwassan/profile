@@ -37,11 +37,14 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      'assets/mainbg.jpg',
-                    ),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage(
+                    'assets/mainback.png',
+                  ),
+                  colorFilter:
+                      ColorFilter.mode(Colors.black87, BlendMode.darken),
+                  fit: BoxFit.cover),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -64,7 +67,7 @@ class _HomeState extends State<Home> {
             color: kBackgroundColor,
             image: DecorationImage(
                 image: AssetImage(
-                  'assets/drawerbg.png',
+                  'assets/mainbg.jpg',
                 ),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
@@ -150,11 +153,16 @@ class _HomeState extends State<Home> {
       IconData icon,
       Color color = Colors.transparent,
       Function() onPressed}) {
-    return MaterialButton(
-      elevation: 0,
-      height: 45,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      color: color,
+    return TextButton(
+      style: ButtonStyle(
+        overlayColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
+        padding: MaterialStateProperty.all(const EdgeInsets.all(8)),
+        backgroundColor: MaterialStateProperty.all(color),
+        shadowColor: MaterialStateProperty.all(color),
+        elevation: MaterialStateProperty.all(12),
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
+      ),
       onPressed: onPressed,
       child: Row(
         children: [
