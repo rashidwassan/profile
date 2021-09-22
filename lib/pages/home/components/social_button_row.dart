@@ -10,72 +10,77 @@ class SocialIconButtonsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        runAlignment: WrapAlignment.center,
-        spacing: 24,
-        runSpacing: 24,
-        // mainAxisAlignment:
-        //     (isMobile) ? MainAxisAlignment.spaceAround : MainAxisAlignment.center,
-        children: [
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.facebookF,
-            color: const Color(0xFF4267B2),
-            onPressed: () {
-              launchURL('https://www.facebook.com/rashidwassann');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.github,
-            color: const Color(0xFF2D333B),
-            onPressed: () {
-              launchURL('https://github.com/RashidWassan');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.linkedinIn,
-            color: const Color(0xFF2867B2),
-            onPressed: () {
-              launchURL('https://www.linkedin.com/in/rashidwassan/');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.youtube,
-            color: const Color(0xFFDB4437),
-            onPressed: () {
-              launchURL('https://www.youtube.com/c/RashidsTechStuff');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.twitter,
-            color: const Color(0xFF1DA1F2),
-            onPressed: () {
-              launchURL('https://twitter.com/RashidWassaan');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.mediumM,
-            color: const Color(0xFF202122),
-            onPressed: () {
-              launchURL('https://rashidwassan.medium.com/');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.instagram,
-            color: const Color(0xFFC13584),
-            onPressed: () {
-              launchURL('https://www.instagram.com/rashidwassaan/');
-            },
-          ),
-          SocialButtonWithShadow(
-            icon: FontAwesomeIcons.discord,
-            color: const Color(0xFF5865F2),
-            onPressed: () {
-              launchURL('https://discordapp.com/users/rashidwassan/');
-            },
-          ),
-        ],
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(0)),
+      padding: EdgeInsets.all(24),
+      child: Center(
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          runAlignment: WrapAlignment.center,
+          spacing: 24,
+          runSpacing: 24,
+          // mainAxisAlignment:
+          //     (isMobile) ? MainAxisAlignment.spaceAround : MainAxisAlignment.center,
+          children: [
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.facebookF,
+              color: const Color(0xFF4267B2),
+              onPressed: () {
+                launchURL('https://www.facebook.com/rashidwassann');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.github,
+              color: const Color(0xFF2D333B),
+              onPressed: () {
+                launchURL('https://github.com/RashidWassan');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.linkedinIn,
+              color: const Color(0xFF2867B2),
+              onPressed: () {
+                launchURL('https://www.linkedin.com/in/rashidwassan/');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.youtube,
+              color: const Color(0xFFDB4437),
+              onPressed: () {
+                launchURL('https://www.youtube.com/c/RashidsTechStuff');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.twitter,
+              color: const Color(0xFF1DA1F2),
+              onPressed: () {
+                launchURL('https://twitter.com/RashidWassaan');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.mediumM,
+              color: const Color(0xFF202122),
+              onPressed: () {
+                launchURL('https://rashidwassan.medium.com/');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.instagram,
+              color: const Color(0xFFC13584),
+              onPressed: () {
+                launchURL('https://www.instagram.com/rashidwassaan/');
+              },
+            ),
+            SocialButtonWithShadow(
+              icon: FontAwesomeIcons.discord,
+              color: const Color(0xFF5865F2),
+              onPressed: () {
+                launchURL('https://discordapp.com/users/rashidwassan/');
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

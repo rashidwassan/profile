@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rashidwassan/pages/home/components/carousel.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:rashidwassan/pages/home/components/dialogs.dart';
@@ -11,6 +12,7 @@ import 'package:rashidwassan/pages/home/components/header.dart';
 import 'package:rashidwassan/pages/home/components/ios_app_ad.dart';
 import 'package:rashidwassan/pages/home/components/portfolio_stats.dart';
 import 'package:rashidwassan/pages/home/components/skill_section.dart';
+import 'package:rashidwassan/pages/home/components/social_button_row.dart';
 import 'package:rashidwassan/pages/home/components/sponsors.dart';
 import 'package:rashidwassan/pages/home/components/testimonial_widget.dart';
 import 'package:rashidwassan/pages/home/components/website_ad.dart';
@@ -192,6 +194,23 @@ class _HomeState extends State<Home> {
         ),
         SizedBox(
           height: 50.0,
+        ),
+        Center(
+          child: Text(
+            'CATCH ME ON',
+            style: GoogleFonts.oswald(
+              fontSize: 18.0,
+              fontWeight: FontWeight.w700,
+              color: Colors.white,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 24,
+        ),
+        SocialIconButtonsRow(),
+        SizedBox(
+          height: 50,
         ),
         EducationSection(),
         SizedBox(

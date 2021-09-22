@@ -61,8 +61,8 @@ Widget _buildUi(double width, BuildContext context) {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 32.0),
                 child: Wrap(
-                  spacing: 20.0,
-                  runSpacing: 20.0,
+                  spacing: 24.0,
+                  runSpacing: 24.0,
                   children: footerItems
                       .map(
                         (footerItem) => Container(
@@ -82,7 +82,7 @@ Widget _buildUi(double width, BuildContext context) {
                                       width: 25.0,
                                     ),
                                     SizedBox(
-                                      width: 15.0,
+                                      width: 16.0,
                                     ),
                                     Text(
                                       footerItem.title,
@@ -126,22 +126,8 @@ Widget _buildUi(double width, BuildContext context) {
                       .toList(),
                 ),
               ),
-              Center(
-                child: Text(
-                  'CATCH ME ON',
-                  style: GoogleFonts.oswald(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
               SizedBox(
-                height: 24,
-              ),
-              SocialIconButtonsRow(),
-              SizedBox(
-                height: 48.0,
+                height: 8.0,
               ),
               Flex(
                 direction: ScreenHelper.isMobile(context)
