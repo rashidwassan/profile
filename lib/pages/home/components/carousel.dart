@@ -245,7 +245,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               child: TextButton(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 16)),
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
                   elevation: MaterialStateProperty.all(12),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50))),
@@ -376,6 +376,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               //   opacity: _imageAnimationController,
             ),
           ),
+          24.heightBox,
           text,
           24.heightBox,
         ],
