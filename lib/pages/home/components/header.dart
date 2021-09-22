@@ -82,7 +82,7 @@ class HeaderRow extends StatelessWidget {
       HeaderItem(
           title: "ARTICLES",
           onTap: () {
-            launchURL('https://medium.com/@rashidwassaan');
+            launchURL('https://medium.com/@rashidwassan');
           }),
       HeaderItem(
         title: "HIRE ME",
@@ -103,34 +103,31 @@ class HeaderRow extends StatelessWidget {
               (item) => item.isButton
                   ? MouseRegion(
                       cursor: SystemMouseCursors.click,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: kDangerColor,
-                          borderRadius: BorderRadius.circular(8.0),
+                      child: TextButton(
+                        style: ButtonStyle(
+                          // padding: MaterialStateProperty.all(
+                          //     const EdgeInsets.symmetric(
+                          //         horizontal: 16, vertical: 16)),
+                          elevation: MaterialStateProperty.all(12),
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50))),
+                          backgroundColor:
+                              MaterialStateProperty.all(kDangerColor),
+                          shadowColor: MaterialStateProperty.all(kDangerColor),
                         ),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 5.0),
-                        child: TextButton(
-                          style: ButtonStyle(
-                            // padding: MaterialStateProperty.all(
-                            //     const EdgeInsets.symmetric(
-                            //         horizontal: 16, vertical: 16)),
-                            elevation: MaterialStateProperty.all(12),
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(50))),
-                            backgroundColor:
-                                MaterialStateProperty.all(kDangerColor),
-                            shadowColor: MaterialStateProperty.all(
-                                kDangerColor.withOpacity(0.5)),
-                          ),
-                          onPressed: item.onTap,
-                          child: Text(
-                            item.title,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 13.0,
-                              fontWeight: FontWeight.bold,
+                        onPressed: item.onTap,
+                        child: SizedBox(
+                          height: 38,
+                          width: 85,
+                          child: Center(
+                            child: Text(
+                              item.title,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
@@ -215,8 +212,10 @@ class MobileHeader extends StatelessWidget {
                     // Lets open drawer using global key
                     Scaffold.of(context).openEndDrawer();
                   },
-                  child: Lottie.asset('assets/anims/menu.json',
-                      height: 45, reverse: false)),
+                  child: Lottie.asset(
+                    'assets/anims/menu.json',
+                    height: 45,
+                  )),
             )
           ],
         ),

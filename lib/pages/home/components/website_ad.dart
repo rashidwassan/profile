@@ -75,28 +75,30 @@ class WebsiteAd extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            MaterialButton(
-                              color: kPrimaryColor,
-                              hoverElevation: 8,
-                              onPressed: () => {},
-                              height: 55.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                                side: BorderSide(
-                                  color: kPrimaryColor,
-                                ),
-                              ),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 28.0),
+                            Flexible(
+                              child: SizedBox(
+                                height: 50,
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.all(
+                                        const EdgeInsets.symmetric(
+                                            horizontal: 24)),
+                                    elevation: MaterialStateProperty.all(12),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50))),
+                                    backgroundColor: MaterialStateProperty.all(
+                                        kPrimaryColor),
+                                    shadowColor: MaterialStateProperty.all(
+                                        kPrimaryColor.withOpacity(0.6)),
+                                  ),
+                                  onPressed: () {},
                                   child: Text(
                                     "EXPLORE MORE",
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 13.0,
+                                      fontSize: 15.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -113,7 +115,7 @@ class WebsiteAd extends StatelessWidget {
                                 onPressed: () {},
                                 height: 55.0,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(50.0),
                                   side: BorderSide(
                                     color: kPrimaryColor,
                                   ),

@@ -242,10 +242,11 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
               height: 25.0,
             ),
             SizedBox(
+              height: 50,
               child: TextButton(
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all(
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
+                      const EdgeInsets.symmetric(horizontal: 32)),
                   elevation: MaterialStateProperty.all(12),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50))),
@@ -253,19 +254,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
                   shadowColor:
                       MaterialStateProperty.all(kPrimaryColor.withOpacity(0.6)),
                 ),
-                onPressed: () async {
-                  // final Email email = Email(
-                  //   body: 'Hi there! Just wanted to say hi!',
-                  //   subject: 'Email from portfolio web',
-                  //   recipients: ['rashidwassaan@gmail.com'],
-                  //   // cc: ['cc@example.com'],
-                  //   // bcc: ['bcc@example.com'],
-                  //   //  attachmentPaths: ['/path/to/attachment.zip'],
-                  //   isHTML: false,
-                  // );
-
-                  // await FlutterEmailSender.send(email);
-                },
+                onPressed: () {},
                 child: Text(
                   "GET STARTED",
                   style: TextStyle(

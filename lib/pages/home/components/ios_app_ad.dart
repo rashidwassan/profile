@@ -258,29 +258,30 @@ class _IosAppAdState extends State<IosAppAd> {
                         Row(
                           children: [
                             Flexible(
-                              child: MaterialButton(
-                                color: kPrimaryColor,
-                                hoverElevation: 8,
-                                onPressed: () => _prevApp(),
-                                height: 55.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  side: BorderSide(
-                                    color: kPrimaryColor,
+                              child: SizedBox(
+                                height: 50,
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.all(
+                                        const EdgeInsets.symmetric(
+                                            horizontal: 24)),
+                                    elevation: MaterialStateProperty.all(12),
+                                    shape: MaterialStateProperty.all(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(50))),
+                                    backgroundColor: MaterialStateProperty.all(
+                                        kPrimaryColor),
+                                    shadowColor: MaterialStateProperty.all(
+                                        kPrimaryColor.withOpacity(0.6)),
                                   ),
-                                ),
-                                child: Center(
-                                  child: Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 28.0),
-                                    child: Text(
-                                      "PREVIOUS APP",
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                  onPressed: () => _prevApp(),
+                                  child: Text(
+                                    "PREVIOUS APP",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
@@ -297,7 +298,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                 onPressed: () => _nextApp(),
                                 height: 55.0,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(50.0),
                                   side: BorderSide(
                                     color: kPrimaryColor,
                                   ),

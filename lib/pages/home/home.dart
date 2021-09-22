@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
                     'assets/mainback.png',
                   ),
                   colorFilter:
-                      ColorFilter.mode(Colors.black87, BlendMode.darken),
+                      ColorFilter.mode(Colors.black54, BlendMode.darken),
                   fit: BoxFit.cover),
             ),
             child: Column(
@@ -156,7 +156,7 @@ class _HomeState extends State<Home> {
     return TextButton(
       style: ButtonStyle(
         overlayColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
-        padding: MaterialStateProperty.all(const EdgeInsets.all(8)),
+        padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
         backgroundColor: MaterialStateProperty.all(color),
         shadowColor: MaterialStateProperty.all(color),
         elevation: MaterialStateProperty.all(12),
