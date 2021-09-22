@@ -45,9 +45,7 @@ class _HomeState extends State<Home> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  child: Header(),
-                ),
+                Header(),
                 (widget.child == null) ? _buildHomeWidgets() : widget.child,
                 Footer(),
                 24.heightBox

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rashidwassan/utils/constants.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 
@@ -22,13 +23,13 @@ class SocialIconButtonsRow extends StatelessWidget {
           fit: BoxFit.cover,
           //  colorFilter: ColorFilter.mode(Colors.white70, BlendMode.colorDodge),
         ),
-        // boxShadow: [
-        //   BoxShadow(
-        //       color: Colors.white38,
-        //       spreadRadius: 3,
-        //       blurRadius: 12,
-        //       offset: Offset(0, 16))
-        // ],
+        boxShadow: [
+          BoxShadow(
+              color: Colors.purple.withOpacity(0.4),
+              spreadRadius: 1,
+              blurRadius: 24,
+              offset: Offset(0, 12))
+        ],
       ),
       padding: EdgeInsets.all(24),
       child: Wrap(
