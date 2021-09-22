@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FooterItem {
-  final String iconPath;
+  final IconData iconData;
   final String title;
   final String text1;
   final String text2;
 
   FooterItem({
-    @required this.iconPath,
+    @required this.iconData,
     @required this.title,
     @required this.text1,
     @required this.text2,

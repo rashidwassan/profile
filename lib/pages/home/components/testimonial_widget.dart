@@ -94,13 +94,14 @@ Widget _buildUi(double width) {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            child: Image.asset(
-                              "assets/quote.png",
-                              width: 50.0,
+                            child: Icon(
+                              FontAwesome.quote_left,
+                              color: kPrimaryColor,
+                              size: 50.0,
                             ),
                           ),
                           SizedBox(
-                            height: 15.0,
+                            height: 12.0,
                           ),
                           Text(
                             testimonial.text,

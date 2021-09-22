@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/footer_item.dart';
@@ -9,25 +10,25 @@ import 'package:rashidwassan/utils/screen_helper.dart';
 
 final List<FooterItem> footerItems = [
   FooterItem(
-    iconPath: "assets/mappin.png",
+    iconData: FontAwesome.address_card,
     title: "ADDRESS",
     text1: "Room #72, Latif Hostel",
     text2: "MUET Jamshoro, Pakistan",
   ),
   FooterItem(
-    iconPath: "assets/phone.png",
+    iconData: FontAwesome.phone,
     title: "PHONE",
     text1: "+923078611011",
     text2: "+923133590980",
   ),
   FooterItem(
-    iconPath: "assets/email.png",
+    iconData: FontAwesome.envelope,
     title: "EMAIL",
     text1: "rashidwassaan@gmail.com",
     text2: "Not Available",
   ),
   FooterItem(
-    iconPath: "assets/whatsapp.png",
+    iconData: FontAwesome.whatsapp,
     title: "WHATSAPP",
     text1: "+923078611011",
     text2: "+923133590980",
@@ -77,9 +78,10 @@ Widget _buildUi(double width, BuildContext context) {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Image.asset(
-                                      footerItem.iconPath,
-                                      width: 25.0,
+                                    Icon(
+                                      footerItem.iconData,
+                                      color: kPrimaryColor,
+                                      size: 25.0,
                                     ),
                                     SizedBox(
                                       width: 16.0,

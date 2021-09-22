@@ -11,8 +11,23 @@ class SocialIconButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(0)),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: AssetImage('assets/socialbg.png'),
+          fit: BoxFit.cover,
+          //  colorFilter: ColorFilter.mode(Colors.white70, BlendMode.colorDodge),
+        ),
+        // boxShadow: [
+        //   BoxShadow(
+        //       color: Colors.white38,
+        //       spreadRadius: 3,
+        //       blurRadius: 12,
+        //       offset: Offset(0, 16))
+        // ],
+      ),
       padding: EdgeInsets.all(24),
       child: Center(
         child: Wrap(
@@ -98,8 +113,8 @@ class SocialButtonWithShadow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 45,
-      height: 45,
+      width: 47,
+      height: 47,
       child: TextButton(
         onPressed: onPressed,
         style: ButtonStyle(
