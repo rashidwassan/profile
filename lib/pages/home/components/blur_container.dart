@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class BlurContainer extends StatelessWidget {
-  const BlurContainer({Key key, this.value = 0}) : super(key: key);
+  const BlurContainer({Key key, this.child}) : super(key: key);
 
-  final double value;
+  final Widget child;
   @override
   Widget build(BuildContext context) {
-    return BackdropFilter(
-      filter: ImageFilter.blur(
-        sigmaX: value,
-        sigmaY: value,
+    return ImageFiltered(
+      imageFilter: ImageFilter.blur(
+        sigmaX: 2,
+        sigmaY: 2,
       ),
-      child: Container(
-        color: Colors.transparent,
-      ),
+      child: child,
     );
   }
 }

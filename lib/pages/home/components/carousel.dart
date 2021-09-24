@@ -363,7 +363,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
             child: Image.asset(
               "assets/rashid2.png",
               //   opacity: _imageAnimationController,
-            ),
+            ).p(24),
           ),
           24.heightBox,
           text,

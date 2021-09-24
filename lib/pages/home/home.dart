@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rashidwassan/pages/home/components/blur_container.dart';
 import 'package:rashidwassan/pages/home/components/carousel.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:rashidwassan/pages/home/components/dialogs.dart';
@@ -33,9 +34,9 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: _buildEndDrawer(context),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Container(
+      body: Stack(
+        children: [
+          Container(
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
@@ -45,17 +46,29 @@ class _HomeState extends State<Home> {
                       ColorFilter.mode(Colors.black54, BlendMode.darken),
                   fit: BoxFit.cover),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Header(),
-                (widget.child == null) ? _buildHomeWidgets() : widget.child,
-                Footer(),
-                24.heightBox
-              ],
+            child: SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    60.heightBox,
+                    (widget.child == null) ? _buildHomeWidgets() : widget.child,
+                    Footer(),
+                    24.heightBox
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
+          // BlurContainer(
+          //     child: Container(
+          //   color: Colors.transparent,
+          //   height: 60,
+          //   width: double.infinity,
+          //   child: Row(),
+          // )),
+          Container(color: Colors.black54, child: Header())
+        ],
       ),
     );
   }
