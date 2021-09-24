@@ -192,33 +192,31 @@ class MobileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            HeaderLogo(),
-            // Restart server to make icons work
-            // Lets make a scaffold key and create a drawer
-            SizedBox(
-              height: 60,
-              width: 60,
-              child: MaterialButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(500)),
-                  padding: EdgeInsets.all(0),
-                  onPressed: () {
-                    // Lets open drawer using global key
-                    Scaffold.of(context).openEndDrawer();
-                  },
-                  child: Lottie.asset(
-                    'assets/anims/menu.json',
-                    height: 45,
-                  )),
-            )
-          ],
-        ),
+    return Padding(
+      padding: EdgeInsets.only(top: 24, left: 24, right: 24),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          HeaderLogo(),
+          // Restart server to make icons work
+          // Lets make a scaffold key and create a drawer
+          SizedBox(
+            height: 60,
+            width: 60,
+            child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(500)),
+                padding: EdgeInsets.all(0),
+                onPressed: () {
+                  // Lets open drawer using global key
+                  Scaffold.of(context).openEndDrawer();
+                },
+                child: Lottie.asset(
+                  'assets/anims/menu.json',
+                  height: 45,
+                )),
+          )
+        ],
       ),
     );
   }
