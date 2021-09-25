@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -36,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
   Animation _animation;
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     super.initState();
     _animateLogo();
     _navigate();
@@ -50,65 +49,74 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: kBackgroundColor,
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.purple.withOpacity(0.5),
-                          spreadRadius: 4,
-                          blurRadius: 32)
-                    ]),
-                child: Hero(
-                  tag: 'mainAvatarImg',
-                  child: Image.asset(
-                    'assets/rashid.png',
-                    width: _animation.value * (context.percentWidth * 25),
-                  ).p(_animation.value * 16),
-                ),
-              ).p(24),
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/mainback.png',
             ),
-            SizedBox(
-              height: 90 - (_animation.value * 90),
-            ),
-            Opacity(
-              opacity: _animation.value,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Text(
-                      'Made with',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.purple.withOpacity(0.5),
+                            spreadRadius: 4,
+                            blurRadius: 32)
+                      ]),
+                  child: Hero(
+                    tag: 'mainAvatarImg',
+                    child: Image.asset(
+                      'assets/rashid.png',
+                      width: _animation.value * (context.percentWidth * 25),
+                    ).p(_animation.value * 16),
                   ),
-                  Flexible(
-                    child: LottieBuilder.asset(
-                      'assets/flutter_anim.json',
-                      height: 15,
-                    ).px(8),
-                  ),
-                  Text(
-                    'with ',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                    size: 15,
-                  )
-                ],
+                ).p(24),
               ),
-            )
-          ],
+              SizedBox(
+                height: 90 - (_animation.value * 90),
+              ),
+              Opacity(
+                opacity: _animation.value,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        'Made with',
+                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      ),
+                    ),
+                    Flexible(
+                      child: LottieBuilder.asset(
+                        'assets/flutter_anim.json',
+                        height: 15,
+                      ).px(8),
+                    ),
+                    Text(
+                      'with ',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                    Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                      size: 15,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
