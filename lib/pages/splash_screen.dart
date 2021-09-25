@@ -67,10 +67,13 @@ class _SplashScreenState extends State<SplashScreen>
                           spreadRadius: 4,
                           blurRadius: 32)
                     ]),
-                child: Image.asset(
-                  'assets/rashid.png',
-                  width: _animation.value * (context.percentWidth * 25),
-                ).p(_animation.value * 16),
+                child: Hero(
+                  tag: 'mainAvatarImg',
+                  child: Image.asset(
+                    'assets/rashid.png',
+                    width: _animation.value * (context.percentWidth * 25),
+                  ).p(_animation.value * 16),
+                ),
               ).p(24),
             ),
             SizedBox(

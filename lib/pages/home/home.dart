@@ -42,8 +42,8 @@ class _HomeState extends State<Home> {
                   image: AssetImage(
                     'assets/mainback.png',
                   ),
-                  colorFilter:
-                      ColorFilter.mode(Colors.black54, BlendMode.darken),
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.8), BlendMode.darken),
                   fit: BoxFit.cover),
             ),
             child: SingleChildScrollView(
@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
           Container(
               margin: EdgeInsets.only(left: 16, right: 16),
               decoration: BoxDecoration(
-                  color: Colors.black54,
+                  color: Colors.white24,
                   borderRadius: BorderRadius.circular(16)),
               child: Header())
         ],

@@ -15,42 +15,20 @@ class Carousel extends StatefulWidget {
 
 class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   //Initializing
-
-  AnimationController _flutterFLoatController;
   AnimationController _imageAnimationController;
-  Animation _flutterIconAnimation;
   Animation _mainImageAnimation;
-  List<String> _tech;
-  int _currentTech = 2;
 
   @override
   void initState() {
     super.initState();
-    _flutterFLoatController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
 
     _imageAnimationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: 2),
     );
 
-    _flutterIconAnimation = CurvedAnimation(
-        parent: _flutterFLoatController,
-        curve: Curves.elasticIn,
-        reverseCurve: Curves.bounceOut);
-
     _mainImageAnimation = CurvedAnimation(
         parent: _imageAnimationController, curve: Curves.bounceInOut);
-
-    _tech = [
-      'assets/f3.png',
-      'assets/m1.png',
-      'assets/python.png',
-      'assets/macos.png'
-    ];
-
     Future.delayed(Duration(seconds: 2), () {
       _imageAnimationController.forward();
       _imageAnimationController.addListener(() {
@@ -69,28 +47,7 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
   @override
   void dispose() {
     _imageAnimationController.dispose();
-    _flutterFLoatController.dispose();
     super.dispose();
-  }
-
-  Future changeTechIcon() async {
-    int _currentCount = 0;
-    while (true) {
-      await new Future.delayed(const Duration(seconds: 1), () {
-        if (_flutterFLoatController.status == AnimationStatus.completed) {
-          _currentCount += 1;
-          if (_currentCount == 4) {
-            _flutterFLoatController.reverse();
-            _currentCount = 0;
-          }
-        } else {
-          if (_currentCount == 0) {
-            _currentTech = (_currentTech + 1) % _tech.length;
-            _flutterFLoatController.forward();
-          }
-        }
-      });
-    }
   }
 
   final CarouselController carouselController = CarouselController();
@@ -292,40 +249,13 @@ class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
 
   Expanded _buildMainImage() {
     return Expanded(
-      child: Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          Image.asset(
-            "assets/rashid.png",
-            // opacity: _imageAnimationController,
-            fit: BoxFit.cover,
-          ),
-          SizedBox(
-            width: 90,
-            child: Opacity(
-              // opacity: (_flutterFLoatController.value + 0.00001) % 1,
-              opacity: _mainImageAnimation.value,
-              child: Container(
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      color: Colors.black38,
-                      offset: Offset(-3, 3),
-                      blurRadius: 4,
-                      spreadRadius: 0.1)
-                ], color: Color(0xFFff03f7), shape: BoxShape.circle),
-                child: Center(
-                  child: Image.asset(
-                    _tech[_currentTech],
-                    width: 90,
-                    height: 90,
-                    //   height: _flutterIconAnimation.value * 90,
-                    //   width: _flutterIconAnimation.value * 90,
-                  ).p(16),
-                ),
-              ),
-            ),
-          )
-        ],
+      child: Hero(
+        tag: 'mainAvatarImg',
+        child: Image.asset(
+          "assets/rashid.png",
+          // opacity: _imageAnimationController,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
