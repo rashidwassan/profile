@@ -23,6 +23,7 @@ dependencies:
   smooth_page_indicator: ^0.2.0
   url_launcher: ^6.0.9
   velocity_x: ^3.3.0
+  any_link_preview: ^1.0.8
 
 dev_dependencies:
   flutter_test:

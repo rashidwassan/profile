@@ -1,6 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:rashidwassan/models/testimonial.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -13,6 +17,7 @@ class TestimonialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.transparent,
       child: ScreenHelper(
         desktop: _buildUi(kDesktopMaxWidth),
         tablet: _buildUi(kTabletMaxWidth),
@@ -24,6 +29,7 @@ class TestimonialsPage extends StatelessWidget {
 
 Widget _buildUi(double width) {
   return Material(
+    color: Colors.transparent,
     child: Center(
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
@@ -52,14 +58,34 @@ Widget _buildUi(double width) {
                     height: 5.0,
                   ),
                   Container(
-                    constraints: BoxConstraints(maxWidth: 400.0),
                     child: RichText(
                       text: TextSpan(
                         children: [
                           TextSpan(
                             text:
-                                "This is section contains some testimonials from worthy people I have worked with. If you want to write one, consider visting my LinkedIn profile.",
-                            style: TextStyle(color: Colors.white, height: 1.8),
+                                "This is section contains some testimonials from worthy people I have worked with. If you want to write one, consider visting my ",
+                            style: TextStyle(
+                              color: Colors.white,
+                              height: 1.8,
+                              fontSize: 17,
+                            ),
+                          ),
+                          TextSpan(
+                              text: "LinkedIn profile",
+                              style: TextStyle(
+                                  color: kPrimaryColor,
+                                  height: 1.8,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () {
+                                  launchURL(
+                                      'https://linkedin.com/in/rashidwassan');
+                                }),
+                          TextSpan(
+                            text: ".",
+                            style: TextStyle(
+                                color: Colors.white, height: 1.8, fontSize: 17),
                           ),
                         ],
                       ),
@@ -80,18 +106,19 @@ Widget _buildUi(double width) {
                           child: Container(
                             padding: EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
+                                color: Colors.black.withOpacity(0.7),
+                                borderRadius: BorderRadius.circular(16),
                                 border: Border.all(
                                     width: 0.3, color: Colors.white)),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  child: Image.asset(
-                                    "assets/quote.png",
-                                    width: 40.0,
-                                  ),
-                                ),
+                                    child: Icon(
+                                  FontAwesomeIcons.quoteLeft,
+                                  color: kPrimaryColor,
+                                  size: 40,
+                                )),
                                 SizedBox(
                                   height: 12.0,
                                 ),

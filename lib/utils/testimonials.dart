@@ -3,6 +3,30 @@ import 'package:rashidwassan/models/testimonial.dart';
 final List<Testimonial> allTestimonials = [
   Testimonial(
     text:
+        "He is a Tech Enthusiast and a Good Team Player. Very humble and down to earth. He have acquired many skills in no time. Recommended Person for Any Tech Related Position 😊",
+    occupation: "React JS",
+    personName: "MUBASHIR IBRAHIM",
+    profilePhoto:
+        "https://media-exp1.licdn.com/dms/image/C5635AQGcu9VxcFfsvA/profile-framedphoto-shrink_400_400/0/1619196913838?e=1629133200&v=beta&t=IB6P5LDJfA9hrQDZL74tAWogw4P-oHni7tJaP3P38NI",
+  ),
+  Testimonial(
+    text:
+        "Being a team member of Rashid, I have worked with him on several professional projects. I have found him very cooperative and quick learner along with very good personality and polite nature. He is a dedicated programmer.",
+    occupation: "Flutter Developer",
+    personName: "WAQAR ALI SIAL",
+    profilePhoto:
+        "https://media-exp1.licdn.com/dms/image/C5635AQGcu9VxcFfsvA/profile-framedphoto-shrink_400_400/0/1619196913838?e=1629133200&v=beta&t=IB6P5LDJfA9hrQDZL74tAWogw4P-oHni7tJaP3P38NI",
+  ),
+  Testimonial(
+    text:
+        "Rashid is a passionate developer and leader. He is the better choice in different alternatives of developers. He knows how to work with teams and is good at leading them. I would recommend him for your next project.",
+    occupation: "MERN Stack Developer",
+    personName: "AZIZ KHOSO",
+    profilePhoto:
+        "https://media-exp1.licdn.com/dms/image/C5635AQGcu9VxcFfsvA/profile-framedphoto-shrink_400_400/0/1619196913838?e=1629133200&v=beta&t=IB6P5LDJfA9hrQDZL74tAWogw4P-oHni7tJaP3P38NI",
+  ),
+  Testimonial(
+    text:
         "Rashid is a highly motivated and talented individual with variety of knowledge and expertise. He has been a mentor and a code partner to me for more than a year and has never failed to astonish me with his skills and logics! Highly recommended!",
     occupation: "SWE Student",
     personName: "MILTON CHELANI",

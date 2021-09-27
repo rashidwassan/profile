@@ -55,6 +55,14 @@ class SocialIconButtonsRow extends StatelessWidget {
             },
           ),
           SocialButtonWithShadow(
+            icon: FontAwesomeIcons.stackOverflow,
+            color: const Color(0xFFf48024),
+            onPressed: () {
+              launchURL(
+                  'https://stackoverflow.com/users/15750590/rashid-wassan');
+            },
+          ),
+          SocialButtonWithShadow(
             icon: FontAwesomeIcons.linkedinIn,
             color: const Color(0xFF2867B2),
             onPressed: () {
