@@ -139,7 +139,7 @@ class _IosAppAdState extends State<IosAppAd> {
                                         end: Alignment.bottomCenter,
                                         colors: [
                                           Colors.transparent,
-                                          Colors.black.withOpacity(0.6),
+                                          Colors.black.withOpacity(0.5),
                                           Colors.black87
                                         ]),
                                   ),

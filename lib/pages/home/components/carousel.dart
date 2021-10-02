@@ -6,47 +6,46 @@ import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'dart:async';
 
 class Carousel extends StatefulWidget {
   @override
   State<Carousel> createState() => _CarouselState();
 }
 
-class _CarouselState extends State<Carousel> with TickerProviderStateMixin {
+class _CarouselState extends State<Carousel> {
   //Initializing
-  AnimationController _imageAnimationController;
-  Animation _mainImageAnimation;
+  // AnimationController _imageAnimationController;
+  // Animation _mainImageAnimation;
 
   @override
   void initState() {
     super.initState();
 
-    _imageAnimationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 2),
-    );
+    // _imageAnimationController = AnimationController(
+    //   vsync: this,
+    //   duration: Duration(seconds: 2),
+    // );
 
-    _mainImageAnimation = CurvedAnimation(
-        parent: _imageAnimationController, curve: Curves.bounceInOut);
-    Future.delayed(Duration(seconds: 2), () {
-      _imageAnimationController.forward();
-      _imageAnimationController.addListener(() {
-        setState(() {});
-      });
+    // _mainImageAnimation = CurvedAnimation(
+    //     parent: _imageAnimationController, curve: Curves.bounceInOut);
+    // Future.delayed(Duration(seconds: 2), () {
+    //   _imageAnimationController.forward();
+    //   _imageAnimationController.addListener(() {
+    //     setState(() {});
+    //   });
 
-      // _flutterFLoatController.forward();
-      // _flutterFLoatController.addListener(() {
-      //   setState(() {});
-      // });
-    });
+    // _flutterFLoatController.forward();
+    // _flutterFLoatController.addListener(() {
+    //   setState(() {});
+    // });
+    // });
 
     // changeTechIcon();
   }
 
   @override
   void dispose() {
-    _imageAnimationController.dispose();
+    // _imageAnimationController.dispose();
     super.dispose();
   }
 
