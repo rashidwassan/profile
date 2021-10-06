@@ -77,7 +77,7 @@ class _SplashScreenState extends State<SplashScreen>
                   child: Hero(
                     tag: 'mainAvatarImg',
                     child: Image.asset(
-                      'assets/rashiD2.png',
+                      'assets/rashid.png',
                       width: _animation.value * (context.percentWidth * 25),
                     ).p(_animation.value * 3),
                   ),
