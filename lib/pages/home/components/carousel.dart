@@ -210,7 +210,9 @@ class _CarouselState extends State<Carousel> {
                   shadowColor:
                       MaterialStateProperty.all(kPrimaryColor.withOpacity(0.6)),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  launchURL('https://www.linkedin.com/in/rashidwassan');
+                },
                 child: Text(
                   "GET STARTED",
                   style: TextStyle(
