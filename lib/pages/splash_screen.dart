@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
                     ]),
                 child: Image.asset(
                   'assets/rashid.png',
-                  width: _animation.value * (context.percentWidth * 25),
+                  width: _animation.value * (context.percentWidth * 33),
                 ),
               ).p(_animation.value * 24),
             ),

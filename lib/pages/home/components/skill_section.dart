@@ -63,6 +63,10 @@ class SkillSection extends StatelessWidget {
                     ),
                   ),
                 ),
+                if (ScreenHelper.isMobile(context))
+                  SizedBox(
+                    height: 32,
+                  ),
                 SizedBox(
                   width: 50.0,
                 ),
