@@ -56,9 +56,9 @@ class SkillSection extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: Image.asset(
-                    "assets/person_small.png",
+                    "assets/rashid2.png",
                     width: 300.0,
-                  ).pOnly(bottom: 32),
+                  ).pOnly(bottom: ScreenHelper.isMobile(context) ? 32 : 0),
                 ),
                 SizedBox(
                   width: 50.0,
@@ -105,7 +105,7 @@ class SkillSection extends StatelessWidget {
                                         child: Container(
                                           padding: EdgeInsets.only(left: 10.0),
                                           alignment: Alignment.centerLeft,
-                                          height: 33.0,
+                                          height: 30.0,
                                           child: Text(
                                             skill.skill,
                                             style: TextStyle(

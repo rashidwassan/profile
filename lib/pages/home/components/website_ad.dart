@@ -51,7 +51,7 @@ class WebsiteAd extends StatelessWidget {
                           height: 15.0,
                         ),
                         Text(
-                          "EVOLVING NAGA\nRESORT WEBSITE",
+                          "DANTASK\nTASKER WEBSITE",
                           style: GoogleFonts.oswald(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -63,7 +63,7 @@ class WebsiteAd extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "This is a random text about the project, I should have used the regular lorem ipsum text, but I am too lazy to search for that. This should be long enough",
+                          "Dantask website was the extended part of the Dantask project. The website is used for hiring a worker for a particular task.",
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,
@@ -125,7 +125,7 @@ class WebsiteAd extends StatelessWidget {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 28.0),
                                     child: Text(
-                                      "NEXT APP",
+                                      "NEXT WEB",
                                       maxLines: 1,
                                       style: TextStyle(
                                         color: kPrimaryColor,

@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
         SizedBox(
           height: 24,
         ),
-        SocialIconButtonsRow(),
+        SocialIconButtonsRow().px(24),
         SizedBox(
           height: 50,
         ),
