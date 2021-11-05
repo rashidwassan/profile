@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
     _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
+        vsync: this, duration: Duration(milliseconds: 2000));
     _animation =
         CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
     _controller.forward();
@@ -50,73 +50,63 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/mainback.png',
-            ),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.purple.withOpacity(0.5),
-                            spreadRadius: 4,
-                            blurRadius: 32)
-                      ]),
-                  child: Hero(
-                    tag: 'mainAvatarImg',
-                    child: Image.asset(
-                      'assets/rashid.png',
-                      width: _animation.value * (context.percentWidth * 25),
-                    ).p(_animation.value * 3),
-                  ),
-                ).p(24),
-              ),
-              SizedBox(
-                height: 90 - (_animation.value * 90),
-              ),
-              Opacity(
-                opacity: _animation.value,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        'Made with',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      ),
-                    ),
-                    Flexible(
-                      child: LottieBuilder.asset(
-                        'assets/flutter_anim.json',
-                        height: 15,
-                      ).px(8),
-                    ),
-                    Text(
-                      'with ',
-                      style: TextStyle(color: Colors.white, fontSize: 14),
-                    ),
-                    Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                      size: 15,
-                    )
-                  ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.purple.withOpacity(0.5),
+                          spreadRadius: 4,
+                          blurRadius: 32)
+                    ]),
+                child: Hero(
+                  tag: 'mainAvatarImg',
+                  child: Image.asset(
+                    'assets/rashid.png',
+                    width: _animation.value * (context.percentWidth * 25),
+                  ).p(_animation.value * 3),
                 ),
-              )
-            ],
-          ),
+              ).p(24),
+            ),
+            SizedBox(
+              height: 90 - (_animation.value * 90),
+            ),
+            Opacity(
+              opacity: _animation.value,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: Text(
+                      'Made with',
+                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    ),
+                  ),
+                  Flexible(
+                    child: LottieBuilder.asset(
+                      'assets/flutter_anim.json',
+                      height: 15,
+                    ).px(8),
+                  ),
+                  Text(
+                    'with ',
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 15,
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
