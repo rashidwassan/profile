@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   _animateLogo() {
     _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 2000));
+        vsync: this, duration: Duration(milliseconds: 1000));
     _animation =
         CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
     _controller.forward();
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   _navigate() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 30000), () {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => Home()));
     });
@@ -57,54 +57,45 @@ class _SplashScreenState extends State<SplashScreen>
             Flexible(
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    // color: Colors.white,
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
                           color: Colors.purple.withOpacity(0.5),
-                          spreadRadius: 4,
-                          blurRadius: 32)
+                          spreadRadius: 2,
+                          blurRadius: 48)
                     ]),
-                child: Hero(
-                  tag: 'mainAvatarImg',
-                  child: Image.asset(
-                    'assets/rashid.png',
-                    width: _animation.value * (context.percentWidth * 25),
-                  ).p(_animation.value * 3),
+                child: Image.asset(
+                  'assets/rashid.png',
+                  width: _animation.value * (context.percentWidth * 25),
                 ),
-              ).p(24),
+              ).p(_animation.value * 24),
             ),
-            SizedBox(
-              height: 90 - (_animation.value * 90),
-            ),
-            Opacity(
-              opacity: _animation.value,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Text(
-                      'Made with',
-                      style: TextStyle(color: Colors.white, fontSize: 15),
-                    ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: Text(
+                    'Made with',
+                    style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
-                  Flexible(
-                    child: LottieBuilder.asset(
-                      'assets/flutter_anim.json',
-                      height: 15,
-                    ).px(8),
-                  ),
-                  Text(
-                    'with ',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-                  Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                    size: 15,
-                  )
-                ],
-              ),
+                ),
+                Flexible(
+                  child: LottieBuilder.asset(
+                    'assets/flutter_anim.json',
+                    height: 15,
+                  ).px(8),
+                ),
+                Text(
+                  'with ',
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+                Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 17,
+                )
+              ],
             )
           ],
         ),
