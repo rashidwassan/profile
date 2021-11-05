@@ -63,7 +63,7 @@ class WebsiteAd extends StatelessWidget {
                           height: 10.0,
                         ),
                         Text(
-                          "Dantask website was the extended part of the Dantask project. The website is used for hiring a worker for a particular task.",
+                          "Dantask website was the extended part of the Dantask project. The website is used for hiring a worker for a particular task. The project was made using Flutter web and the website was totally responsive.",
                           style: TextStyle(
                             color: kCaptionColor,
                             height: 1.5,

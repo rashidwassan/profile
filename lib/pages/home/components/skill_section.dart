@@ -55,10 +55,13 @@ class SkillSection extends StatelessWidget {
               children: [
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
-                  child: Image.asset(
-                    "assets/rashid2.png",
-                    width: 300.0,
-                  ).pOnly(bottom: ScreenHelper.isMobile(context) ? 32 : 0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(320),
+                    child: Image.asset(
+                      "assets/skills.jpeg",
+                      width: 300.0,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   width: 50.0,
