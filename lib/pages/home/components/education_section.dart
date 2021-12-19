@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -24,24 +23,27 @@ final List<Education> educationList = [
 ];
 
 class EducationSection extends StatelessWidget {
-  final _cVUrl = 'https://www.muet.edu.pk/';
-
-  void _launchMUETURL() async => await canLaunch(_cVUrl)
-      ? await launch(_cVUrl)
-      : throw 'Could not launch url';
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ScreenHelper(
-        desktop: _buildUi(kDesktopMaxWidth),
-        tablet: _buildUi(kTabletMaxWidth),
-        mobile: _buildUi(getMobileMaxWidth(context)),
+        desktop: EducationUI(width: kDesktopMaxWidth),
+        tablet: EducationUI(width: kTabletMaxWidth),
+        mobile: EducationUI(width: getMobileMaxWidth(context)),
       ),
     );
   }
+}
 
-  Widget _buildUi(double width) {
+class EducationUI extends StatelessWidget {
+  const EducationUI({Key key, @required this.width}) : super(key: key);
+  final double width;
+  final _cVUrl = 'https://www.muet.edu.pk/';
+  void _launchMUETURL() async => await canLaunch(_cVUrl)
+      ? await launch(_cVUrl)
+      : throw 'Could not launch url';
+  @override
+  Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       child: ResponsiveWrapper(
