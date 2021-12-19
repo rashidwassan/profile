@@ -46,15 +46,19 @@ class CvSection extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: ScreenHelper(
-        desktop: _buildUi(context, kDesktopMaxWidth),
-        tablet: _buildUi(context, kTabletMaxWidth),
-        mobile: _buildUi(context, getMobileMaxWidth(context)),
+        desktop: CVSectionUI(width: kDesktopMaxWidth),
+        tablet: CVSectionUI(width: kTabletMaxWidth),
+        mobile: CVSectionUI(width: getMobileMaxWidth(context)),
       ),
     );
   }
+}
 
-  Widget _buildUi(BuildContext context, double width) {
-    // we need the context to get maxWidth before the constraints below
+class CVSectionUI extends StatelessWidget {
+  const CVSectionUI({Key key, @required this.width}) : super(key: key);
+  final double width;
+  @override
+  Widget build(BuildContext context) {
     return ResponsiveWrapper(
       maxWidth: width,
       minWidth: width,

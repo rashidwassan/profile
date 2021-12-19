@@ -162,17 +162,21 @@ class Header extends StatelessWidget {
       child: ScreenHelper(
         desktop: Padding(
           padding: EdgeInsets.symmetric(vertical: 8.0),
-          child: buildHeader(),
+          child: BuildHeader(),
         ),
         // We will make this in a bit
         mobile: MobileHeader(),
-        tablet: buildHeader(),
+        tablet: BuildHeader(),
       ),
     );
   }
+}
 
-  // Lets plan for mobile and smaller width screens
-  Widget buildHeader() {
+class BuildHeader extends StatelessWidget {
+  const BuildHeader({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
