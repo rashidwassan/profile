@@ -1,9 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rashidwassan/utils/constants.dart';
-import 'package:velocity_x/velocity_x.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 
 class SocialIconButtonsRow extends StatelessWidget {

@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rashidwassan/pages/home/components/carousel.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';

@@ -81,17 +81,17 @@ class _CarouselState extends State<Carousel> {
                       ),
                       child: ScreenHelper(
                         // Responsive views
-                        desktop: _buildDesktop(
+                        desktop: BuildDeskTop(
                           context,
                           carouselItems[index].text,
                           carouselItems[index].image,
                         ),
-                        tablet: _buildTablet(
+                        tablet: BuildTablet(
                           context,
                           carouselItems[index].text,
                           carouselItems[index].image,
                         ),
-                        mobile: _buildMobile(
+                        mobile: BuildMobile(
                           context,
                           carouselItems[index].text,
                           carouselItems[index].image,
@@ -228,9 +228,16 @@ class _CarouselState extends State<Carousel> {
       ),
     ),
   );
+}
 
-  // Big screens
-  Widget _buildDesktop(BuildContext context, Widget text, Widget image) {
+class BuildDeskTop extends StatelessWidget {
+  const BuildDeskTop(this.context, this.text, this.image);
+  final Widget text;
+  final BuildContext context;
+  final Widget image;
+
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: ResponsiveWrapper(
         maxWidth: kDesktopMaxWidth,
@@ -241,28 +248,22 @@ class _CarouselState extends State<Carousel> {
             Expanded(
               child: text,
             ),
-            _buildMainImage()
+            MainImage()
           ],
         ),
       ),
     );
   }
+}
 
-  Expanded _buildMainImage() {
-    return Expanded(
-      child: Hero(
-        tag: 'mainAvatarImg',
-        child: Image.asset(
-          "assets/rashid.png",
-          // opacity: _imageAnimationController,
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
+class BuildTablet extends StatelessWidget {
+  const BuildTablet(this.context, this.text, this.image);
+  final Widget text;
+  final BuildContext context;
+  final Widget image;
 
-// Mid screens
-  Widget _buildTablet(BuildContext context, Widget text, Widget image) {
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: ResponsiveWrapper(
         maxWidth: kTabletMaxWidth,
@@ -273,16 +274,22 @@ class _CarouselState extends State<Carousel> {
             Expanded(
               child: text,
             ),
-            _buildMainImage(),
+            MainImage()
           ],
         ),
       ),
     );
   }
+}
 
-// SMall Screens
+class BuildMobile extends StatelessWidget {
+  const BuildMobile(this.context, this.text, this.image);
+  final Widget text;
+  final BuildContext context;
+  final Widget image;
 
-  Widget _buildMobile(BuildContext context, Widget text, Widget image) {
+  @override
+  Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
         maxWidth: getMobileMaxWidth(context),
@@ -300,6 +307,24 @@ class _CarouselState extends State<Carousel> {
           text,
           24.heightBox,
         ],
+      ),
+    );
+  }
+}
+
+class MainImage extends StatelessWidget {
+  const MainImage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Hero(
+        tag: 'mainAvatarImg',
+        child: Image.asset(
+          "assets/rashid.png",
+          // opacity: _imageAnimationController,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
