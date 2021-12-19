@@ -4,7 +4,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/skill.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 List<Skill> skills = [
   Skill(
@@ -34,14 +33,20 @@ class SkillSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ScreenHelper(
-        desktop: _buildUi(kDesktopMaxWidth),
-        tablet: _buildUi(kTabletMaxWidth),
-        mobile: _buildUi(getMobileMaxWidth(context)),
+        desktop: BuildSkillsUI(width: kDesktopMaxWidth),
+        tablet: BuildSkillsUI(width: kTabletMaxWidth),
+        mobile: BuildSkillsUI(width: getMobileMaxWidth(context)),
       ),
     );
   }
+}
 
-  Widget _buildUi(double width) {
+class BuildSkillsUI extends StatelessWidget {
+  const BuildSkillsUI({Key key, @required this.width}) : super(key: key);
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
