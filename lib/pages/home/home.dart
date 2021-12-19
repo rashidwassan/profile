@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     60.heightBox,
-                    (widget.child == null) ? _buildHomeWidgets() : widget.child,
+                    (widget.child == null) ? HomeWidget() : widget.child,
                     Footer(),
                     24.heightBox
                   ],
@@ -52,13 +52,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          // BlurContainer(
-          //     child: Container(
-          //   color: Colors.transparent,
-          //   height: 60,
-          //   width: double.infinity,
-          //   child: Row(),
-          // )),
           Container(
               decoration: BoxDecoration(
                   color: Colors.white24,
@@ -70,8 +63,13 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+}
 
-  Column _buildHomeWidgets() {
+class HomeWidget extends StatelessWidget {
+  const HomeWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Carousel(),

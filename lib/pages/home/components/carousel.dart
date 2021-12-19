@@ -13,34 +13,9 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
-  //Initializing
-  // AnimationController _imageAnimationController;
-  // Animation _mainImageAnimation;
-
   @override
   void initState() {
     super.initState();
-
-    // _imageAnimationController = AnimationController(
-    //   vsync: this,
-    //   duration: Duration(seconds: 2),
-    // );
-
-    // _mainImageAnimation = CurvedAnimation(
-    //     parent: _imageAnimationController, curve: Curves.bounceInOut);
-    // Future.delayed(Duration(seconds: 2), () {
-    //   _imageAnimationController.forward();
-    //   _imageAnimationController.addListener(() {
-    //     setState(() {});
-    //   });
-
-    // _flutterFLoatController.forward();
-    // _flutterFLoatController.addListener(() {
-    //   setState(() {});
-    // });
-    // });
-
-    // changeTechIcon();
   }
 
   @override
