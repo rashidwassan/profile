@@ -187,28 +187,6 @@ class _IosAppAdState extends State<IosAppAd> {
                                   ],
                                 ).p(16),
                               ),
-
-                              // Container(
-                              //   color: Colors.black54,
-                              //   child: AspectRatio(
-                              //     aspectRatio: 9 / 19.6,
-                              //     child: Center(
-                              //       child: Text(
-                              //         'Please swipe or click any arrow button to navigate betweeen images',
-                              //         style: TextStyle(
-                              //           color: Colors.white,
-                              //           fontSize: 20,
-                              //         ),
-                              //       ).p(16),
-                              //     ),
-                              //   ),
-                              // )
-
-                              // Image.asset(
-                              //   "assets/ios.png",
-                              //   // Set width for image on smaller screen
-                              //   width: constraints.maxWidth > 720.0 ? null : 350.0,
-                              // ),
                             ],
                           ),
                         ),
