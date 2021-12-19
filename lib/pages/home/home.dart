@@ -26,7 +26,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: buildEndDrawer(context),
+      endDrawer: EndDrawer(),
       body: Stack(
         children: [
           Container(
