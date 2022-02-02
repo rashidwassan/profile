@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/skill.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -83,7 +82,7 @@ class BuildSkillsUI extends StatelessWidget {
                     children: [
                       Text(
                         "SKILLS",
-                        style: GoogleFonts.oswald(
+                        style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
                           fontSize: 28.0,

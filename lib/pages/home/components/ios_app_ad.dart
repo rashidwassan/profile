@@ -1,8 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/utils/apps.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -202,7 +200,7 @@ class _IosAppAdState extends State<IosAppAd> {
                       children: [
                         Text(
                           "MOBILE APP",
-                          style: GoogleFonts.oswald(
+                          style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w900,
                             fontSize: 16.0,
@@ -213,7 +211,7 @@ class _IosAppAdState extends State<IosAppAd> {
                         ),
                         Text(
                           apps[_currentApp].name,
-                          style: GoogleFonts.oswald(
+                          style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
                             height: 1.3,

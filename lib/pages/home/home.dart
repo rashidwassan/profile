@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rashidwassan/pages/home/components/carousel.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:rashidwassan/pages/home/components/education_section.dart';
@@ -81,7 +80,7 @@ class HomeWidget extends StatelessWidget {
         Center(
           child: Text(
             'CATCH ME ON',
-            style: GoogleFonts.oswald(
+            style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.w700,
               color: Colors.white,

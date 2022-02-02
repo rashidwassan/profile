@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:rashidwassan/models/education.dart';
@@ -55,7 +54,7 @@ class EducationUI extends StatelessWidget {
           children: [
             Text(
               "ALMA MATER",
-              style: GoogleFonts.oswald(
+              style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w900,
                 fontSize: 30.0,
@@ -111,7 +110,7 @@ class EducationUI extends StatelessWidget {
                               children: [
                                 Text(
                                   education.period,
-                                  style: GoogleFonts.oswald(
+                                  style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 20.0,

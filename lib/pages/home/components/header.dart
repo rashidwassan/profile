@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/header_item.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
@@ -27,7 +26,7 @@ class HeaderLogo extends StatelessWidget {
               children: [
                 TextSpan(
                   text: "RW",
-                  style: GoogleFonts.oswald(
+                  style: TextStyle(
                     color: Colors.white,
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold,
@@ -35,7 +34,7 @@ class HeaderLogo extends StatelessWidget {
                 ),
                 TextSpan(
                   text: ".",
-                  style: GoogleFonts.oswald(
+                  style: TextStyle(
                     color: kPrimaryColor,
                     fontSize: 36.0,
                     fontWeight: FontWeight.bold,

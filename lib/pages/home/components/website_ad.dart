@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
@@ -41,7 +39,7 @@ class WebsiteAd extends StatelessWidget {
                       children: [
                         Text(
                           "WEBSITE",
-                          style: GoogleFonts.oswald(
+                          style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.w900,
                             fontSize: 16.0,
@@ -52,7 +50,7 @@ class WebsiteAd extends StatelessWidget {
                         ),
                         Text(
                           "DANTASK\nTASKER WEBSITE",
-                          style: GoogleFonts.oswald(
+                          style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
                             height: 1.3,

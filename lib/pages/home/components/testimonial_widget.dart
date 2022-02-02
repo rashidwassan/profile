@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rashidwassan/pages/home/components/social_button_row.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/pages/testimonials_page.dart';
@@ -42,7 +41,7 @@ class BuildTestimonialUI extends StatelessWidget {
               children: [
                 Text(
                   "TESTIMONIALS",
-                  style: GoogleFonts.oswald(
+                  style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
                     fontSize: 30.0,
@@ -122,18 +121,19 @@ class BuildTestimonialUI extends StatelessWidget {
                             ),
                             Row(
                               children: [
-                                SocialButtonWithShadow(
-                                    icon: FontAwesome.user,
-                                    color: kPrimaryColor),
+                                Image.asset(
+                                  testimonial.profilePhoto,
+                                  height: 65,
+                                ),
                                 SizedBox(
-                                  width: 24.0,
+                                  width: 16.0,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       testimonial.personName,
-                                      style: GoogleFonts.oswald(
+                                      style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w700,
                                         fontSize: 16.0,

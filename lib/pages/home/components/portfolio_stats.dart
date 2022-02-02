@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/stat.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -48,7 +47,7 @@ class PortfolioStats extends StatelessWidget {
                     children: [
                       Text(
                         stat.count,
-                        style: GoogleFonts.oswald(
+                        style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 32.0,
                           color: Colors.white,

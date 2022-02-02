@@ -108,7 +108,6 @@ class _CarouselState extends State<Carousel> {
             Text(
               "RASHID WASSAN",
               style: TextStyle(
-                fontFamily: 'Oswald',
                 color: Colors.white,
                 fontSize: 40.0,
                 fontWeight: FontWeight.w900,

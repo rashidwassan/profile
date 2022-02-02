@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/footer_item.dart';
 import 'package:rashidwassan/pages/home/components/social_button_row.dart';
@@ -93,7 +92,7 @@ class FooterUI extends StatelessWidget {
                                       ),
                                       Text(
                                         footerItem.title,
-                                        style: GoogleFonts.oswald(
+                                        style: TextStyle(
                                           fontSize: 18.0,
                                           fontWeight: FontWeight.w700,
                                           color: Colors.white,

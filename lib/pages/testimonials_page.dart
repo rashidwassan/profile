@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:rashidwassan/models/testimonial.dart';
@@ -47,7 +46,7 @@ Widget _buildUi(double width) {
                   ),
                   Text(
                     "TESTIMONIALS",
-                    style: GoogleFonts.oswald(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w900,
                       fontSize: 30.0,
@@ -147,7 +146,7 @@ Widget _buildUi(double width) {
                                       children: [
                                         Text(
                                           testimonial.personName,
-                                          style: GoogleFonts.oswald(
+                                          style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700,
                                             fontSize: 16.0,

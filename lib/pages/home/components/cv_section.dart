@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:rashidwassan/models/design_process.dart';
@@ -71,7 +70,7 @@ class CVSectionUI extends StatelessWidget {
             children: [
               Text(
                 "BETTER DESIGN,\nBETTER EXPERIENCES",
-                style: GoogleFonts.oswald(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
                   height: 1.8,
@@ -86,7 +85,7 @@ class CVSectionUI extends StatelessWidget {
                   children: [
                     Text(
                       "DOWNLOAD CV",
-                      style: GoogleFonts.oswald(
+                      style: TextStyle(
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w900,
                         fontSize: 16.0,
@@ -145,7 +144,7 @@ class CVSectionUI extends StatelessWidget {
                               ),
                               Text(
                                 designProcesses[index].title,
-                                style: GoogleFonts.oswald(
+                                style: TextStyle(
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white,
