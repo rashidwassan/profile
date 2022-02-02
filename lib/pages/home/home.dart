@@ -10,7 +10,6 @@ import 'package:rashidwassan/pages/home/components/mobile_drawer.dart';
 import 'package:rashidwassan/pages/home/components/portfolio_stats.dart';
 import 'package:rashidwassan/pages/home/components/skill_section.dart';
 import 'package:rashidwassan/pages/home/components/social_button_row.dart';
-import 'package:rashidwassan/pages/home/components/sponsors.dart';
 import 'package:rashidwassan/pages/home/components/testimonial_widget.dart';
 import 'package:rashidwassan/pages/home/components/website_ad.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -104,7 +103,6 @@ class HomeWidget extends StatelessWidget {
         SizedBox(
           height: 50.0,
         ),
-        Sponsors(),
         SizedBox(
           height: 50.0,
         ),

@@ -12,3 +12,8 @@ const double kDesktopMaxWidth = 1000.0;
 const double kTabletMaxWidth = 760.0;
 double getMobileMaxWidth(BuildContext context) =>
     MediaQuery.of(context).size.width * .8;
+
+class Images {
+  Images._();
+  static const splashAnimation = 'assets/anim/splash_anim.json';
+}

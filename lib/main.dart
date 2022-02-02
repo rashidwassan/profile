@@ -15,10 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Rashid Wassan - Software Solutions",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Lato'),
+      theme: ThemeData(fontFamily: 'Gilroy'),
       themeMode: ThemeMode.dark,
       darkTheme: Theme.of(context).copyWith(
-        platform: TargetPlatform.android,
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         canvasColor: kBackgroundColor,

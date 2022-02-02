@@ -40,6 +40,7 @@ flutter:
     - assets/lgn/
     - assets/labouronline/
     - assets/anim/
+    - assets/fonts/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -50,19 +51,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Oswald
-      fonts:
-        - asset: fonts/Oswald-Regular.ttf
-        - asset: fonts/Oswald-Light.ttf
-          weight: 300
-        - asset: fonts/Oswald-Bold.ttf
-          weight: 900
 
-    - family: Lato
+  fonts:
+    - family: Gilroy
       fonts:
-        - asset: fonts/Lato-Regular.ttf
-        - asset: fonts/Lato-Light.ttf
-          weight: 300
-        - asset: fonts/Lato-Bold.ttf
+        - asset: assets/fonts/Gilroy-ExtraBold.otf
           weight: 900
+        - asset: assets/fonts/Gilroy-Light.otf
+          weight: 300
