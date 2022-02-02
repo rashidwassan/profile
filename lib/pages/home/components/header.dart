@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -205,8 +206,8 @@ class MobileHeader extends StatelessWidget {
           // Restart server to make icons work
           // Lets make a scaffold key and create a drawer
           SizedBox(
-            height: 65,
-            width: 65,
+            height: 50,
+            width: 50,
             child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(500)),
@@ -215,8 +216,10 @@ class MobileHeader extends StatelessWidget {
                   // Lets open drawer using global key
                   Scaffold.of(context).openEndDrawer();
                 },
-                child: Lottie.asset('assets/anim/menu.json',
-                    height: 90, width: 90)),
+                child: Icon(
+                  CupertinoIcons.rectangle_grid_2x2_fill,
+                  color: Colors.white,
+                )),
           )
         ],
       ),
