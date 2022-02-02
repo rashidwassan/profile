@@ -11,19 +11,7 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
-  _animateLogo() {
-    _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1000));
-    _animation =
-        CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
-    _controller.forward();
-    _controller.addListener(() {
-      setState(() {});
-    });
-  }
-
+class _SplashScreenState extends State<SplashScreen> {
   _navigate() {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
@@ -31,20 +19,10 @@ class _SplashScreenState extends State<SplashScreen>
     });
   }
 
-  AnimationController _controller;
-  Animation _animation;
   @override
   void initState() {
-    // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    super.initState();
-    _animateLogo();
     _navigate();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+    super.initState();
   }
 
   @override
@@ -54,49 +32,13 @@ class _SplashScreenState extends State<SplashScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(
-              child: Container(
-                decoration: BoxDecoration(
-                    // color: Colors.white,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.purple.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 48)
-                    ]),
-                child: Image.asset(
-                  'assets/rashid.png',
-                  width: _animation.value * (context.percentWidth * 33),
-                ),
-              ).p(_animation.value * 24),
+            SizedBox(
+              height: 200,
+              child: LottieBuilder.asset(
+                'assets/anim/splash_anim.json',
+                frameRate: FrameRate(60),
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Flexible(
-                  child: Text(
-                    'Made with',
-                    style: TextStyle(color: Colors.white, fontSize: 15),
-                  ),
-                ),
-                Flexible(
-                  child: LottieBuilder.asset(
-                    'assets/flutter_anim.json',
-                    height: 15,
-                  ).px(8),
-                ),
-                Text(
-                  'with ',
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                ),
-                Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                  size: 17,
-                )
-              ],
-            )
           ],
         ),
       ),

@@ -28,6 +28,7 @@ class _CarouselState extends State<Carousel> {
 
   @override
   Widget build(BuildContext context) {
+    print('carousel created');
     double carouselContainerHeight = MediaQuery.of(context).size.height *
         (ScreenHelper.isMobile(context) ? .80 : .85);
     return Container(

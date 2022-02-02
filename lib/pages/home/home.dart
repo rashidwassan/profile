@@ -25,41 +25,43 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      endDrawer: EndDrawer(),
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/mainback.jpg',
-                ),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: SingleChildScrollView(
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    60.heightBox,
-                    (widget.child == null) ? HomeWidget() : widget.child,
-                    Footer(),
-                    24.heightBox
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Container(
+    return SafeArea(
+      child: Scaffold(
+        endDrawer: EndDrawer(),
+        body: Stack(
+          children: [
+            Container(
               decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(12),
-                      bottomRight: Radius.circular(12))),
-              child: Header())
-        ],
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/mainback.jpg',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: SingleChildScrollView(
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      60.heightBox,
+                      (widget.child == null) ? HomeWidget() : widget.child,
+                      Footer(),
+                      24.heightBox
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Container(
+                decoration: BoxDecoration(
+                    color: Colors.white24,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(12),
+                        bottomRight: Radius.circular(12))),
+                child: Header())
+          ],
+        ),
       ),
     );
   }

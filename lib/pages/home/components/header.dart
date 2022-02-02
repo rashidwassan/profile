@@ -205,8 +205,8 @@ class MobileHeader extends StatelessWidget {
           // Restart server to make icons work
           // Lets make a scaffold key and create a drawer
           SizedBox(
-            height: 60,
-            width: 60,
+            height: 65,
+            width: 65,
             child: MaterialButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(500)),
@@ -215,10 +215,8 @@ class MobileHeader extends StatelessWidget {
                   // Lets open drawer using global key
                   Scaffold.of(context).openEndDrawer();
                 },
-                child: Lottie.asset(
-                  'assets/anims/menu.json',
-                  height: 45,
-                )),
+                child: Lottie.asset('assets/anim/menu.json',
+                    height: 90, width: 90)),
           )
         ],
       ),

@@ -56,6 +56,7 @@ class _IosAppAdState extends State<IosAppAd> {
   }
 
   Widget _buildUi(double width) {
+    print('iosAPP UI Build');
     return Center(
       child: LayoutBuilder(
         builder: (context, constraints) {
