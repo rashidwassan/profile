@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/header_item.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
@@ -11,7 +8,6 @@ import 'package:rashidwassan/pages/home/components/dialogs.dart';
 import 'package:rashidwassan/pages/home/home.dart';
 import 'package:rashidwassan/pages/testimonials_page.dart';
 import 'package:rashidwassan/utils/constants.dart';
-import 'package:rashidwassan/utils/globals.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -162,7 +158,7 @@ class Header extends StatelessWidget {
     return Container(
       child: ScreenHelper(
         desktop: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0),
+          padding: EdgeInsets.symmetric(vertical: 0.0),
           child: BuildHeader(),
         ),
         // We will make this in a bit
@@ -219,6 +215,7 @@ class MobileHeader extends StatelessWidget {
                 child: Icon(
                   CupertinoIcons.rectangle_grid_2x2_fill,
                   color: Colors.white,
+                  size: 30,
                 )),
           )
         ],
