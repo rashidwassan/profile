@@ -13,35 +13,33 @@ import 'package:velocity_x/velocity_x.dart';
 class HeaderLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Home()));
-          },
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "RW",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => Home()));
+        },
+        child: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "RW",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 32.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                TextSpan(
-                  text: ".",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                    fontSize: 36.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
-            ),
+              ),
+              TextSpan(
+                text: ".",
+                style: TextStyle(
+                  color: kPrimaryColor,
+                  fontSize: 36.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
           ),
         ),
       ),
@@ -155,16 +153,22 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          color: kheaderColor.withOpacity(0.8),
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+                color: kheaderColor.withOpacity(0.8),
+                spreadRadius: 1,
+                blurRadius: 12,
+                blurStyle: BlurStyle.outer)
+          ]),
       child: ScreenHelper(
-        desktop: Padding(
-          padding: EdgeInsets.symmetric(vertical: 0.0),
-          child: BuildHeader(),
-        ),
-        // We will make this in a bit
+        desktop: BuildHeader(),
         mobile: MobileHeader(),
         tablet: BuildHeader(),
       ),
-    );
+    ).px(8);
   }
 }
 
@@ -193,26 +197,23 @@ class MobileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 24, right: 24),
+      padding: EdgeInsets.only(left: 12, right: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           HeaderLogo(),
-          // Restart server to make icons work
-          // Lets make a scaffold key and create a drawer
           SizedBox(
-            height: 50,
-            width: 50,
+            width: 45,
             child: MaterialButton(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(500)),
+                    borderRadius: BorderRadius.circular(50)),
                 padding: EdgeInsets.all(0),
                 onPressed: () {
                   // Lets open drawer using global key
                   Scaffold.of(context).openEndDrawer();
                 },
                 child: Icon(
-                  CupertinoIcons.rectangle_grid_2x2_fill,
+                  CupertinoIcons.line_horizontal_3_decrease,
                   color: Colors.white,
                   size: 30,
                 )),

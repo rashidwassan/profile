@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/skill.dart';
 import 'package:rashidwassan/utils/constants.dart';
@@ -59,13 +60,7 @@ class BuildSkillsUI extends StatelessWidget {
               children: [
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(320),
-                    child: Image.asset(
-                      "assets/skills.jpeg",
-                      width: 300.0,
-                    ),
-                  ),
+                  child: LottieBuilder.asset(Images.splashAnimation),
                 ),
                 if (ScreenHelper.isMobile(context))
                   SizedBox(

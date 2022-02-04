@@ -68,38 +68,29 @@ class CVSectionUI extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "BETTER DESIGN,\nBETTER EXPERIENCES",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                  height: 1.8,
-                  fontSize: 18.0,
+              Flexible(
+                child: Text(
+                  "BETTER DESIGN,\nBETTER EXPERIENCES",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    height: 1.8,
+                    fontSize: 18.0,
+                  ),
                 ),
               ),
               MaterialButton(
                 onPressed: () {
                   launchURL(_cVUrl);
                 },
-                child: Row(
-                  children: [
-                    Text(
-                      "DOWNLOAD CV",
-                      style: TextStyle(
-                        color: kPrimaryColor,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Icon(
-                      Icons.download,
-                      color: kPrimaryColor,
-                      size: 16,
-                    )
-                  ],
+                child: Text(
+                  "DOWNLOAD CV",
+                  style: TextStyle(
+                    overflow: TextOverflow.ellipsis,
+                    color: kPrimaryColor,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 16.0,
+                  ),
                 ),
               ),
             ],
@@ -144,6 +135,7 @@ class CVSectionUI extends StatelessWidget {
                               ),
                               Text(
                                 designProcesses[index].title,
+                                softWrap: true,
                                 style: TextStyle(
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.w700,

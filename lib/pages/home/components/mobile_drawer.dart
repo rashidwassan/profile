@@ -70,7 +70,7 @@ class EndDrawer extends StatelessWidget {
                       16.heightBox,
                       EndDrawerButton(
                           title: 'HIRE ME',
-                          color: kDangerColor,
+                          color: kheaderColor,
                           icon: MaterialIcons.add,
                           onPressed: () {
                             showGetStartedDialog(context);

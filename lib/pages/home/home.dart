@@ -11,6 +11,7 @@ import 'package:rashidwassan/pages/home/components/skill_section.dart';
 import 'package:rashidwassan/pages/home/components/social_button_row.dart';
 import 'package:rashidwassan/pages/home/components/testimonial_widget.dart';
 import 'package:rashidwassan/pages/home/components/website_ad.dart';
+import 'package:rashidwassan/utils/constants.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Home extends StatefulWidget {
@@ -41,11 +42,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            Container(
-                decoration: BoxDecoration(
-                    color: Colors.white24,
-                    borderRadius: BorderRadius.circular(12)),
-                child: Header())
+            Header()
           ],
         ),
       ),
