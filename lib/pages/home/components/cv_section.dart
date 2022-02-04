@@ -133,13 +133,15 @@ class CVSectionUI extends StatelessWidget {
                               SizedBox(
                                 width: 15.0,
                               ),
-                              Text(
-                                designProcesses[index].title,
-                                softWrap: true,
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
+                              Flexible(
+                                child: Text(
+                                  designProcesses[index].title,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               )
                             ],
