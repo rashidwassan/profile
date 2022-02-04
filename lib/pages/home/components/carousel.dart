@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:neon/neon.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:rashidwassan/models/carousel_item_model.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
@@ -82,13 +83,17 @@ class _CarouselState extends State<Carousel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              "SOFTWARE DEVELOPER",
-              style: TextStyle(
-                color: kPrimaryColor,
-                fontWeight: FontWeight.w900,
-                fontSize: 16.0,
-              ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Neon(
+                    text: 'SOFTWARE DEVELOPER',
+                    color: Colors.deepPurple,
+                    fontSize: 20,
+                    glowing: true,
+                    flickeringLetters: [1, 5, 9, 11],
+                    font: NeonFont.Automania),
+              ],
             ),
             SizedBox(
               height: 18.0,
