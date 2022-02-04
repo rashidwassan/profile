@@ -1,11 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rashidwassan/pages/home/components/cv_section.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
-import 'package:rashidwassan/models/testimonial.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
 import 'package:rashidwassan/utils/testimonials.dart';

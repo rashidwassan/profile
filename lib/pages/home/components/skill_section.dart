@@ -126,6 +126,7 @@ class SkillsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
         itemCount: skills.length,
         shrinkWrap: true,
         itemBuilder: (context, index) {
