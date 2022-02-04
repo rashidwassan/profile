@@ -19,7 +19,7 @@ class EndDrawer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(flex: 2, child: Image.asset('assets/rashid2.png').p(32)),
+            Flexible(flex: 2, child: Image.asset(Images.imageOutOfSpace).p(32)),
             Divider(
               color: Colors.white60,
               height: 4,

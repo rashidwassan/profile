@@ -13,17 +13,6 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    // _imageAnimationController.dispose();
-    super.dispose();
-  }
-
   final CarouselController carouselController = CarouselController();
 
   @override
@@ -96,7 +85,6 @@ class _CarouselState extends State<Carousel> {
             Text(
               "SOFTWARE DEVELOPER",
               style: TextStyle(
-                fontFamily: 'Oswald',
                 color: kPrimaryColor,
                 fontWeight: FontWeight.w900,
                 fontSize: 16.0,
@@ -274,7 +262,7 @@ class BuildMobile extends StatelessWidget {
         children: [
           Expanded(
             child: Image.asset(
-              "assets/rashid2.png",
+              Images.imageInSpace,
               //   opacity: _imageAnimationController,
             ).p(24),
           ),
@@ -293,13 +281,9 @@ class MainImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Hero(
-        tag: 'mainAvatarImg',
-        child: Image.asset(
-          "assets/rashid.png",
-          // opacity: _imageAnimationController,
-          fit: BoxFit.cover,
-        ),
+      child: Image.asset(
+        Images.imageInSpace,
+        fit: BoxFit.cover,
       ),
     );
   }

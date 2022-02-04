@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:lottie/lottie.dart';
+import 'package:velocity_x/velocity_x.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:rashidwassan/models/skill.dart';
-import 'package:rashidwassan/utils/constants.dart';
-import 'package:rashidwassan/utils/screen_helper.dart';
+
+import '/models/skill.dart';
+import '/utils/constants.dart';
+import '/utils/screen_helper.dart';
 
 List<Skill> skills = [
   Skill(
@@ -24,7 +27,7 @@ List<Skill> skills = [
   ),
   Skill(
     skill: "C++",
-    percentage: 70,
+    percentage: 80,
   ),
 ];
 
@@ -47,6 +50,7 @@ class BuildSkillsUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('skills build');
     return Center(
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
@@ -60,7 +64,7 @@ class BuildSkillsUI extends StatelessWidget {
               children: [
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
-                  child: LottieBuilder.asset(Images.splashAnimation),
+                  child: LottieBuilder.asset(Images.skillAnim),
                 ),
                 if (ScreenHelper.isMobile(context))
                   SizedBox(
@@ -96,75 +100,9 @@ class BuildSkillsUI extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 15.0,
+                        height: 24.0,
                       ),
-                      Column(
-                        children: skills
-                            .map(
-                              (skill) => Padding(
-                                padding: EdgeInsets.only(bottom: 16),
-                                child: Container(
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        flex: skill.percentage,
-                                        child: Container(
-                                          padding: EdgeInsets.only(left: 10.0),
-                                          alignment: Alignment.centerLeft,
-                                          height: 30.0,
-                                          child: Text(
-                                            skill.skill,
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                                topRight: Radius.circular(30),
-                                                bottomRight:
-                                                    Radius.circular(30),
-                                                topLeft: Radius.circular(30),
-                                                bottomLeft:
-                                                    Radius.circular(30)),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                  offset: Offset(2, 3),
-                                                  color: kPrimaryColor
-                                                      .withOpacity(0.3),
-                                                  blurRadius: 8,
-                                                  spreadRadius: 0.1)
-                                            ],
-                                            color: kPrimaryColor,
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      Expanded(
-                                        // remaining (blank part)
-                                        flex: 100 - skill.percentage,
-                                        child: Divider(
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      Text(
-                                        "${skill.percentage}%",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16.0,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            )
-                            .toList(),
-                      )
+                      SkillsList()
                     ],
                   ),
                 )
@@ -174,5 +112,52 @@ class BuildSkillsUI extends StatelessWidget {
         },
       ),
     );
+  }
+}
+
+class SkillsList extends StatelessWidget {
+  const SkillsList({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: skills.length,
+        shrinkWrap: true,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: EdgeInsets.only(bottom: 16),
+            child: Row(
+              children: [
+                Flexible(
+                  flex: skills[index].percentage.toInt(),
+                  child: Container(
+                    height: 28,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [kheaderColor, kPrimaryColor])),
+                    alignment: Alignment.centerLeft,
+                    child:
+                        skills[index].skill.text.semiBold.white.make().px(16),
+                  ),
+                ),
+                12.widthBox,
+                Flexible(
+                  flex: (100 - skills[index].percentage).toInt(),
+                  child: Container(
+                    height: 0.5,
+                    color: kPrimaryColor.withOpacity(0.5),
+                  ),
+                ),
+                8.widthBox,
+                '${skills[index].percentage.toInt()}%'.text.sm.white.make(),
+              ],
+            ),
+          );
+        });
   }
 }

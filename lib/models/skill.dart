@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Skill {
   final String skill;
-  final int percentage;
+  final double percentage;
 
   Skill({
     @required this.skill,

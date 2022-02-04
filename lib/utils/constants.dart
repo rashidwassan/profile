@@ -15,6 +15,7 @@ double getMobileMaxWidth(BuildContext context) =>
 class Images {
   Images._();
   static const splashAnimation = 'assets/anim/splash_anim.json';
+  static const skillAnim = 'assets/anim/skill.json';
 
   // avatars
   static const avatarAdult = 'assets/icons/adult.png';
@@ -23,6 +24,10 @@ class Images {
   static const avatarGirl = 'assets/icons/girl.png';
   static const avatarGirlGlasses = 'assets/icons/girl_glasses.png';
 
-  //icons
+  // icons
   static const pkIcon = 'assets/icons/pk.jpeg';
+
+  // images
+  static const imageInSpace = 'assets/images/rashid.png';
+  static const imageOutOfSpace = 'assets/images/rashid2.png';
 }
