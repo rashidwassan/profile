@@ -64,7 +64,10 @@ class BuildSkillsUI extends StatelessWidget {
               children: [
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
-                  child: LottieBuilder.asset(Images.skillAnim),
+                  child: LottieBuilder.asset(
+                    Images.skillAnim,
+                    frameRate: FrameRate(60),
+                  ),
                 ),
                 if (ScreenHelper.isMobile(context))
                   SizedBox(
@@ -127,7 +130,7 @@ class SkillsList extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return Container(
-            margin: EdgeInsets.only(bottom: 16),
+            margin: EdgeInsets.only(bottom: 20),
             child: Row(
               children: [
                 Flexible(
@@ -139,7 +142,14 @@ class SkillsList extends StatelessWidget {
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
-                            colors: [kheaderColor, kPrimaryColor])),
+                            colors: [kheaderColor, kPrimaryColor]),
+                        boxShadow: [
+                          BoxShadow(
+                            color: kPrimaryColor.withOpacity(0.5),
+                            spreadRadius: 1,
+                            blurRadius: 8,
+                          )
+                        ]),
                     alignment: Alignment.centerLeft,
                     child:
                         skills[index].skill.text.semiBold.white.make().px(16),
