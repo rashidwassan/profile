@@ -21,4 +21,7 @@ class Images {
   static const avatarBoy = 'assets/icons/boy.png';
   static const avatarGirl = 'assets/icons/girl.png';
   static const avatarGirlGlasses = 'assets/icons/girl_glasses.png';
+
+  //icons
+  static const pkIcon = 'assets/icons/pk.jpeg';
 }

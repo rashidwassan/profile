@@ -15,83 +15,72 @@ class EndDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        decoration: BoxDecoration(
-            color: kBackgroundColor,
-            image: DecorationImage(
-                image: AssetImage(
-                  'assets/mainbg.jpg',
-                ),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                    kBackgroundColor.withOpacity(0.5), BlendMode.darken))),
-        child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Flexible(flex: 2, child: Image.asset('assets/rashid2.png').p(32)),
-              Divider(
-                color: Colors.white60,
-                height: 4,
-              ).px(24),
-              Expanded(
-                  flex: 3,
-                  child: SingleChildScrollView(
-                    physics: BouncingScrollPhysics(),
-                    child: Column(
-                      children: [
-                        16.heightBox,
-                        EndDrawerButton(
-                            title: 'HOME',
-                            icon: CupertinoIcons.home,
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Home()));
-                            }),
-                        EndDrawerButton(
-                                title: 'MY INTRO',
-                                icon: MaterialIcons.info,
-                                onPressed: () {})
-                            .py(16),
-                        EndDrawerButton(
-                            title: 'MY CODE',
-                            icon: MaterialIcons.code,
-                            onPressed: () {
-                              launchURL('https://github.com/rashidwassan');
-                            }),
-                        EndDrawerButton(
-                            title: 'TESTIMONIALS',
-                            icon: CupertinoIcons.book,
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          Home(child: TestimonialsPage())));
-                            }).py(16),
-                        EndDrawerButton(
-                            title: 'ARTICLES',
-                            icon: MaterialIcons.book,
-                            onPressed: () {
-                              launchURL('https://medium.com/@rashidwassan');
-                            }),
-                        16.heightBox,
-                        EndDrawerButton(
-                            title: 'HIRE ME',
-                            color: kDangerColor,
-                            icon: MaterialIcons.add,
-                            onPressed: () {
-                              showGetStartedDialog(context);
-                            }).py(16),
-                      ],
-                    ),
-                  )),
-              24.heightBox,
-              'Made with Flutter with ❤️'.text.white.makeCentered().py(8),
-            ],
-          ),
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Flexible(flex: 2, child: Image.asset('assets/rashid2.png').p(32)),
+            Divider(
+              color: Colors.white60,
+              height: 4,
+            ).px(24),
+            Expanded(
+                flex: 3,
+                child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      16.heightBox,
+                      EndDrawerButton(
+                          title: 'HOME',
+                          icon: CupertinoIcons.home,
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Home()));
+                          }),
+                      EndDrawerButton(
+                              title: 'MY INTRO',
+                              icon: MaterialIcons.info,
+                              onPressed: () {})
+                          .py(16),
+                      EndDrawerButton(
+                          title: 'MY CODE',
+                          icon: MaterialIcons.code,
+                          onPressed: () {
+                            launchURL('https://github.com/rashidwassan');
+                          }),
+                      EndDrawerButton(
+                          title: 'TESTIMONIALS',
+                          icon: CupertinoIcons.book,
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Home(child: TestimonialsPage())));
+                          }).py(16),
+                      EndDrawerButton(
+                          title: 'ARTICLES',
+                          icon: MaterialIcons.book,
+                          onPressed: () {
+                            launchURL('https://medium.com/@rashidwassan');
+                          }),
+                      16.heightBox,
+                      EndDrawerButton(
+                          title: 'HIRE ME',
+                          color: kDangerColor,
+                          icon: MaterialIcons.add,
+                          onPressed: () {
+                            showGetStartedDialog(context);
+                          }).py(16),
+                    ],
+                  ),
+                )),
+            24.heightBox,
+            'Made with Flutter with ❤️'.text.white.makeCentered().py(8),
+          ],
         ),
       ),
     );

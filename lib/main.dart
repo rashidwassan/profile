@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:rashidwassan/pages/splash_screen.dart';
-import 'package:rashidwassan/utils/constants.dart';
+import './pages/splash_screen.dart';
+import './utils/constants.dart';
 
 void main() {
   runApp(MyApp());

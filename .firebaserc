@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "web-portfolio-ddd55"
-  }
+    "default": "myportfolio-dc7ff",
+    "profile": "myportfolio-dc7ff"
+  },
+  "targets": {}
 }

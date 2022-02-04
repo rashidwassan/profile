@@ -130,7 +130,7 @@ class _CarouselState extends State<Carousel> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(3),
                   child: Image.asset(
-                    'assets/pk.jpeg',
+                    Images.pkIcon,
                     height: 13,
                   ),
                 ),
