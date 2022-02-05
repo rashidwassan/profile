@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:rashidwassan/models/design_process.dart';
-import 'package:rashidwassan/utils/constants.dart';
-import 'package:rashidwassan/utils/screen_helper.dart';
+
+import '/models/design_process.dart';
+import '/utils/constants.dart';
+import '/utils/screen_helper.dart';
 
 const _cVUrl =
     'https://drive.google.com/file/d/1l6YViAYRUukuVNsn633YK5DqsxbFyF9g/view?usp=sharing';

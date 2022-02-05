@@ -112,18 +112,12 @@ class _IosAppAdState extends State<IosAppAd> {
                                         physics: BouncingScrollPhysics(),
                                         itemBuilder: (context, index) {
                                           return Image.asset(
-                                            'assets/${apps[_currentApp].id}/$_currentAppPage.png',
+                                            'assets/projectSnapshots/${apps[_currentApp].id}/$_currentAppPage.png',
                                           );
                                         },
                                       ),
                                     ),
                                   )),
-                              Align(
-                                alignment: Alignment.topCenter,
-                                child: Image.asset('assets/camera_lens.png',
-                                        height: 28)
-                                    .py(5),
-                              ),
                               Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Container(

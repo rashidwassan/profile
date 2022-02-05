@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:rashidwassan/utils/constants.dart';
 import 'package:rashidwassan/utils/screen_helper.dart';
@@ -150,9 +151,8 @@ class WebsiteAd extends StatelessWidget {
                   ),
                   Expanded(
                     flex: constraints.maxWidth > 720.0 ? 1 : 0,
-                    child: Image.asset(
-                      "assets/laptop.png",
-                      // Set width for image on smaller screen
+                    child: LottieBuilder.asset(
+                      Images.splashAnimation,
                       width: constraints.maxWidth > 720.0 ? null : 350.0,
                     ),
                   ),

@@ -34,15 +34,15 @@ flutter:
 
   assets:
     - assets/
-    - assets/reapet/
-    - assets/keyless/
-    - assets/chatapp/
-    - assets/lgn/
-    - assets/labouronline/
     - assets/anim/
     - assets/fonts/
     - assets/icons/
     - assets/images/
+    - assets/projectSnapshots/lgn/
+    - assets/projectSnapshots/reapet/
+    - assets/projectSnapshots/chatapp/
+    - assets/projectSnapshots/keyless/
+    - assets/projectSnapshots/labouronline/
 
 
   fonts:
