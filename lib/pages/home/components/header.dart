@@ -99,16 +99,13 @@ class HeaderRow extends StatelessWidget {
                       cursor: SystemMouseCursors.click,
                       child: TextButton(
                         style: ButtonStyle(
-                          // padding: MaterialStateProperty.all(
-                          //     const EdgeInsets.symmetric(
-                          //         horizontal: 16, vertical: 16)),
                           elevation: MaterialStateProperty.all(12),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50))),
                           backgroundColor:
-                              MaterialStateProperty.all(kDangerColor),
-                          shadowColor: MaterialStateProperty.all(kDangerColor),
+                              MaterialStateProperty.all(kPrimaryColor),
+                          shadowColor: MaterialStateProperty.all(kPrimaryColor),
                         ),
                         onPressed: item.onTap,
                         child: SizedBox(
