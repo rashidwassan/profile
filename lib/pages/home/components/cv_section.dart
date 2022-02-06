@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neon/neon.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -80,17 +81,19 @@ class CVSectionUI extends StatelessWidget {
                 ),
               ),
               MaterialButton(
+                splashColor: kPrimaryColor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
                 onPressed: () {
                   launchURL(_cVUrl);
                 },
-                child: Text(
-                  "DOWNLOAD CV",
-                  style: TextStyle(
-                    overflow: TextOverflow.ellipsis,
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 16.0,
-                  ),
+                child: Neon(
+                  text: "DOWNLOAD CV",
+                  color: Colors.pink,
+                  font: NeonFont.Automania,
+                  fontSize: 15,
+                  glowing: true,
+                  glowingDuration: Duration(milliseconds: 250),
                 ),
               ),
             ],

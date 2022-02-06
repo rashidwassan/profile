@@ -15,14 +15,32 @@ class EndDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: SafeArea(
+      backgroundColor: Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      elevation: 8,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  kheaderColor,
+                  Colors.teal,
+                  Colors.black87,
+                  kPrimaryColor,
+                  kheaderColor
+                ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Flexible(flex: 2, child: Image.asset(Images.imageOutOfSpace).p(32)),
+            Flexible(flex: 2, child: Image.asset(Images.imageOutOfSpace).p(24)),
             Divider(
-              color: Colors.white60,
-              height: 4,
+              color: kPrimaryColor,
+              thickness: 0.3,
+              height: 1,
             ).px(24),
             Expanded(
                 flex: 3,
@@ -118,7 +136,7 @@ class EndDrawerButton extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Colors.white,
+            color: Colors.white60,
             size: 25,
           ),
           16.widthBox,
