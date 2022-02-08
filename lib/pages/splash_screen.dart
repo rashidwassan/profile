@@ -31,15 +31,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TweenAnimationBuilder<double>(
-              tween: Tween(begin: 1, end: 200),
-              duration: const Duration(milliseconds: 1000),
-              curve: Curves.bounceIn,
-              builder: (context, val, child) => LottieBuilder.asset(
-                Images.skillAnim,
-                frameRate: FrameRate(60),
-                height: val,
-              ),
+            LottieBuilder.asset(
+              Images.splashAnimation,
+              frameRate: FrameRate(60),
             ),
             const SizedBox(height: 16),
             Neon(
