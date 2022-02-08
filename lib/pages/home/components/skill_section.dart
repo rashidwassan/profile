@@ -65,7 +65,7 @@ class BuildSkillsUI extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: LottieBuilder.asset(
-                    Images.skillAnim,
+                    Images.splashAnimation,
                     frameRate: FrameRate(60),
                   ),
                 ),
@@ -143,12 +143,12 @@ class SkillsList extends StatelessWidget {
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
-                            colors: [kheaderColor, kPrimaryColor]),
+                            colors: [Colors.blue, kPrimaryColor]),
                         boxShadow: [
                           BoxShadow(
                             color: kPrimaryColor.withOpacity(0.5),
                             spreadRadius: 1,
-                            blurRadius: 8,
+                            blurRadius: 3,
                           )
                         ]),
                     alignment: Alignment.centerLeft,
