@@ -22,17 +22,19 @@ class EndDrawer extends StatelessWidget {
       elevation: 8,
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  kheaderColor,
-                  Colors.teal,
-                  Colors.black87,
-                  kPrimaryColor,
-                  kheaderColor
-                ])),
+          borderRadius: BorderRadius.circular(16),
+          color: kBackgroundColor,
+          // gradient: LinearGradient(
+          //     begin: Alignment.topLeft,
+          //     end: Alignment.bottomRight,
+          //     colors: [
+          //       kheaderColor,
+          //       Colors.teal,
+          //       Colors.black87,
+          //       kPrimaryColor,
+          //       kheaderColor
+          //     ]),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

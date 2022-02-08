@@ -37,7 +37,7 @@ final List<Testimonial> allTestimonials = [
           "Rashid is a young professional with special set of skills and passion. I find him very fascinating how he manage to keep his learning consistent. I personally have worked with him regarding Android and MERN stack development and would highly recommend him for his expertise in technologies mentioned above.",
       occupation: "MERN Stack Developer",
       personName: "MUZAMIL NAWAZ",
-      profilePhoto: Images.avatarBoy),
+      profilePhoto: Images.beard),
   Testimonial(
       text:
           "Rashid and I worked on several projects together, As a Team member he is pretty dedicated and hard working colleague.",

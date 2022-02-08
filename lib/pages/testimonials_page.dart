@@ -98,73 +98,84 @@ Widget _buildUi(double width) {
                       return Expanded(
                         flex: 0,
                         child: Container(
-                          padding: const EdgeInsets.all(8.0),
-                          margin: EdgeInsets.only(bottom: 32.0),
-                          child: Container(
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.7),
-                                borderRadius: BorderRadius.circular(16),
-                                border: Border.all(
-                                    width: 0.3, color: Colors.white)),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Container(
-                                    child: Icon(
-                                  FontAwesomeIcons.quoteLeft,
-                                  color: kPrimaryColor,
-                                  size: 40,
-                                )),
-                                SizedBox(
-                                  height: 12.0,
-                                ),
-                                Text(
-                                  testimonial.text,
-                                  style: TextStyle(
-                                    color: kCaptionColor,
-                                    height: 1.8,
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 24.0,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    SocialButtonWithShadow(
-                                        icon: FontAwesome.user,
-                                        color: kPrimaryColor),
-                                    SizedBox(
-                                      width: 24.0,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          testimonial.personName,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 16.0,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 4.0,
-                                        ),
-                                        Text(
-                                          testimonial.occupation,
-                                          style: TextStyle(
-                                            color: kCaptionColor,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                          margin: EdgeInsets.all(12),
+                          padding: EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                              gradient: RadialGradient(colors: [
+                                kheaderColor,
+                                Colors.blue,
+                                kBackgroundColor,
+                                kBackgroundColor,
+                              ], center: Alignment.topLeft),
+                              borderRadius: BorderRadius.circular(16),
+                              border:
+                                  Border.all(width: 0.3, color: Colors.white),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black54,
+                                  spreadRadius: 1,
+                                  blurRadius: 12,
+                                  blurStyle: BlurStyle.outer,
                                 )
-                              ],
-                            ),
+                              ]),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                  child: Icon(
+                                FontAwesomeIcons.quoteLeft,
+                                color: kPrimaryColor,
+                                size: 40,
+                              )),
+                              SizedBox(
+                                height: 12.0,
+                              ),
+                              Text(
+                                testimonial.text,
+                                style: TextStyle(
+                                  color: kCaptionColor,
+                                  height: 1.8,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 24.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    testimonial.profilePhoto,
+                                    height: 60,
+                                  ),
+                                  SizedBox(
+                                    width: 16.0,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        testimonial.personName,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16.0,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 4.0,
+                                      ),
+                                      Text(
+                                        testimonial.occupation,
+                                        style: TextStyle(
+                                          color: kCaptionColor,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                         ),
                       );
