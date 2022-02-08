@@ -65,8 +65,7 @@ class BuildSkillsUI extends StatelessWidget {
                 Expanded(
                   flex: ScreenHelper.isMobile(context) ? 0 : 2,
                   child: LottieBuilder.asset(
-                    Images.splashAnimation,
-                    frameRate: FrameRate(60),
+                    Images.skillAnim,
                   ),
                 ),
                 if (ScreenHelper.isMobile(context))
