@@ -31,6 +31,15 @@ class _HomeState extends State<Home> {
           children: [
             SingleChildScrollView(
               child: Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                      kBackgroundColor,
+                      kheaderColor.withOpacity(0.5)
+                    ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        tileMode: TileMode.decal)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
