@@ -136,7 +136,7 @@ class SkillsList extends StatelessWidget {
                 Flexible(
                   flex: skills[index].percentage.toInt(),
                   child: Container(
-                    height: 30,
+                    height: 27,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         gradient: LinearGradient(

@@ -125,7 +125,7 @@ class EndDrawerButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        overlayColor: MaterialStateColor.resolveWith((states) => kPrimaryColor),
+        overlayColor: MaterialStateColor.resolveWith((states) => kheaderColor),
         padding: MaterialStateProperty.all(const EdgeInsets.all(12)),
         backgroundColor: MaterialStateProperty.all(color),
         shadowColor: MaterialStateProperty.all(color),
